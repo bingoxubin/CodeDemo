@@ -1,0 +1,7 @@
+.idea
+*.iml
+target
+log
+logs
+spark-warehouse/
+.DS_Store
