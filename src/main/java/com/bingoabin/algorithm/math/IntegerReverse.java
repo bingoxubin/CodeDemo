@@ -9,7 +9,7 @@ public class IntegerReverse {
 		//LeetCode.7 整数反转 https://leetcode-cn.com/problems/reverse-integer/
 		//案例：输入123  输出321
 		//分析：将整数反转
-		//思路：需要考虑临界情况，比如1534236469，本身并没有超过21亿，但是反转过来就是90亿，就越界了
+		//思路：需要考虑临界情况，比如1534236469，本身并没有超过21亿，但是反转过来就是90多亿，就越界了
 		int x = 1534236469;
 		System.out.println(reverse(x));
 	}
