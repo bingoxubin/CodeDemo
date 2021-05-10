@@ -33,6 +33,7 @@ public class MysqlUtil {
 		}
 	}
 
+	//获取连接
 	public static Connection getConn() {
 		try {
 			Connection conn = DriverManager.getConnection(url, user, password);
@@ -43,6 +44,7 @@ public class MysqlUtil {
 		return null;
 	}
 
+	//执行sql
 	public static void executeSQL(String sql) {
 		Connection conn = getConn();
 		Statement stmt = null;
@@ -56,6 +58,7 @@ public class MysqlUtil {
 		}
 	}
 
+	//关闭连接
 	public static void close(Connection conn, Statement stmt, ResultSet rs) {
 		if (rs != null) {
 			try {
