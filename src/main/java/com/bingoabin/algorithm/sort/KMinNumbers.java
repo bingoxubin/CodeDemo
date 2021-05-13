@@ -46,6 +46,7 @@ public class KMinNumbers {
 		arr[i] = temp;
 		//刚好到达边界，即可退出
 		if (i == k - 1) return;
+		//递归调用
 		quickSort(arr, left, i - 1, k);
 		quickSort(arr, i + 1, right, k);
 	}
