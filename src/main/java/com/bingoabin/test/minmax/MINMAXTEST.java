@@ -1,4 +1,4 @@
-package com.bingoabin.test;
+package com.bingoabin.test.minmax;
 
 /**
  * @author xubin03

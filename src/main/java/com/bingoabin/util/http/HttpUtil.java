@@ -1,4 +1,4 @@
-package com.bingoabin.util;
+package com.bingoabin.util.http;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -63,7 +63,7 @@
                     <archive>
                         <manifest>
                             <!--java -jar运行入口 -->
-                            <mainClass>com.bingoabin.test.MysqlUtilTest</mainClass>
+                            <mainClass>com.bingoabin.test.mysql.MysqlUtilTest</mainClass>
                         </manifest>
                     </archive>
                     <!--打出来的jar包名称去掉jar-with-dependencies后缀-->

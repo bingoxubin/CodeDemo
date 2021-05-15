@@ -1,4 +1,4 @@
-package com.bingoabin.util;
+package com.bingoabin.util.jdbc;
 
 import java.io.IOException;
 import java.io.InputStream;

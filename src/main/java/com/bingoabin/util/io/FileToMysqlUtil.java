@@ -1,4 +1,6 @@
-package com.bingoabin.util;
+package com.bingoabin.util.io;
+
+import com.bingoabin.util.jdbc.MysqlUtil;
 
 import java.io.BufferedReader;
 import java.io.File;

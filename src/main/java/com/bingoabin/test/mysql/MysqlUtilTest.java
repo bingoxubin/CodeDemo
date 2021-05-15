@@ -1,6 +1,6 @@
-package com.bingoabin.test;
+package com.bingoabin.test.mysql;
 
-import com.bingoabin.util.MysqlUtil;
+import com.bingoabin.util.jdbc.MysqlUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

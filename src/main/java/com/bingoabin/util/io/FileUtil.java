@@ -1,4 +1,4 @@
-package com.bingoabin.util;
+package com.bingoabin.util.io;
 
 import java.io.*;
 
