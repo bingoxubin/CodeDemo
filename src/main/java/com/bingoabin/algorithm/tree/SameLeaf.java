@@ -19,10 +19,10 @@ public class SameLeaf {
 		TreeNode tmp4 = new TreeNode(4);
 		TreeNode tmp9 = new TreeNode(9);
 		TreeNode tmp8 = new TreeNode(8);
-		TreeNode tmp2 = new TreeNode(2,tmp7,tmp4);
-		TreeNode tmp5 = new TreeNode(5,tmp6,tmp2);
-		TreeNode tmp1 = new TreeNode(1,tmp9,tmp8);
-		TreeNode tmp3 = new TreeNode(3,tmp5,tmp1);
+		TreeNode tmp2 = new TreeNode(2, tmp7, tmp4);
+		TreeNode tmp5 = new TreeNode(5, tmp6, tmp2);
+		TreeNode tmp1 = new TreeNode(1, tmp9, tmp8);
+		TreeNode tmp3 = new TreeNode(3, tmp5, tmp1);
 		TreeNode root1 = tmp3;
 
 		//构建root2的树
@@ -31,13 +31,13 @@ public class SameLeaf {
 		TreeNode temp4 = new TreeNode(4);
 		TreeNode temp9 = new TreeNode(9);
 		TreeNode temp8 = new TreeNode(8);
-		TreeNode temp5 = new TreeNode(5,temp6,temp7);
-		TreeNode temp2 = new TreeNode(2,temp9,temp8);
-		TreeNode temp1 = new TreeNode(1,temp4,temp2);
-		TreeNode temp3 = new TreeNode(3,temp5,temp1);
+		TreeNode temp5 = new TreeNode(5, temp6, temp7);
+		TreeNode temp2 = new TreeNode(2, temp9, temp8);
+		TreeNode temp1 = new TreeNode(1, temp4, temp2);
+		TreeNode temp3 = new TreeNode(3, temp5, temp1);
 		TreeNode root2 = temp3;
 
-		System.out.println(leafSimilar(root1,root2));
+		System.out.println(leafSimilar(root1, root2));
 	}
 
 	public static boolean leafSimilar(TreeNode root1, TreeNode root2) {
@@ -60,26 +60,28 @@ public class SameLeaf {
 			dfs(root.right, list);
 		}
 	}
+
+	//定义TreeNode
+	static class TreeNode {
+		int val;
+		TreeNode left;
+		TreeNode right;
+
+		public TreeNode() {
+		}
+
+		public TreeNode(int val) {
+			this.val = val;
+		}
+
+		public TreeNode(int val, TreeNode left, TreeNode right) {
+			this.val = val;
+			this.left = left;
+			this.right = right;
+		}
+	}
 }
 
-//定义TreeNode
-class TreeNode {
-	int val;
-	TreeNode left;
-	TreeNode right;
 
-	public TreeNode() {
-	}
-
-	public TreeNode(int val) {
-		this.val = val;
-	}
-
-	public TreeNode(int val, TreeNode left, TreeNode right) {
-		this.val = val;
-		this.left = left;
-		this.right = right;
-	}
-}
 
 
