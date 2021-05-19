@@ -6,11 +6,11 @@ object Structure {
 	def main(args: Array[String]): Unit = {
 		//一、数组
 		//定长
-		val arr1 = new Array[Int](8)
+		val arr1 = Array[Int](8)
 		val arr2 = Array(1, 3, 4, 5, 6, 7)
 		println(arr2(4))
 		//不定长
-		val arr3 = new ArrayBuffer[Int](8)
+		val arr3 = ArrayBuffer[Int](8)
 		val arr4 = ArrayBuffer("nihao", 3, "world")
 		arr4 += "flink"
 		arr4 ++= ArrayBuffer("nishuo", 7, 8, 9)
