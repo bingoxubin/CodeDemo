@@ -14,6 +14,7 @@ public class SubArrayMaxSum {
 		System.out.println(maxsumofSubarray(arr));
 	}
 
+	//先记下arr[0]，从下标第一个开始遍历，arr[i] = arr[i-1] + arr[i] 如果arr[i-1] <= 0 那么就为arr[i]本身
 	public static int maxsumofSubarray(int[] arr) {
 		int res = arr[0];
 		for (int i = 1; i < arr.length; i++) {
