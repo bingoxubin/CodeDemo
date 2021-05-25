@@ -17,19 +17,23 @@ public class StockSellKth {
 		System.out.println(maxProfit(2, arr1));
 	}
 
+	//    {8, 9, 3, 5, 1, 3}
+	//dp: [0, 0, 0, 0, 0, 0]
+	//    [0, 1, 1, 2, 2, 2]
+	//    [0, 1, 1, 3, 3, 4]
 	public static int maxProfit(int k, int[] prices) {
 		int n = prices.length;
 		if (k > n / 2) return maxProfit(prices);
-		int[][] dp = new int[k + 1][n + 1];
+		int[][] dp = new int[k + 1][n];
 		for (int i = 1; i <= k; i++) {
 			int temp = -prices[0];
-			for (int j = 1; j <= n; j++) {
-				dp[i][j] = Math.max(dp[i][j - 1], temp + prices[j - 1]);
-				temp = Math.max(temp, dp[i - 1][j - 1] - prices[j - 1]);
+			for (int j = 1; j < n; j++) {
+				dp[i][j] = Math.max(dp[i][j - 1], temp + prices[j]);
+				temp = Math.max(temp, dp[i - 1][j - 1] - prices[j]);
 			}
 		}
 		System.out.println(Arrays.deepToString(dp));
-		return dp[k][n];
+		return dp[k][n - 1];
 	}
 
 	public static int maxProfit(int[] prices) {

@@ -17,6 +17,10 @@ public class StockSellTwice {
 		System.out.println(maxProfit(arr));
 	}
 
+	//    {8, 9, 3, 5, 1, 3}
+	//dp: [0, 0, 0, 0, 0, 0]
+	//    [0, 1, 1, 2, 2, 2]
+	//    [0, 1, 1, 3, 3, 4]
 	public static int maxProfit(int[] prices) {
 		int n = prices.length;
 		if (n == 0) return 0;
