@@ -11,7 +11,7 @@ public class MissingNum {
 	//思路：方式一：位运算  将数组中的数和1-n+1中的所有数进行异或运算，最后得出的数就是结果
 	//     方式二:数学法  求和的方式做差 得出结果
 	//     方式三:差值法  看后面一个数是否比前面一个大1
-	//     方式四:二分法
+	//     方式四:二分法  二分法  记下范围为0 ~ a.length - 1,如果下标的值 = 元素的值 left = mid + 1,如果下标的值 < 元素的值  right = mid - 1; 不存在下标值 > 元素值的情况
 	public static void main(String[] args) {
 		int[] arr = {0, 1, 2, 3, 4, 5, 7};
 		System.out.println(solve1(arr));
