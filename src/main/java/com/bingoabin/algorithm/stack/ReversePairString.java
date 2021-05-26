@@ -21,15 +21,17 @@ public class ReversePairString {
 	public static String reverseParentheses(String s) {
 		StringBuilder res = new StringBuilder();
 		Deque<String> stack = new LinkedList<String>();
-		for(int i = 0;i<s.length();i++){
+		for (int i = 0; i < s.length(); i++) {
 			char ch = s.charAt(i);
 			if (ch == '(') {
+				//如果是（  将收集到的 string 加入到队列中，然后清空sring
 				stack.push(res.toString());
 				res.setLength(0);
-			}else if(ch == ')'){
+			} else if (ch == ')') {
+				//如果是) 将收集到的string翻转，然后将stack中的弹出放到string前面
 				res.reverse();
 				res.insert(0, stack.pop());
-			}else{
+			} else {
 				res.append(ch);
 			}
 		}
