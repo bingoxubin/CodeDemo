@@ -15,22 +15,30 @@ public class FindKthMax {
 	}
 
 	public static int findKth(int[] a, int n, int k) {
-		if (k < 1 || k > n) return -1;
+		if (k < 1 || k > n) {
+			return -1;
+		}
 		quickSort(a, 0, a.length - 1, k);
 		return a[n - k];
 	}
 
 	public static void quickSort(int[] arr, int left, int right, int k) {
 		//退出条件
-		if (left > right) return;
+		if (left > right) {
+			return;
+		}
 		//标记下最左边的值
 		int temp = arr[left];
 		//开始比较，左边的都大于temp，右边的都小于temp
 		int i = left;
 		int j = right;
 		while (i < j) {
-			while (i < j && arr[j] > temp) j--;
-			while (i < j && arr[i] <= temp) i++;
+			while (i < j && arr[j] > temp) {
+				j--;
+			}
+			while (i < j && arr[i] <= temp) {
+				i++;
+			}
 			if (i < j) {
 				int tmp = arr[i];
 				arr[i] = arr[j];
@@ -40,7 +48,9 @@ public class FindKthMax {
 		arr[left] = arr[i];
 		arr[i] = temp;
 		//刚好到达边界，即可退出
-		if (i == arr.length - k) return;
+		if (i == arr.length - k) {
+			return;
+		}
 		//递归调用
 		quickSort(arr, left, i - 1, k);
 		quickSort(arr, i + 1, right, k);

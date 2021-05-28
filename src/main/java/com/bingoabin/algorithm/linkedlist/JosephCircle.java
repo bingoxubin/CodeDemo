@@ -21,7 +21,9 @@ public class JosephCircle {
 	//方式一：创建arraylist进行模拟    1 2 3 4 5  第一个去掉下标为1  1345接下来去掉下标为2  135接下来去掉下表为0   35接下来去掉下表为1
 	public static int ysf(int n, int m) {
 		ArrayList<Integer> list = new ArrayList<>();
-		for (int i = 1; i <= n; i++) list.add(i);
+		for (int i = 1; i <= n; i++) {
+			list.add(i);
+		}
 		int index = 0;
 		while (list.size() > 1) {
 			index = (m + index - 1) % list.size();

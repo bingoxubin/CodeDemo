@@ -23,7 +23,9 @@ public class StockSellTwice {
 	//    [0, 1, 1, 3, 3, 4]
 	public static int maxProfit(int[] prices) {
 		int n = prices.length;
-		if (n == 0) return 0;
+		if (n == 0) {
+			return 0;
+		}
 		int[][] dp = new int[3][n];
 		for (int i = 1; i < 3; i++) {
 			int diff = -prices[0];

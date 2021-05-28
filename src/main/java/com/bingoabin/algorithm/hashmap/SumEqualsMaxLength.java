@@ -26,7 +26,9 @@ public class SumEqualsMaxLength {
 	// 0 1 -1 0 1 2
 	public static int maxlenEqualK(int[] arr, int k) {
 		int[] helper = new int[arr.length + 1];
-		for (int i = 1; i <= arr.length; i++) helper[i] = arr[i - 1] + helper[i - 1];
+		for (int i = 1; i <= arr.length; i++) {
+			helper[i] = arr[i - 1] + helper[i - 1];
+		}
 		for (int i = arr.length; i > 0; i--) {
 			for (int j = 0; i + j <= arr.length; j++) {
 				if (helper[i + j] - helper[j] == k) {
@@ -40,7 +42,9 @@ public class SumEqualsMaxLength {
 	//方式二：先求出数组的前缀和，然后遍历前缀和，如果map中不存在，那就放入map中，key value分别是前缀和和下标，如果map中包含当前值 - k ,那就得出结果，比较长度，然后用hashmap缓存中间结果，求出结果值
 	public static int maxlenEqualK1(int[] arr, int k) {
 		int[] helper = new int[arr.length + 1];
-		for (int i = 1; i <= arr.length; i++) helper[i] = helper[i - 1] + arr[i - 1];
+		for (int i = 1; i <= arr.length; i++) {
+			helper[i] = helper[i - 1] + arr[i - 1];
+		}
 		int res = 0;
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for (int i = 0; i < helper.length; i++) {

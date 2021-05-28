@@ -40,7 +40,7 @@ public class _61SerializeBinaryTree {
 			index++;
 			String[] splits = str.split(",");
 			TreeNode root = null;
-			if (!splits[index].equals("#")) {
+			if (!"#".equals(splits[index])) {
 				root = new TreeNode(Integer.valueOf(splits[index]));
 				root.left = Deserialize(str);
 				root.right = Deserialize(str);

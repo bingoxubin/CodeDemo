@@ -25,7 +25,9 @@ public class TimesTopK {
 	//先通过hashmap，统计出出现次数，然后创建优先队列，按照出现次数排序，如果次数相等，按照字母顺序排序，小根堆，将数据放入队列中，最后打印队列结果值
 	public static String[][] topKstrings(String[] strings, int k) {
 		HashMap<String, Integer> map = new HashMap<>();
-		for (String string : strings) map.put(string, map.getOrDefault(string, 0) + 1);
+		for (String string : strings) {
+			map.put(string, map.getOrDefault(string, 0) + 1);
+		}
 		PriorityQueue<String> queue = new PriorityQueue<>(new Comparator<String>() {
 			@Override
 			public int compare(String o1, String o2) {

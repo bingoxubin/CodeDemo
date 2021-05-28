@@ -11,6 +11,7 @@ public class CompareClass {
 		//一、定制排序
 		String[] arr = {"AA", "CC", "KK", "MM", "GG", "JJ", "DD"};
 		Arrays.sort(arr, new Comparator<String>() {
+			@Override
 			public int compare(String s1, String s2) {
 				return s1.compareTo(s2);
 			}

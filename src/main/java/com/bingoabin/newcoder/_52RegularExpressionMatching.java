@@ -27,18 +27,21 @@ public class _52RegularExpressionMatching {
 				return false;
 			}
 			if (j + 1 == length2) {
-				if (str[i] == pattern[j] || pattern[j] == '.')
+				if (str[i] == pattern[j] || pattern[j] == '.') {
 					return matchTwo(str, i + 1, length1, pattern, j + 1, length2);
-				else {
+				} else {
 					return false;
 				}
 			}
-			if ((str[i] == pattern[j] || pattern[j] == '.') && pattern[j + 1] != '*')
+			if ((str[i] == pattern[j] || pattern[j] == '.') && pattern[j + 1] != '*') {
 				return matchTwo(str, i + 1, length1, pattern, j + 1, length2);
-			if ((str[i] == pattern[j] || pattern[j] == '.') && pattern[j + 1] == '*')
+			}
+			if ((str[i] == pattern[j] || pattern[j] == '.') && pattern[j + 1] == '*') {
 				return matchTwo(str, i, length1, pattern, j + 2, length2) || matchTwo(str, i + 1, length1, pattern, j, length2);
-			if (pattern[j + 1] == '*')
+			}
+			if (pattern[j + 1] == '*') {
 				return matchTwo(str, i, length1, pattern, j + 2, length2);
+			}
 			return false;
 		}
 	}

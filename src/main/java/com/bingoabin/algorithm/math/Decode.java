@@ -23,14 +23,20 @@ public class Decode {
 		int[] res = new int[n];
 		//求出所有数据的异或值
 		int all = 0;
-		for (int i = 1; i <= n; i++) all ^= i;
+		for (int i = 1; i <= n; i++) {
+			all ^= i;
+		}
 		//求出缺少第一位的异或值
 		int first = 0;
-		for (int i = 1; i < encoded.length; i += 2) first ^= encoded[i];
+		for (int i = 1; i < encoded.length; i += 2) {
+			first ^= encoded[i];
+		}
 		first = first ^ all;
 		//求出第一个后，遍历后面的求出结果值
 		res[0] = first;
-		for (int i = 1; i < n; i++) res[i] = res[i - 1] ^ encoded[i - 1];
+		for (int i = 1; i < n; i++) {
+			res[i] = res[i - 1] ^ encoded[i - 1];
+		}
 		return res;
 	}
 }

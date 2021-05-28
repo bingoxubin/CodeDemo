@@ -105,15 +105,17 @@ public class IOClass {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (fw != null)
+				if (fw != null) {
 					fw.close();
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 
 			try {
-				if (fr != null)
+				if (fr != null) {
 					fr.close();
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

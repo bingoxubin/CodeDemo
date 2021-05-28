@@ -19,11 +19,14 @@ public class KthFrequencyWord {
 	public static List<String> topKFrequent(String[] words, int k) {
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
 		//统计次数
-		for (String word : words) map.put(word, map.getOrDefault(word, 0) + 1);
+		for (String word : words) {
+			map.put(word, map.getOrDefault(word, 0) + 1);
+		}
 		//用优先队列进行删选,小顶堆
 		PriorityQueue<String> queue = new PriorityQueue<String>(new Comparator<String>() {
+			@Override
 			public int compare(String s1, String s2) {
-				if (map.get(s1) == map.get(s2)) {
+				if (map.get(s1).equals(map.get(s2))) {
 					return s2.compareTo(s1);
 				}
 				return map.get(s1) - map.get(s2);

@@ -15,7 +15,9 @@ import java.util.LinkedList;
 public class _46ChildrenGame {
 	public class Solution {
 		public int LastRemaining_Solution(int n, int m) {
-			if (n == 0 || m == 0) return -1;
+			if (n == 0 || m == 0) {
+				return -1;
+			}
 			int s = 0;
 			for (int i = 2; i <= n; i++) {
 				s = (s + m) % i;

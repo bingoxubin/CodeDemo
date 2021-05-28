@@ -20,9 +20,15 @@ public class _10RectangleCover {
 	public class Solution {
 		public int RectCover(int target) {
 			//1 2 3 5
-			if (target == 1) return 1;
-			if (target == 2) return 2;
-			if (target >= 3) return RectCover(target - 1) + RectCover(target - 2);
+			if (target == 1) {
+				return 1;
+			}
+			if (target == 2) {
+				return 2;
+			}
+			if (target >= 3) {
+				return RectCover(target - 1) + RectCover(target - 2);
+			}
 			return 0;
 		}
 	}

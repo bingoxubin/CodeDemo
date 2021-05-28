@@ -23,7 +23,9 @@ public class StockSellKth {
 	//    [0, 1, 1, 3, 3, 4]
 	public static int maxProfit(int k, int[] prices) {
 		int n = prices.length;
-		if (k > n / 2) return maxProfit(prices);
+		if (k > n / 2) {
+			return maxProfit(prices);
+		}
 		int[][] dp = new int[k + 1][n];
 		for (int i = 1; i <= k; i++) {
 			int temp = -prices[0];

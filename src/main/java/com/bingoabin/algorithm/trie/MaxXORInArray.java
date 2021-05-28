@@ -29,6 +29,7 @@ public class MaxXORInArray {
 			helper[i][2] = i;
 		}
 		Arrays.sort(helper, new Comparator<int[]>() {
+			@Override
 			public int compare(int[] a, int[] b) {
 				return a[1] - b[1];
 			}

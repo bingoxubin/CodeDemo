@@ -35,15 +35,21 @@ public class AboveHalfInArray {
 		int vote = 0, num = 0;
 		for (int val : array) {
 			//票数为0的时候，把当前值复制给num
-			if (vote == 0) num = val;
+			if (vote == 0) {
+				num = val;
+			}
 			//记下票数
 			vote += num == val ? 1 : -1;
 		}
 		//验证num是否正确
 		int count = 0;
 		for (int val : array) {
-			if (val == num) count++;
-			if (count > array.length / 2) return num;
+			if (val == num) {
+				count++;
+			}
+			if (count > array.length / 2) {
+				return num;
+			}
 		}
 		return -1;
 	}

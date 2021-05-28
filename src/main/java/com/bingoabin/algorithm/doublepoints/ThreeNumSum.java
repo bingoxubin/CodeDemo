@@ -26,9 +26,13 @@ public class ThreeNumSum {
 		//if(num.length < 3) return res;
 		for (int i = 0; i < num.length - 2; i++) {
 			//如果最左边的数大于0，直接可以退出了
-			if (num[i] > 0) break;
+			if (num[i] > 0) {
+				break;
+			}
 			//如果最左边的，跟之前的一样，那么直接往后，再来
-			if (i > 0 && num[i] == num[i - 1]) continue;
+			if (i > 0 && num[i] == num[i - 1]) {
+				continue;
+			}
 			//标记除了最左边的数字，定义首尾
 			int left = i + 1, right = num.length - 1;
 			while (left < right) {
@@ -36,9 +40,13 @@ public class ThreeNumSum {
 				if (sum == 0) {
 					res.add(new ArrayList(Arrays.asList(num[i], num[left], num[right])));
 					//如果最后一个数字，跟下一次遍历的最后数字一样，过滤掉
-					while (left < right && num[right] == num[right - 1]) right--;
+					while (left < right && num[right] == num[right - 1]) {
+						right--;
+					}
 					//如果中间一个数字，跟下一次遍历的中间数字一样，过滤掉
-					while (left < right && num[left] == num[left + 1]) left++;
+					while (left < right && num[left] == num[left + 1]) {
+						left++;
+					}
 					right--;
 					left++;
 				} else if (sum > 0) {

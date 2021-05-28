@@ -34,12 +34,14 @@ public class IsBrotherNode {
 		depth = new HashMap<>();
 		parent = new HashMap<>();
 		dfs(root, null);
-		return depth.get(x) == depth.get(y) && parent.get(x) != parent.get(y);
+		return depth.get(x).equals(depth.get(y)) && parent.get(x) != parent.get(y);
 	}
 
 	//通过前序遍历，求出每个节点的深度，以及父节点
 	private void dfs(TreeNode root, TreeNode pre) {
-		if (root == null) return;
+		if (root == null) {
+			return;
+		}
 		depth.put(root.val, pre == null ? 0 : depth.get(pre.val) + 1);
 		parent.put(root.val, pre);
 		dfs(root.left, root);

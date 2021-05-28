@@ -10,10 +10,14 @@ package com.bingoabin.newcoder;
 public class _06RotateArrayMin {
 	public class Solution {
 		public int minNumberInRotateArray(int[] array) {
-			if (array.length == 0) return 0;
+			if (array.length == 0) {
+				return 0;
+			}
 			int i = 0;
 			while (true) {
-				if (array[0] > array[i++]) return array[i - 1];
+				if (array[0] > array[i++]) {
+					return array[i - 1];
+				}
 			}
 		}
 	}

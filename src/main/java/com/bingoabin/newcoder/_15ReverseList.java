@@ -18,7 +18,9 @@ public class _15ReverseList {
 
 	public class Solution {
 		public ListNode ReverseList(ListNode head) {
-			if (head == null || head.next == null) return head;
+			if (head == null || head.next == null) {
+				return head;
+			}
 			ListNode temp = head.next;
 			ListNode result = ReverseList(head.next);
 			temp.next = head;

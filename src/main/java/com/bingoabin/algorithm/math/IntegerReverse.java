@@ -24,8 +24,12 @@ public class IntegerReverse {
 			int temp = x % 10;
 			//Integer.MAX_VALUE 2147483647
 			//Integer.MIN_VALUE -2147483648
-			if (res > Integer.MAX_VALUE / 10 || (res == Integer.MAX_VALUE / 10 && temp > 7)) return 0;
-			if (res < Integer.MIN_VALUE / 10 || (res == Integer.MIN_VALUE / 10 && temp < -8)) return 0;
+			if (res > Integer.MAX_VALUE / 10 || (res == Integer.MAX_VALUE / 10 && temp > 7)) {
+				return 0;
+			}
+			if (res < Integer.MIN_VALUE / 10 || (res == Integer.MIN_VALUE / 10 && temp < -8)) {
+				return 0;
+			}
 			res = 10 * res + temp;
 			x /= 10;
 		}

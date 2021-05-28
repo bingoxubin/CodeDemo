@@ -25,7 +25,9 @@ public class XORQueries {
 		int len = arr.length;
 		//求出异或前缀和
 		int[] dp = new int[len + 1];
-		for(int i = 1;i<dp.length;i++) dp[i] = dp[i-1] ^ arr[i-1];
+		for(int i = 1;i<dp.length;i++) {
+			dp[i] = dp[i-1] ^ arr[i-1];
+		}
 		//通过异或前缀和，求出最终结果值
 		int index = 0;
 		int[] res = new int[queries.length];

@@ -18,7 +18,9 @@ public class KMinNumbers {
 
 	public static ArrayList<Integer> GetLeastNumbers_Solution(int[] input, int k) {
 		ArrayList<Integer> res = new ArrayList<Integer>();
-		if (k > input.length || k <= 0) return res;
+		if (k > input.length || k <= 0) {
+			return res;
+		}
 		quickSort(input, 0, input.length - 1, k);
 		for (int i = 0; i < k; i++) {
 			res.add(input[i]);
@@ -27,15 +29,21 @@ public class KMinNumbers {
 	}
 
 	public static void quickSort(int[] arr, int left, int right, int k) {
-		if (left > right) return;
+		if (left > right) {
+			return;
+		}
 		//标记下最左边的值，作为比较的临界
 		int temp = arr[left];
 		//开始比较，左边的都大于temp，右边的都小于temp
 		int i = left;
 		int j = right;
 		while (i < j) {
-			while (i < j && arr[j] > temp) j--;
-			while (i < j && arr[i] <= temp) i++;
+			while (i < j && arr[j] > temp) {
+				j--;
+			}
+			while (i < j && arr[i] <= temp) {
+				i++;
+			}
 			if (i < j) {
 				int tmp = arr[i];
 				arr[i] = arr[j];
@@ -45,7 +53,9 @@ public class KMinNumbers {
 		arr[left] = arr[i];
 		arr[i] = temp;
 		//刚好到达边界，即可退出
-		if (i == k - 1) return;
+		if (i == k - 1) {
+			return;
+		}
 		//递归调用
 		quickSort(arr, left, i - 1, k);
 		quickSort(arr, i + 1, right, k);

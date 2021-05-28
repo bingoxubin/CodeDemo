@@ -12,7 +12,9 @@ public class _19ClockwisePrintMatrix {
 	public class Solution {
 		public ArrayList<Integer> printMatrix(int[][] matrix) {
 			ArrayList result = new ArrayList();
-			if (matrix.length == 0 || matrix == null) return result;
+			if (matrix.length == 0 || matrix == null) {
+				return result;
+			}
 			int up = 0;
 			int down = matrix.length - 1;
 			int left = 0;

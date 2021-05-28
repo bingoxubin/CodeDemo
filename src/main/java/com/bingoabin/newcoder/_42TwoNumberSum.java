@@ -27,10 +27,13 @@ public class _42TwoNumberSum {
 						list.add(array[i] * array[j]);
 					}
 				}
-				if (!list.isEmpty())
+				if (!list.isEmpty()) {
 					lists.add(list);
+				}
 			}
-			if (lists.size() == 0) return new ArrayList<Integer>();
+			if (lists.size() == 0) {
+				return new ArrayList<Integer>();
+			}
 			//if(lists.size() ==1) return lists.get(0);
 			Collections.sort(lists, new Comparator<ArrayList<Integer>>() {
 

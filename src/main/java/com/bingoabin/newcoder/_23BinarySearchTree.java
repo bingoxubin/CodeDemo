@@ -12,12 +12,16 @@ package com.bingoabin.newcoder;
 public class _23BinarySearchTree {
 	public class Solution {
 		public boolean VerifySquenceOfBST(int[] sequence) {
-			if (sequence == null || sequence.length == 0) return false;
+			if (sequence == null || sequence.length == 0) {
+				return false;
+			}
 			return isTree(sequence, 0, sequence.length - 1);
 		}
 
 		public boolean isTree(int[] arr, int L, int R) {
-			if (L >= R) return true;
+			if (L >= R) {
+				return true;
+			}
 			int index = R - 1;
 			while ((index >= L) && (arr[index] > arr[R])) {
 				index--;

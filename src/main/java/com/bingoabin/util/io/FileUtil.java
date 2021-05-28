@@ -92,8 +92,9 @@ public class FileUtil {
 		if (!fileParent.exists()) {
 			fileParent.mkdirs();// 能创建多级目录
 		}
-		if (!testFile.exists())
+		if (!testFile.exists()) {
 			testFile.createNewFile();//有路径才能创建文件
+		}
 		// System.out.println(testFile);
 		// String path = testFile.getPath();
 		// String absolutePath = testFile.getAbsolutePath();//得到文件/文件夹的绝对路径
@@ -254,15 +255,17 @@ public class FileUtil {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (fw != null)
+				if (fw != null) {
 					fw.close();
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 
 			try {
-				if (fr != null)
+				if (fr != null) {
 					fr.close();
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

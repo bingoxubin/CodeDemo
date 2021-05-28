@@ -39,9 +39,15 @@ public class RotationArray {
 	//方式二：将数组放到双端队列中，后面的放到前面，放m次
 	public static int[] solve2(int n, int m, int[] a) {
 		Deque<Integer> queue = new LinkedList<Integer>();
-		for (int i : a) queue.offerLast(i);
-		for (int i = 0; i < m; i++) queue.offerFirst(queue.pollLast());
-		for (int i = 0; i < n; i++) a[i] = queue.pollFirst();
+		for (int i : a) {
+			queue.offerLast(i);
+		}
+		for (int i = 0; i < m; i++) {
+			queue.offerFirst(queue.pollLast());
+		}
+		for (int i = 0; i < n; i++) {
+			a[i] = queue.pollFirst();
+		}
 		return a;
 	}
 

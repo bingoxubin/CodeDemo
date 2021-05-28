@@ -1,8 +1,6 @@
 package com.bingoabin.juc.threadcreate;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 /**
  * @author xubin03
@@ -49,8 +47,54 @@ public class ThreadPool {
 	 * 继承Thread类   实现Runnable接口   实现Callable接口   使用线程池
 	 */
 	public static void main(String[] args) {
+		//核心线程数
+		int corePoolSize = 3;
+		//最大线程数
+		int maximumPoolSize = 6;
+		//超过 corePoolSize 线程数量的线程最大空闲时间
+		long keepAliveTime = 2;
+		//以秒为时间单位
+		TimeUnit unit = TimeUnit.SECONDS;
+		//创建工作队列，用于存放提交的等待执行任务
+		BlockingQueue<Runnable> workQueue = new ArrayBlockingQueue<Runnable>(2);
+		ThreadPoolExecutor threadPoolExecutor = null;
+		try {
+			//创建线程池
+			threadPoolExecutor = new ThreadPoolExecutor(corePoolSize,
+			                                            maximumPoolSize,
+			                                            keepAliveTime,
+			                                            unit,
+			                                            workQueue,
+			                                            new ThreadPoolExecutor.AbortPolicy());
+
+			//循环提交任务
+			for (int i = 0; i < 8; i++) {
+				//提交任务的索引
+				// final int index = (i + 1);
+				// threadPoolExecutor.submit(() -> {
+				// 	//线程打印输出
+				// 	System.out.println("大家好，我是线程：" + index);
+				// 	try {
+				// 		//模拟线程执行时间，10s
+				// 		Thread.sleep(10000);
+				// 	} catch (InterruptedException e) {
+				// 		e.printStackTrace();
+				// 	}
+				// });
+				threadPoolExecutor.submit(new NumberThread());
+				//每个任务提交后休眠500ms再提交下一个任务，用于保证提交顺序
+				Thread.sleep(500);
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			threadPoolExecutor.shutdown();
+		}
+	}
+
+	public static void test() {
 		//1. 提供指定线程数量的线程池
-		ExecutorService service = Executors.newFixedThreadPool(10);
+		// ExecutorService service = Executors.newFixedThreadPool(10);
 		// ThreadPoolExecutor service1 = (ThreadPoolExecutor) service;
 		//设置线程池的属性
 		//System.out.println(service.getClass());
@@ -58,12 +102,12 @@ public class ThreadPool {
 		//service1.setKeepAliveTime();
 
 		//2.执行指定的线程的操作。需要提供实现Runnable接口或Callable接口实现类的对象
-		service.execute(new NumberThread());//适合适用于Runnable
-		service.execute(new NumberThread1());//适合适用于Runnable
+		// service.execute(new NumberThread());//适合适用于Runnable
+		// service.execute(new NumberThread1());//适合适用于Runnable
 
 		//service.submit(Callable callable);//适合使用于Callable
 		//3.关闭连接池
-		service.shutdown();
+		// service.shutdown();
 	}
 
 	static class NumberThread implements Runnable {

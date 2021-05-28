@@ -22,9 +22,15 @@ import java.util.Map;
 public class _08JumpSteps {
 	public class Solution {
 		public int JumpFloor(int target) {
-			if (target == 1) return 1;
-			if (target == 2) return 2;
-			if (target >= 3) return JumpFloor(target - 1) + JumpFloor(target - 2);
+			if (target == 1) {
+				return 1;
+			}
+			if (target == 2) {
+				return 2;
+			}
+			if (target >= 3) {
+				return JumpFloor(target - 1) + JumpFloor(target - 2);
+			}
 			return -1;
 		}
 	}

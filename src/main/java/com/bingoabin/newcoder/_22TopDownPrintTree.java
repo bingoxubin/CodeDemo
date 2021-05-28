@@ -28,12 +28,18 @@ public class _22TopDownPrintTree {
 		public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
 			ArrayList<Integer> result = new ArrayList();
 			ArrayList<TreeNode> treenode = new ArrayList();
-			if (root == null) return result;
+			if (root == null) {
+				return result;
+			}
 			treenode.add(root);
 			while (treenode.size() != 0) {
 				TreeNode temp = treenode.remove(0);
-				if (temp.left != null) treenode.add(temp.left);
-				if (temp.right != null) treenode.add(temp.right);
+				if (temp.left != null) {
+					treenode.add(temp.left);
+				}
+				if (temp.right != null) {
+					treenode.add(temp.right);
+				}
 				result.add(temp.val);
 			}
 			return result;

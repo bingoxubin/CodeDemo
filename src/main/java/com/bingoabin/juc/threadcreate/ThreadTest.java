@@ -19,6 +19,7 @@ public class ThreadTest {
 
 		//方式二：
 		new Thread() {
+			@Override
 			public void run() {
 
 			}
@@ -26,6 +27,7 @@ public class ThreadTest {
 	}
 
 	static class Thread1 extends Thread {
+		@Override
 		public void run() {
 			//......
 		}

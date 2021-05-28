@@ -165,12 +165,18 @@ class User implements Comparable {
 	@Override
 	public boolean equals(Object o) {
 		System.out.println("User equals()....");
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
 
 		User user = (User) o;
 
-		if (age != user.age) return false;
+		if (age != user.age) {
+			return false;
+		}
 		return name != null ? name.equals(user.name) : user.name == null;
 	}
 

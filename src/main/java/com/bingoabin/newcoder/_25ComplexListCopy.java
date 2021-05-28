@@ -23,7 +23,9 @@ public class _25ComplexListCopy {
 
 	public class Solution {
 		public RandomListNode Clone(RandomListNode pHead) {
-			if (pHead == null) return null;
+			if (pHead == null) {
+				return null;
+			}
 			HashMap<RandomListNode, RandomListNode> result = new HashMap();
 			RandomListNode head = pHead;
 			while (head != null) {

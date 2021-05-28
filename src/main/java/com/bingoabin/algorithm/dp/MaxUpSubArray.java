@@ -26,7 +26,9 @@ public class MaxUpSubArray {
 		for (int i = 0; i < nums.length; i++) {
 			dp[i] = 1;
 			for (int j = 0; j < i; j++) {
-				if (nums[i] > nums[j]) dp[i] = Math.max(dp[i], dp[j] + 1);
+				if (nums[i] > nums[j]) {
+					dp[i] = Math.max(dp[i], dp[j] + 1);
+				}
 			}
 		}
 		System.out.println(Arrays.toString(dp));
@@ -85,7 +87,9 @@ public class MaxUpSubArray {
 					int mid = (l + r) >> 1;
 					if (end[mid] >= arr[i]) {
 						r = mid - 1;
-					} else l = mid + 1;
+					} else {
+						l = mid + 1;
+					}
 				}
 				end[l] = arr[i];
 				dp[i] = l;

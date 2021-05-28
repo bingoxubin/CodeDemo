@@ -16,7 +16,9 @@ public class Palindrome {
 
 	public static boolean isPalindrome(int x) {
 		//如果x小于0  或者是10的倍数而且不是0  那么直接返回false
-		if (x < 0 || (x % 10 == 0 && x != 0)) return false;
+		if (x < 0 || (x % 10 == 0 && x != 0)) {
+			return false;
+		}
 		int res = 0;
 		while (x > res) {
 			res = 10 * res + x % 10;

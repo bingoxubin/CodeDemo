@@ -43,7 +43,9 @@ public class TwoMaxXORInArray {
 			TrieTree p = this;
 			for (int i = 30; i >= 0; i--) {
 				int temp = (num >> i) & 1;
-				if (p.node[temp] == null) p.node[temp] = new TrieTree();
+				if (p.node[temp] == null) {
+					p.node[temp] = new TrieTree();
+				}
 				p = p.node[temp];
 			}
 		}

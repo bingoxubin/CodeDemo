@@ -33,13 +33,17 @@ public class MissingNum {
 	//方式二:数学法  求和的方式做差 得出结果
 	public static int solve2(int[] a) {
 		int sum = 0;
-		for (int num : a) sum += num;
+		for (int num : a) {
+			sum += num;
+		}
 		return (1 + a.length) * a.length / 2 - sum;
 	}
 
 	//方式三:差值法  看后面一个数是否比前面一个大1
 	public static int solve3(int[] a) {
-		if (a[0] != 0) return 0;
+		if (a[0] != 0) {
+			return 0;
+		}
 		for (int i = 1; i < a.length; i++) {
 			if (a[i] - a[i - 1] != 1) {
 				return a[i] - 1;

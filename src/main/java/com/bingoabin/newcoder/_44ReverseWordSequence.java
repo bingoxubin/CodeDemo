@@ -15,7 +15,7 @@ public class _44ReverseWordSequence {
 			if (str == null) {
 				return null;
 			}
-			if (str.trim().equals("")) {
+			if ("".equals(str.trim())) {
 				return str;
 			}
 			String string = str;

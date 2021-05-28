@@ -33,6 +33,7 @@ public class UnionSection {
 
 	public static ArrayList<Interval> merge(ArrayList<Interval> intervals) {
 		Collections.sort(intervals, new Comparator<Interval>() {
+			@Override
 			public int compare(Interval i1, Interval i2) {
 				if (i1.start == i2.start) {
 					return i1.end - i2.end;

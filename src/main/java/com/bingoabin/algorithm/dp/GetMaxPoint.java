@@ -15,13 +15,19 @@ public class GetMaxPoint {
 	}
 
 	public static int deleteAndEarn(int[] nums) {
-		if(nums.length == 0) return 0;
+		if(nums.length == 0) {
+			return 0;
+		}
 		//计算频次数组的最大长度
 		int max = nums[0];
-		for(int num:nums) max = Math.max(max,num);
+		for(int num:nums) {
+			max = Math.max(max,num);
+		}
 		//统计频次
 		int[] times = new int[max+1];
-		for(int num:nums) times[num]++;
+		for(int num:nums) {
+			times[num]++;
+		}
 		//调用打家劫舍的办法
 		return rob(times);
 	}
@@ -29,9 +35,15 @@ public class GetMaxPoint {
 	public static int rob(int[] times) {
 		//讨论边界情况
 		int len = times.length;
-		if(len == 0) return 0;
-		if(len == 1) return times[0];
-		if(len == 2) return Math.max(times[0],times[1]);
+		if(len == 0) {
+			return 0;
+		}
+		if(len == 1) {
+			return times[0];
+		}
+		if(len == 2) {
+			return Math.max(times[0],times[1]);
+		}
 		//创建dp数组
 		int[] dp = new int[len];
 		//初始化数组

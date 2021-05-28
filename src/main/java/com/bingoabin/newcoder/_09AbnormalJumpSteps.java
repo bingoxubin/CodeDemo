@@ -27,7 +27,9 @@ public class _09AbnormalJumpSteps {
 		public int JumpFloorII(int target) {
 			// 1 2 4 8
 			int result = 1;
-			if (target == 1) return 1;
+			if (target == 1) {
+				return 1;
+			}
 			for (int i = 2; i <= target; i++) {
 				result = result * 2;
 			}

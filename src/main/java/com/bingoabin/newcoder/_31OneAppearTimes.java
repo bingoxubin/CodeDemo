@@ -36,8 +36,9 @@ public class _31OneAppearTimes {
 				String str = String.valueOf(n);
 				char[] chars = str.toCharArray();
 				for (int i = 0; i < chars.length; i++) {
-					if (chars[i] == '1')
+					if (chars[i] == '1') {
 						count++;
+					}
 				}
 				n--;
 			}

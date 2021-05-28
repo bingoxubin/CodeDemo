@@ -32,7 +32,9 @@ public class _24BinaryTreeSumPath {
 		ArrayList<Integer> subresult = new ArrayList();
 
 		public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
-			if (root == null) return result;
+			if (root == null) {
+				return result;
+			}
 			subresult.add(root.val);
 			target = target - root.val;
 			if (target == 0 && root.left == null && root.right == null) {

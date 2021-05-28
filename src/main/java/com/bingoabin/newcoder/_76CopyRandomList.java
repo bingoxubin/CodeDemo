@@ -8,8 +8,9 @@ package com.bingoabin.newcoder;
 public class _76CopyRandomList {
 	public RandomListNode copyRandomList(RandomListNode head) {
 
-		if (head == null)
+		if (head == null) {
 			return null;
+		}
 
 		RandomListNode p = head;
 
@@ -24,8 +25,9 @@ public class _76CopyRandomList {
 		// copy random pointer for each new node
 		p = head;
 		while (p != null) {
-			if (p.random != null)
+			if (p.random != null) {
 				p.next.random = p.random.next;
+			}
 			p = p.next.next;
 		}
 
@@ -35,8 +37,9 @@ public class _76CopyRandomList {
 		while (p != null) {
 			RandomListNode temp = p.next;
 			p.next = temp.next;
-			if (temp.next != null)
+			if (temp.next != null) {
 				temp.next = temp.next.next;
+			}
 			p = p.next;
 		}
 

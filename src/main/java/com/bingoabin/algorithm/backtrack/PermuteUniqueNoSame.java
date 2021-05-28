@@ -51,7 +51,9 @@ public class PermuteUniqueNoSame {
 		}
 
 		for (int i = 0; i < nums.length; i++) {
-			if (used[i]) continue;
+			if (used[i]) {
+				continue;
+			}
 			path.addLast(nums[i]);
 			used[i] = true;
 			dfs(nums, depth + 1, path, used, res);

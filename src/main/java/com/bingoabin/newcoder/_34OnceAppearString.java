@@ -24,8 +24,9 @@ public class _34OnceAppearString {
 			}
 			for (int i = 0; i < str.length(); i++) {
 				char c = str.charAt(i);
-				if (map.get(c) == 1)
+				if (map.get(c) == 1) {
 					return i;
+				}
 			}
 			return -1;
 		}

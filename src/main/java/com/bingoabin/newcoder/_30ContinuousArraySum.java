@@ -27,7 +27,9 @@ public class _30ContinuousArraySum {
 					list.add(sum);
 				}
 			}
-			if (list.size() <= 0) return 0;
+			if (list.size() <= 0) {
+				return 0;
+			}
 			Collections.sort(list);
 			return list.get(list.size() - 1);
 		}

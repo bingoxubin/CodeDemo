@@ -72,7 +72,9 @@ public class FillWaterContainer {
 		while (cur < height.length) {
 			while (!stack.isEmpty() && height[cur] > height[stack.peek()]) {
 				int top = stack.pop();
-				if (stack.isEmpty()) break;
+				if (stack.isEmpty()) {
+					break;
+				}
 				long distance = cur - stack.peek() - 1;
 				long high = Math.min(height[cur], height[stack.peek()]) - height[top];
 				res += distance * high;

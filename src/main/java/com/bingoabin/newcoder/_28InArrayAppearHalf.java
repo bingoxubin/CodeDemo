@@ -28,8 +28,9 @@ public class _28InArrayAppearHalf {
 			Arrays.sort(array);
 			int num = array[len / 2];
 			for (int i = 0; i < len; i++) {
-				if (num == array[i])
+				if (num == array[i]) {
 					count++;
+				}
 			}
 			if (count <= (len / 2)) {
 				num = 0;
@@ -44,8 +45,9 @@ public class _28InArrayAppearHalf {
 			int middle = array[array.length / 2];
 			int count = 0;
 			for (int i = 0; i < array.length; ++i) {
-				if (array[i] == middle)
+				if (array[i] == middle) {
 					++count;
+				}
 			}
 			return (count > array.length / 2) ? middle : 0;
 		}

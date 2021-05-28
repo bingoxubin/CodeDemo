@@ -15,10 +15,18 @@ public class _07Fibonacci {
 	public class Solution {
 		public int Fibonacci(int n) {
 			//0 1 1 2 3
-			if (n == 0) return 0;
-			if (n == 1) return 1;
-			if (n == 2) return 1;
-			if (n >= 3) return Fibonacci(n - 2) + Fibonacci(n - 1);
+			if (n == 0) {
+				return 0;
+			}
+			if (n == 1) {
+				return 1;
+			}
+			if (n == 2) {
+				return 1;
+			}
+			if (n >= 3) {
+				return Fibonacci(n - 2) + Fibonacci(n - 1);
+			}
 			return 0;
 		}
 	}
@@ -76,8 +84,12 @@ public class _07Fibonacci {
 			int pre = 1;
 			int last = 1;
 			int result = 0;
-			if (n <= 0) return 0;
-			if (n <= 2) return 1;
+			if (n <= 0) {
+				return 0;
+			}
+			if (n <= 2) {
+				return 1;
+			}
 			while (n > 2) {
 				n--;
 				result = pre + last;

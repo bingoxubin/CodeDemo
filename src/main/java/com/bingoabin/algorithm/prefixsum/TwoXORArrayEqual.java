@@ -25,7 +25,9 @@ public class TwoXORArrayEqual {
 	public static int countTriplets1(int[] arr) {
 		int len = arr.length;
 		int[] res = new int[len + 1];
-		for (int i = 1; i <= len; i++) res[i] = res[i - 1] ^ arr[i - 1];
+		for (int i = 1; i <= len; i++) {
+			res[i] = res[i - 1] ^ arr[i - 1];
+		}
 		int ans = 0;
 		for (int i = 1; i <= len; i++) {
 			for (int j = i + 1; j <= len; j++) {
@@ -47,7 +49,9 @@ public class TwoXORArrayEqual {
 	public static int countTriplets(int[] arr) {
 		int len = arr.length;
 		int[] res = new int[len + 1];
-		for (int i = 1; i <= len; i++) res[i] = res[i - 1] ^ arr[i - 1];
+		for (int i = 1; i <= len; i++) {
+			res[i] = res[i - 1] ^ arr[i - 1];
+		}
 		int ans = 0;
 		HashMap<Integer, List<Integer>> map = new HashMap<>();
 		for (int i = 0; i <= len; i++) {

@@ -57,7 +57,9 @@ public class PermuteUniqueHasSame {
 			if (used[i] || (i > 0 && nums[i] == nums[i - 1] && !used[i - 1])) {
 				continue;
 			}
-			if (used[i]) continue;
+			if (used[i]) {
+				continue;
+			}
 			path.addLast(nums[i]);
 			used[i] = true;
 			dfs(nums, depth + 1, path, used, res);

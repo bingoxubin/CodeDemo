@@ -32,7 +32,9 @@ public class _64StackAndQueue {
 	public class Solution1 {
 		public ArrayList<Integer> maxInWindows(int[] num, int size) {
 			ArrayList<Integer> result = new ArrayList();
-			if (num == null || size <= 0 || num.length < size) return result;
+			if (num == null || size <= 0 || num.length < size) {
+				return result;
+			}
 			ArrayDeque<Integer> deque = new ArrayDeque();
 			for (int i = 0; i < num.length; i++) {
 				//2 3 4 2 6 2 5 1

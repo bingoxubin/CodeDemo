@@ -42,7 +42,9 @@ public class _00Solve {
 				}
 			}
 		}
-		if(temp == 0) return -1;
+		if(temp == 0) {
+			return -1;
+		}
 		return temp;
 	}
 }

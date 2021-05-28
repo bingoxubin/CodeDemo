@@ -22,8 +22,9 @@ public class _60PrintTreeMultiRow {
 			ArrayList<ArrayList<Integer>> ret = new ArrayList<ArrayList<Integer>>();
 			ArrayList<Integer> tmp = new ArrayList<Integer>();
 			LinkedList<TreeNode> q = new LinkedList<TreeNode>();
-			if (pRoot == null)
+			if (pRoot == null) {
 				return ret;
+			}
 			q.add(pRoot);
 			int now = 1, next = 0;
 			while (!q.isEmpty()) {

@@ -16,9 +16,15 @@ public class RobHome {
 
 	public static int rob(int[] arr){
 		int len = arr.length;
-		if(len == 0) return 0;
-		if(len == 1) return arr[0];
-		if(len == 2) return Math.max(arr[0],arr[1]);
+		if(len == 0) {
+			return 0;
+		}
+		if(len == 1) {
+			return arr[0];
+		}
+		if(len == 2) {
+			return Math.max(arr[0],arr[1]);
+		}
 		int[] dp = new int[len];
 		dp[0] = arr[0];
 		dp[1] = Math.max(arr[1],arr[0]);

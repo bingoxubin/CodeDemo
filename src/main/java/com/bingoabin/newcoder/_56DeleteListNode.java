@@ -38,7 +38,9 @@ public class _56DeleteListNode {
 	public class Solution1 {
 		public ListNode deleteDuplication(ListNode pHead) {
 
-			if (pHead == null) return null;
+			if (pHead == null) {
+				return null;
+			}
 			ListNode p = pHead;
 			ListNode n = new ListNode(0);
 			ListNode pre = n;
@@ -46,7 +48,9 @@ public class _56DeleteListNode {
 			boolean flag = false;
 			while (p != null) {
 				ListNode q = p.next;
-				if (q == null) break;
+				if (q == null) {
+					break;
+				}
 				if (q.val == p.val) {
 					while (q != null && q.val == p.val) {
 						q = q.next;

@@ -25,7 +25,9 @@ public class _41ContinuousNumberSum {
 	public class Solution {
 		public ArrayList<ArrayList<Integer>> FindContinuousSequence(int sum) {
 			ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
-			if (sum == 1) return list;
+			if (sum == 1) {
+				return list;
+			}
 			int n = (int) (Math.ceil((Math.sqrt(8 * sum + 1) - 1) / 2));
 			int tmp = 0;
 			int num = 0;

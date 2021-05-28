@@ -18,7 +18,9 @@ public class _21StackSequence {
 	public class Solution {
 		public boolean IsPopOrder(int[] pushA, int[] popA) {
 			boolean flag = false;
-			if (pushA.length != popA.length) return false;
+			if (pushA.length != popA.length) {
+				return false;
+			}
 			Stack<Integer> stack = new Stack<Integer>();
 			int temp = 0;
 			for (int i = 0; i < pushA.length; i++) {
