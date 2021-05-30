@@ -1,4 +1,4 @@
-package com.bingoabin.algorithm.linkedlist;
+package com.bingoabin.algorithm.queue;
 
 import java.util.Arrays;
 import java.util.Deque;

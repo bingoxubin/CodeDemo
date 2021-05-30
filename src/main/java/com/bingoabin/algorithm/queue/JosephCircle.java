@@ -1,6 +1,5 @@
-package com.bingoabin.algorithm.linkedlist;
+package com.bingoabin.algorithm.queue;
 
-import java.awt.dnd.InvalidDnDOperationException;
 import java.util.ArrayList;
 
 /**
