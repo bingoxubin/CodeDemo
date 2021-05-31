@@ -17,13 +17,17 @@ public class MITwo {
 
 	//方式一：判断二进制位上是否只有一位
 	public static boolean isPowerOfTwo1(int n) {
-		if (n <= 0) return false;
+		if (n <= 0) {
+			return false;
+		}
 		return (n & (n - 1)) == 0;
 	}
 
 	//方式二：通过函数Integer.bitCount()
 	public static boolean isPowerOfTwo2(int n) {
-		if (n < 0) return false;
+		if (n < 0) {
+			return false;
+		}
 		return Integer.bitCount(n) == 1;
 	}
 }

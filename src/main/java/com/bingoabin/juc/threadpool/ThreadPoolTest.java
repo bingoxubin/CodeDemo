@@ -34,7 +34,7 @@ public class ThreadPoolTest {
 			                                            unit,
 			                                            workQueue,
 			                                            new ThreadPoolExecutor.AbortPolicy());
-
+			threadPoolExecutor.allowCoreThreadTimeOut(true);
 			//循环提交任务
 			for (int i = 0; i < 8; i++) {
 				//提交任务的索引
@@ -55,7 +55,7 @@ public class ThreadPoolTest {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {
-			threadPoolExecutor.shutdown();
+			//threadPoolExecutor.shutdown();
 		}
 	}
 }

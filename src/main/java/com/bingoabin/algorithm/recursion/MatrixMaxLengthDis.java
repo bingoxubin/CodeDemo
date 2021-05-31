@@ -34,11 +34,17 @@ public class MatrixMaxLengthDis {
 	}
 
 	private static int dfs(int[][] matrix, int x, int y, int value) {
-		if (x >= matrix.length || x < 0 || y >= matrix[0].length || y < 0) return 0;
+		if (x >= matrix.length || x < 0 || y >= matrix[0].length || y < 0) {
+			return 0;
+		}
 		//value表示之前的值，x y表示要向上下左右遍历的点，如果value大 那么就无法朝这个方向遍历
-		if (value >= matrix[x][y]) return 0;
+		if (value >= matrix[x][y]) {
+			return 0;
+		}
 		//如果中间结果，表示该点已经计算过，那么直接返回
-		if (memo[x][y] != 0) return memo[x][y];
+		if (memo[x][y] != 0) {
+			return memo[x][y];
+		}
 		//表示开始访问这个节点
 		memo[x][y] = 1;
 		//分别向上下左右遍历
