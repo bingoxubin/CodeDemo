@@ -7,9 +7,9 @@ import java.util.HashSet;
  * @date 2021/5/31 2:05 上午
  */
 public class HasCycle {
-	//NC96 判断一个链表是否回文结构
-	//样例：1 2 3 4 5 4 3 2 1 返回 false
-	//分析：给你一个链表，判断是否具有回文结构
+	//NC4 判断链表是否有环
+	//样例：1,2,3,4,5,3 返回 true
+	//分析：给你一个链表，判断是否有环
 	//思路：方式一：快慢指针，慢的能追上那就是有环
 	//     方式二：hashset  如果出现重复的就是有环
 	public static void main(String[] args) {
@@ -18,18 +18,11 @@ public class HasCycle {
 		ListNode node3 = new ListNode(3);
 		ListNode node4 = new ListNode(4);
 		ListNode node5 = new ListNode(5);
-		ListNode node6 = new ListNode(4);
-		ListNode node7 = new ListNode(3);
-		ListNode node8 = new ListNode(2);
-		ListNode node9 = new ListNode(1);
 		node1.next = node2;
 		node2.next = node3;
 		node3.next = node4;
 		node4.next = node5;
-		node5.next = node6;
-		node6.next = node7;
-		node7.next = node8;
-		node8.next = node9;
+		node5.next = node3;
 
 		System.out.println(hasCycle1(node1));
 		System.out.println(hasCycle2(node1));
