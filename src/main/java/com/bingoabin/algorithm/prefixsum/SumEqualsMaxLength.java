@@ -1,4 +1,4 @@
-package com.bingoabin.algorithm.hashmap;
+package com.bingoabin.algorithm.prefixsum;
 
 import jdk.internal.org.objectweb.asm.tree.IntInsnNode;
 

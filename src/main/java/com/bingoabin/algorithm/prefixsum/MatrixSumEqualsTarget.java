@@ -1,4 +1,4 @@
-package com.bingoabin.algorithm.hashmap;
+package com.bingoabin.algorithm.prefixsum;
 
 import java.util.HashMap;
 
