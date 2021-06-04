@@ -43,7 +43,7 @@ public class ReOrderList {
 	public static ListNode getMid(ListNode head) {
 		ListNode first = head;
 		ListNode second = head;
-		while (second != null && second.next != null) {
+		while (second.next != null && second.next.next != null) {
 			first = first.next;
 			second = second.next.next;
 		}

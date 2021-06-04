@@ -5,7 +5,7 @@ package com.bingoabin.algorithm.listnode;
  * @date 2021/6/3 12:44 下午
  */
 public class DeleteRepetitionNodeAll {
-	//NC25 删除有序链表中重复的元素(都删除）
+	//NC24 删除有序链表中重复的元素(都删除）
 	//样例：给出的链表为1 1 2 3 3 返回 2
 	//分析：删除给出链表中的重复元素（链表中元素从小到大有序），使链表中相同的都删除
 	//思路：创建一个亚节点cur，从head开始遍历，如果head.val == head.next.val那么接一个while循环，如果还相等，head= head.next;如果不相等了，那么head后移以为，然后cur.next = head;
