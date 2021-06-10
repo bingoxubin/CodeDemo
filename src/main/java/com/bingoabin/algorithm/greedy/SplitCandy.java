@@ -1,9 +1,5 @@
 package com.bingoabin.algorithm.greedy;
 
-import jdk.internal.org.objectweb.asm.tree.IntInsnNode;
-
-import java.util.Arrays;
-
 /**
  * @author xubin03
  * @date 2021/5/27 2:01 上午

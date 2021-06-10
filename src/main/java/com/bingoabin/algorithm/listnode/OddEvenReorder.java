@@ -1,9 +1,5 @@
 package com.bingoabin.algorithm.listnode;
 
-import scala.util.control.TailCalls;
-
-import javax.naming.directory.SearchControls;
-
 /**
  * @author xubin03
  * @date 2021/6/2 12:43 下午

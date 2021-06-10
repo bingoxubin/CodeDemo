@@ -1,7 +1,5 @@
 package com.bingoabin.algorithm.listnode;
 
-import sun.lwawt.LWComponentPeer;
-
 /**
  * @author xubin03
  * @date 2021/5/31 6:36 下午
