@@ -41,13 +41,16 @@ public class HeapSort {
 	public static void adjustHeap(int[] arr, int parent, int end) {
 		int temp = arr[parent];
 		int lchild = 2 * parent + 1;
-		while(lchild < end){
+		while (lchild < end) {
 			int rchild = lchild + 1;
-			if(rchild < end && arr[lchild] < arr[rchild]){
-				lchild ++;
+			if (rchild < end && arr[lchild] < arr[rchild]) {
+				lchild++;
 			}
-			if(arr[lchild] < temp) break;
-
+			if (arr[lchild] < temp) break;
+			arr[parent] = arr[lchild];
+			parent = lchild;
+			lchild = 2 * lchild + 1;
 		}
+		arr[parent] = temp;
 	}
 }
