@@ -17,7 +17,6 @@ public class ThreeOrders {
 		TreeNode node1 = new TreeNode(1, node2, node3);
 		ThreeOrders threeOrders = new ThreeOrders();
 		System.out.println(Arrays.deepToString(threeOrders.threeOrders(node1)));
-		System.out.println(Arrays.deepToString(threeOrders.threeOrders1(node1)));
 	}
 
 	int pre = 0;
@@ -52,32 +51,5 @@ public class ThreeOrders {
 		result[1][in++] = root.val;
 		threeOrder(root.right, result);
 		result[2][sub++] = root.val;
-	}
-
-	public int[][] threeOrders1(TreeNode root) {
-		int len = getCount1(root);
-		int[][] res = new int[3][len];
-		dfs(root, res);
-		return res;
-	}
-
-	public int getCount1(TreeNode root) {
-		if (root == null) {
-			return 0;
-		}
-		return getCount(root.left) + getCount(root.right) + 1;
-	}
-
-	int i = 0, j = 0, k = 0;
-
-	public void dfs(TreeNode root, int[][] res) {
-		if (root == null) {
-			return;
-		}
-		res[0][i++] = root.val;
-		dfs(root.left, res);
-		res[1][j++] = root.val;
-		dfs(root.right, res);
-		res[2][k++] = root.val;
 	}
 }
