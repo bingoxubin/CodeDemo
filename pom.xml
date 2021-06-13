@@ -48,6 +48,12 @@
             <artifactId>guava</artifactId>
             <version>22.0</version>
         </dependency>
+        <!-- 想引用cglib -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.3.0</version>
+        </dependency>
     </dependencies>
 
     <build>
