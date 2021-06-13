@@ -4,6 +4,7 @@ package com.bingoabin.juc.ProducerConsumer;
  * @author bingoabin
  * @date 2021/6/13 21:54
  */
+//创建生产者，不断生产，死循环，怎么生产，调用共享数据中的同步方法
 public class Producer implements Runnable {
 	private Bread bread;
 

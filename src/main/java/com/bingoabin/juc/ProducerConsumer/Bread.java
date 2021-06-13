@@ -4,6 +4,8 @@ package com.bingoabin.juc.ProducerConsumer;
  * @author bingoabin
  * @date 2021/6/13 21:55
  */
+//构建共享资源，当资源里面小于20个以后，进行生产，否则的话wait 等待
+//构建共享资源，当资源里面大于0，进行消费，否则wait等待
 public class Bread {
 	private int num;
 
