@@ -58,3 +58,7 @@ class SingleTon3 {
 		return singleTon3;
 	}
 }
+
+//一下两种情况还会产生多实例
+//1.分布式环境中，多个jvm虚拟机
+//2.一个jvm虚拟机，多个类加载器
