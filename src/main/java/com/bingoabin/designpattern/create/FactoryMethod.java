@@ -34,19 +34,19 @@ class XiaoMi implements Phone {
 }
 
 //通用工厂
-abstract class PhoneFactory {
-	public abstract Phone createPhone();
+interface PhoneFactory {
+	Phone createPhone();
 }
 
 //华为工厂
-class HuaWeiFactory extends PhoneFactory {
+class HuaWeiFactory implements PhoneFactory {
 	public Phone createPhone() {
 		return new HuaWei();
 	}
 }
 
 //小米工厂
-class AppleFactory extends PhoneFactory {
+class AppleFactory implements PhoneFactory {
 	public Phone createPhone() {
 		return new XiaoMi();
 	}
