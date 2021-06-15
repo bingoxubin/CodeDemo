@@ -1,4 +1,4 @@
-package com.bingoabin.technology;
+package com.bingoabin.technology.bloomfilter;
 
 import com.google.common.base.Charsets;
 import com.google.common.hash.BloomFilter;

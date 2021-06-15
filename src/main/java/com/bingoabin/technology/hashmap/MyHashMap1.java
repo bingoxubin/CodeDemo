@@ -1,4 +1,4 @@
-package com.bingoabin.technology;
+package com.bingoabin.technology.hashmap;
 
 /**
  * @author bingo
