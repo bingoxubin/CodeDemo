@@ -15,17 +15,32 @@ public class BinaryWatch {
 	public static void main(String[] args) {
 		//[0:01, 0:02, 0:04, 0:08, 0:16, 0:32, 1:00, 2:00, 4:00, 8:00]
 		System.out.println(readBinaryWatch(1));
+
+		System.out.println(getBit(59));
+		System.out.println(Integer.bitCount(59));
 	}
 
 	public static List<String> readBinaryWatch(int turnedOn) {
 		List<String> res = new ArrayList<String>();
 		for (int h = 0; h < 12; h++) {
-			for (int m = 0; m < 59; m++) {
-				if (Integer.bitCount(h) + Integer.bitCount(m) == turnedOn) {
+			for (int m = 0; m < 60; m++) {
+				// if (Integer.bitCount(h) + Integer.bitCount(m) == turnedOn) {
+				// 	res.add(String.format("%d:%02d", h, m));
+				// }
+				if (getBit(h) + getBit(m) == turnedOn) {
 					res.add(String.format("%d:%02d", h, m));
 				}
 			}
 		}
 		return res;
+	}
+
+	public static int getBit(int num) {
+		int count = 0;
+		while (num > 0) {
+			count++;
+			num = num & (num - 1);
+		}
+		return count;
 	}
 }
