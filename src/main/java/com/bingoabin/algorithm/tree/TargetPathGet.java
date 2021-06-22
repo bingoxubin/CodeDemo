@@ -6,7 +6,7 @@ import java.util.*;
  * @author bingoabin
  * @date 2021/6/18 20:17
  */
-public class GetTargetPath {
+public class TargetPathGet {
 	//NC8 二叉树根节点到叶子节点和为指定值的路径
 	//样例：输入 [3,5,1,6,2,0,8,#,#,7,4],14 输出：3 5 2 4
 	//分析：计算值为指定和的路径
