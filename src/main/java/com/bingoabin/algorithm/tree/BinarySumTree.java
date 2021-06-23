@@ -21,18 +21,18 @@ public class BinarySumTree {
 		TreeNode node2 = new TreeNode(0, node4, node5);
 		TreeNode node3 = new TreeNode(1, node6, node7);
 		TreeNode node1 = new TreeNode(1, node2, node3);
-
-		System.out.println(sumRootToLeaf(node1));
+		BinarySumTree binarySumTree = new BinarySumTree();
+		System.out.println(binarySumTree.sumRootToLeaf(node1));
 	}
 
-	static int res = 0;
+	int res = 0;
 
-	public static int sumRootToLeaf(TreeNode root) {
+	public int sumRootToLeaf(TreeNode root) {
 		dfs(root, 0);
 		return res;
 	}
 
-	private static void dfs(TreeNode root, int sum) {
+	private void dfs(TreeNode root, int sum) {
 		if (root == null) return;
 		if (root.left == null && root.right == null) {
 			res += 2 * sum + root.val;
