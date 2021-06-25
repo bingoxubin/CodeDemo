@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @author xubin03
  * @date 2021/6/10 1:59 下午
  */
-public class ThreeOrders {
+public class ThreeOrdersRecursion {
 	//NC45 二叉树前中后序遍历
 	//样例：输入 {1,2,3}  返回值：[[1,2,3],[2,1,3],[2,3,1]]
 	//分析：分别按照二叉树先序，中序和后序打印所有的节点。
@@ -15,7 +15,7 @@ public class ThreeOrders {
 		TreeNode node2 = new TreeNode(2);
 		TreeNode node3 = new TreeNode(3);
 		TreeNode node1 = new TreeNode(1, node2, node3);
-		ThreeOrders threeOrders = new ThreeOrders();
+		ThreeOrdersRecursion threeOrders = new ThreeOrdersRecursion();
 		System.out.println(Arrays.deepToString(threeOrders.threeOrders(node1)));
 	}
 

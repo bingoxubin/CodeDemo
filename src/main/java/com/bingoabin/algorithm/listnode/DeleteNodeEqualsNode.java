@@ -27,6 +27,7 @@ public class DeleteNodeEqualsNode {
 		}
 	}
 
+	//方式一：
 	public static ListNode removeElements(ListNode head, int val) {
 		ListNode dummy = new ListNode(-1);
 		dummy.next = head;
@@ -39,6 +40,23 @@ public class DeleteNodeEqualsNode {
 				pre = cur;
 			}
 			cur = cur.next;
+		}
+		return dummy.next;
+	}
+
+	//方式二：
+	public static ListNode removeElements1(ListNode root, int val) {
+		ListNode dummy = new ListNode(-1);
+		dummy.next = root;
+		ListNode res = dummy;
+		while(root != null){
+			if(root.val == val){
+				res.next = root.next;
+				//break;
+			}else{
+				res = res.next;
+			}
+			root = root.next;
 		}
 		return dummy.next;
 	}
