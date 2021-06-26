@@ -9,7 +9,7 @@ import java.util.LinkedList;
  */
 public class MergeTree {
 	//NC117 合并二叉树
-	// 样例：
+	//样例：
 	//分析：将两棵树进行合并
 	//思路：方式一：通过迭代方式
 	//     方式二：通过递归方式
