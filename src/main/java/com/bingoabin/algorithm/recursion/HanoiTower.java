@@ -13,7 +13,8 @@ public class HanoiTower {
 	//     给定一个int n，表示有n个圆盘。请返回一个string数组，其中的元素依次为每次移动的描述。描述格式为： move from [left/mid/right] to [left/mid/right]。
 	//思路：采用递归方式
 	public static void main(String[] args) {
-		System.out.println(getSolution(2));
+		System.out.println(getSolution(12));
+		System.out.println(res.size());
 	}
 
 	static ArrayList<String> res = new ArrayList<String>();
@@ -23,6 +24,7 @@ public class HanoiTower {
 		return res;
 	}
 
+	//首先将n-1 个圆盘从left -> mid  然后将left -> right  最后将 n-1个圆盘 从mid -> right
 	private static void dfs(int n, String left, String mid, String right) {
 		if (n <= 0) return;
 		dfs(n - 1, left, right, mid);
