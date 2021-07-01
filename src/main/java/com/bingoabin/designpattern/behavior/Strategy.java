@@ -17,3 +17,7 @@ public class Strategy {
 		new ThreadPoolExecutor(2, 5, 1000, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(2), new ThreadPoolExecutor.AbortPolicy());
 	}
 }
+
+class StrategyPattern {
+
+}

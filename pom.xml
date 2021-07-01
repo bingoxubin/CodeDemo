@@ -51,6 +51,13 @@
             <artifactId>guava</artifactId>
             <version>22.0</version>
         </dependency>
+        <!-- 想引用lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.22</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
