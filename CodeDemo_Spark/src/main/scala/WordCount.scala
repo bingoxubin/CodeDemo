@@ -1,5 +1,3 @@
-package com.bingoabin.bigdata.spark
-
 import org.apache.spark.{SparkConf, SparkContext}
 
 object WordCount {

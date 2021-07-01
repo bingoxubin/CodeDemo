@@ -1,4 +1,4 @@
-package com.bingoabin.bigdata.mapreduce.wordcount;
+package wordcount;
 
 /**
  * @author bingoabin
