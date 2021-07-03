@@ -11,9 +11,9 @@ public class ErrorList {
 	//Leetcode 645. 错误的集合
 	//实例：输入：nums = [1,2,2,4]  输出：[2,3]
 	//分析：集合 s 包含从 1 到 n 的整数。其中一个重复，一个缺少，第一个返回的是重复的 第二个返回的是缺失的
-	//思路：方式一：
-	//     方式二：
-	//     方式三：
+	//思路：方式一：采用异或运算  比如 1 2 2 3   正确的 1 2 3 4  分析看下面即可
+	//     方式二：采用排序的方式，从下标1开始计算，如果i == i -1 就是重复的  如果i - (i-1） >1 缺少的就是 i-1下标值 + 1
+	//     方式三：采用hashmap的方式  记下次数  如果次数等于2 那么就是重复的  如果缺少的  就是少的
 	public static void main(String[] args) {
 		int[] arr = {1, 2, 2, 4};
 		System.out.println(Arrays.toString(findErrorNums1(arr)));
