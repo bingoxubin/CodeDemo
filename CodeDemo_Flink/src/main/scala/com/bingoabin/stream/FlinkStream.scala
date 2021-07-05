@@ -2,9 +2,9 @@ package com.bingoabin.stream
 
 //实时统计每隔1秒统计最近2秒单词出现的次数
 //1.代码开发
-package com.kkb.day01
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}
 import org.apache.flink.streaming.api.windowing.time.Time
+
 //使用滑动窗口
 //每隔1秒钟统计最近2秒钟的每个单词出现的次数
 object FlinkStream {
@@ -32,7 +32,8 @@ object FlinkStream {
 //2.发送 socket 数据
 //在node01上安装nc服务
 //sudo yum -y install nc
-//nc -lk 9999
+//linux:  nc -lk 9999
+//windows:  nc -l -p 9999
 
 //3.打成jar包提交到yarn中运行
 //flink run -m yarn-cluster -yn 2 -yjm 1024 -ytm 1024 -c com.kaikeba.demo1.FlinkStream original-flink_study-1.0-SNAPSHOT.jar
