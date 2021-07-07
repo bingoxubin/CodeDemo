@@ -29,6 +29,8 @@
             <artifactId>scala-library</artifactId>
             <version>2.11.8</version>
         </dependency>
+        <!-- 为了方便在本地测试观察任务并行度信息，可以在本地工程添加以下依赖 -->
+        <!-- 设置并行度，观察localhost:8081界面 -->
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-runtime-web_2.11</artifactId>
