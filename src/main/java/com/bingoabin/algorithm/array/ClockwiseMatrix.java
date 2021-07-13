@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @date 2021/5/21 2:04 上午
  */
 public class ClockwiseMatrix {
-	//NC18 顺时针旋转矩阵 https://www.nowcoder.com/practice/2e95333fbdd4451395066957e24909cc?tpId=117&&tqId=37790&rp=1&ru=/ta/job-code-high&qru=/ta/job-code-high/question-ranking
+	//NC18顺时针旋转矩阵 https://www.nowcoder.com/practice/2e95333fbdd4451395066957e24909cc?tpId=117&&tqId=37790&rp=1&ru=/ta/job-code-high&qru=/ta/job-code-high/question-ranking
 	//样例：[[[1,2,3],[4,5,6],[7,8,9]],3  返回：[[7,4,1],[8,5,2],[9,6,3]]
 	//分析：给一个二维数组，按照数组，进行顺时针旋转打印新的矩阵
 	//思路：方式一：进行推断，原来的矩阵-》目标的矩阵  横坐标变为之后的纵坐标，纵坐标变为后来的n-1-i，需要新开辟数组，占用空间
