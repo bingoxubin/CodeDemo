@@ -5,7 +5,7 @@ package com.bingoabin.algorithm.array;
  * @date 2021/7/9 2:30
  */
 public class MainElement {
-	//LeetCode 面试题 17.10. 主要元素
+	//LeetCode 面试题 17.10.主要元素
 	//示例：输入：[1,2,5,9,5,9,5,5,5] 输出：5
 	//分析：数组中占比超过一半的元素称之为主要元素。给你一个 整数 数组，找出其中的主要元素。若没有，返回 -1 。
 	//思考：采用投票法
