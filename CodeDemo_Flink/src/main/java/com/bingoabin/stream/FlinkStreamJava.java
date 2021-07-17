@@ -36,28 +36,6 @@ public class FlinkStreamJava {
 		//步骤五：任务启动
 		env.execute("WindowWordCountJava");
 	}
-
-	public static class WordCount {
-		public String word;
-		public long count;
-
-		//记得要有这个空构建
-		public WordCount() {
-		}
-
-		public WordCount(String word, long count) {
-			this.word = word;
-			this.count = count;
-		}
-
-		@Override
-		public String toString() {
-			return "WordCount{" +
-					"word='" + word + '\'' +
-					", count=" + count +
-					'}';
-		}
-	}
 }
 
 //2.发送socket数据
