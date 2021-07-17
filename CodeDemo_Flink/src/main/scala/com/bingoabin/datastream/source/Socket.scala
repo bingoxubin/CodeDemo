@@ -5,10 +5,8 @@ import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironm
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow
 
-/**
-  * 使用滑动窗口
-  * 每隔1秒钟统计最近2秒钟的每个单词出现的次数
-  */
+//使用滑动窗口
+//每隔1秒钟统计最近2秒钟的每个单词出现的次数
 object Socket {
 	//socketTextStream
 	//从socker中读取数据，元素可以通过一个分隔符切开。
@@ -31,3 +29,12 @@ object Socket {
 		env.execute("FlinkStream")
 	}
 }
+
+//2.发送 socket 数据
+//在node01上安装nc服务
+//sudo yum -y install nc
+//linux:  nc -lk 9999
+//windows:  nc -l -p 9999
+
+//3.打成jar包提交到yarn中运行
+//flink run -m yarn-cluster -yn 2 -yjm 1024 -ytm 1024 -c com.kaikeba.demo1.FlinkStream original-flink_study-1.0-SNAPSHOT.jar
