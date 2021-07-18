@@ -1,6 +1,6 @@
 package com.bingoabin.collection;
 
-import com.bingoabin.javase.commonclass.Person;
+import com.bingoabin.commonclass.Person;
 import org.junit.Test;
 
 import java.util.ArrayList;

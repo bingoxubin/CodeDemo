@@ -1,7 +1,5 @@
 package com.bingoabin.threadprincipal;
 
-import com.bingoabin.juc.threadprincipal.MyExecutor;
-
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 

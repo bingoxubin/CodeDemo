@@ -1,6 +1,6 @@
 package com.bingoabin.reflection;
 
-import com.bingoabin.javase.commonclass.Person;
+import com.bingoabin.commonclass.Person;
 import org.junit.Test;
 
 import java.lang.reflect.Constructor;

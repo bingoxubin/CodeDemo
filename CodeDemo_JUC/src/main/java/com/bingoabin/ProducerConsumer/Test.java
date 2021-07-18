@@ -1,9 +1,5 @@
 package com.bingoabin.ProducerConsumer;
 
-import com.bingoabin.juc.ProducerConsumer.Bread;
-import com.bingoabin.juc.ProducerConsumer.Consumer;
-import com.bingoabin.juc.ProducerConsumer.Producer;
-
 /**
  * @author bingoabin
  * @date 2021/6/13 21:55
