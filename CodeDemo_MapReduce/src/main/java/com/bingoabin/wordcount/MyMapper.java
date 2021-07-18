@@ -1,4 +1,4 @@
-package wordcount;
+package com.bingoabin.wordcount;
 
 /**
  * @author bingoabin
