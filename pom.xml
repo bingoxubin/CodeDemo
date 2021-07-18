@@ -32,6 +32,7 @@
         <module>CodeDemo_Spark</module>
         <module>CodeDemo_Technology</module>
         <module>CodeDemo_Zookeeper</module>
+        <module>CodeDemo_ClickHouse</module>
     </modules>
 
     <repositories>
