@@ -9,26 +9,29 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>CodeDemo_Zookeeper</module>
-        <module>CodeDemo_Hive</module>
-        <module>CodeDemo_HBase</module>
-        <module>CodeDemo_Phoneix</module>
-        <module>CodeDemo_Flume</module>
-        <module>CodeDemo_Impala</module>
-        <module>CodeDemo_Kafka</module>
-        <module>CodeDemo_Kylin</module>
-        <module>CodeDemo_Druid</module>
-        <module>CodeDemo_Presto</module>
-        <module>CodeDemo_DesignPattern</module>
         <module>CodeDemo_Algorithm</module>
+        <module>CodeDemo_DesignPattern</module>
+        <module>CodeDemo_Druid</module>
+        <module>CodeDemo_ES</module>
+        <module>CodeDemo_Flink</module>
+        <module>CodeDemo_Flume</module>
+        <module>CodeDemo_HBase</module>
+        <module>CodeDemo_Hive</module>
+        <module>CodeDemo_Impala</module>
         <module>CodeDemo_Java</module>
         <module>CodeDemo_JUC</module>
-        <module>CodeDemo_ES</module>
-        <module>CodeDemo_Redis</module>
+        <module>CodeDemo_Kafka</module>
+        <module>CodeDemo_Kylin</module>
+        <module>CodeDemo_MapReduce</module>
         <module>CodeDemo_MySQL</module>
+        <module>CodeDemo_Phoneix</module>
+        <module>CodeDemo_Presto</module>
+        <module>CodeDemo_Redis</module>
+        <module>CodeDemo_RPC</module>
         <module>CodeDemo_Scala</module>
-        <module>CodeDemo_Util</module>
+        <module>CodeDemo_Spark</module>
         <module>CodeDemo_Technology</module>
+        <module>CodeDemo_Zookeeper</module>
     </modules>
 
     <repositories>

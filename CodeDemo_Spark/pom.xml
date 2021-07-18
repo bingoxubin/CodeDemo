@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.bingoabin</groupId>
-    <artifactId>CodeDemo_spark</artifactId>
+    <artifactId>CodeDemo_Spark</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <repositories>
