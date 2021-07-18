@@ -35,6 +35,6 @@ package com.bingoabin.watermark
 //#### 并行流
 //#并行数据流中的 Watermark
 //在多并行度的情况下，Watermark 会有一个对齐机制，这个对齐机制会取所有 Channel 中最小的 Watermark。
-class Watermark {
+class WaterMark {
 
 }
