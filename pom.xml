@@ -99,7 +99,7 @@
                     <!--<verbal>true</verbal>-->
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.6</version>
@@ -114,15 +114,15 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <!--java -jar运行入口 -->
+                            &lt;!&ndash;java -jar运行入口 &ndash;&gt;
                             <mainClass>com.bingoabin.test.mysql.MysqlUtilTest</mainClass>
                         </manifest>
                     </archive>
-                    <!--打出来的jar包名称去掉jar-with-dependencies后缀-->
+                    &lt;!&ndash;打出来的jar包名称去掉jar-with-dependencies后缀&ndash;&gt;
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptor>build/assembly.xml</descriptor>
                 </configuration>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 </project>

@@ -1,4 +1,4 @@
-package com.bingoabin.create;
+package com.bingoabin.createtable;
 
 /**
  * @author bingoabin
