@@ -40,9 +40,8 @@ public class HttpRequest_Get {
 			// for (String key : map.keySet()) {
 			// 	System.out.println(key + "--->" + map.get(key));
 			// }
-			// 定义 BufferedReader输入流来读取URL的响应
-			in = new BufferedReader(new InputStreamReader(
-					connection.getInputStream()));
+			// 定义 BufferedReader输入流来读取URL的响应  输入到内存  然后再输出
+			in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 			String line;
 			while ((line = in.readLine()) != null) {
 				result += line;

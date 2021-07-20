@@ -41,9 +41,8 @@ public class HttpRequest_Post {
 			out.print(param);
 			// flush输出流的缓冲
 			out.flush();
-			// 定义BufferedReader输入流来读取URL的响应
-			in = new BufferedReader(
-					new InputStreamReader(conn.getInputStream()));
+			// 定义BufferedReader输入流来读取URL的响应  输入到内存  然后再输出
+			in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			String line;
 			while ((line = in.readLine()) != null) {
 				result += line;
