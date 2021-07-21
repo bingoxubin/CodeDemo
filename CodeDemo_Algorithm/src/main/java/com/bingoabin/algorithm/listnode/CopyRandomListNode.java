@@ -65,6 +65,41 @@ public class CopyRandomListNode {
 		}
 		return res;
 	}
+
+	//自己实现一遍
+	public static Node copyRandomList1(Node head){
+		if(head == null) return head;
+		Node node = head;
+		while(node != null){
+			Node temp = new Node(node.val);
+			temp.next = node.next;
+			node.next = temp;
+			node = node.next.next;
+		}
+		node = head;
+		while(node != null){
+			if(node.random != null){
+				node.next.random = node.random.next;
+			}else{
+				node.next.random = null;
+			}
+			node = node.next.next;
+		}
+		node = head;
+		Node res = node.next;
+		Node pre = null;
+		while(node != null){
+			pre = node.next;
+			node.next = node.next.next;
+			if(pre.next == null){
+				pre.next = null;
+			}else{
+				pre.next = pre.next.next;
+			}
+			node = node.next;
+		}
+		return res;
+	}
 }
 
 class Node {
