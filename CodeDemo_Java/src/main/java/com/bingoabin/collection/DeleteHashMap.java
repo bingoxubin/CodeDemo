@@ -26,7 +26,7 @@ public class DeleteHashMap {
 		map.put("6", 1);
 		map.put("7", 1);
 
-		//方式一：
+		//方式一：迭代器  迭代hashmap
 		Iterator<Map.Entry<String, Integer>> iterator = map.entrySet().iterator();
 		while (iterator.hasNext()) {
 			Map.Entry<String, Integer> next = iterator.next();
@@ -35,7 +35,7 @@ public class DeleteHashMap {
 			}
 		}
 
-		//方式二：
+		//方式二：迭代器  迭代key
 		Iterator<String> iter = map.keySet().iterator();
 		while (iter.hasNext()) {
 			String next = iter.next();
