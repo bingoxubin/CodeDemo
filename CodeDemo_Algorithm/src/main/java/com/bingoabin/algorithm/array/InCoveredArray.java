@@ -22,6 +22,7 @@ public class InCoveredArray {
 		int[][] arr = {{1, 3}, {2, 4}, {5, 6}};
 		System.out.println(isCovered1(arr, 2, 5));
 		System.out.println(isCovered2(arr, 2, 5));
+		System.out.println(isCovered3(arr, 2, 5));
 	}
 
 	//方式一：先进行二维数组的排序，然后遍历二维数组，如果left 在二维数组范围之间，那么将left 设置为 二维数组的右边界 + 1;直到 left > right
@@ -60,6 +61,22 @@ public class InCoveredArray {
 			res[i] += res[i - 1];
 		}
 		//判断left 到 right 的下标是否为0
+		for (int i = left; i <= right; i++) {
+			if (res[i] == 0) return false;
+		}
+		return true;
+	}
+
+	//方式二等价于下面的方式  一个意思  只是上面的方式复杂度低一些   差分数组的方式
+	public static boolean isCovered3(int[][] ranges, int left, int right) {
+		int[] res = new int[52];
+		for (int[] range : ranges) {
+			int l = range[0];
+			int r = range[1];
+			for (int i = l; i <= r; i++) {
+				res[i]++;
+			}
+		}
 		for (int i = left; i <= right; i++) {
 			if (res[i] == 0) return false;
 		}
