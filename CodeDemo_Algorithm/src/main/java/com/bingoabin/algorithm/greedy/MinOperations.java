@@ -103,4 +103,71 @@ public class MinOperations {
 		}
 		return len;
 	}
+
+	//自己解法  超时
+	public int minOperations2(int[] target, int[] arr) {
+		HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+		for(int i = 0;i<target.length;i++){
+			map.put(target[i],i+1);
+		}
+		for(int i = 0;i<arr.length;i++){
+			if(map.containsKey(arr[i])){
+				arr[i] = map.get(arr[i]);
+			}else{
+				arr[i] = 0;
+			}
+		}
+		System.out.println(Arrays.toString(arr));
+		int[] dp = new int[arr.length];
+		for(int i = 0;i<arr.length;i++){
+			if(arr[i] == 0){
+				continue;
+			}else{
+				dp[i] = 1;
+				for(int j = 0;j<i;j++){
+					if(arr[i] > arr[j]){
+						dp[i] = Math.max(dp[i],dp[j] + 1);
+					}
+				}
+			}
+		}
+		int ans = 0;
+		for(int i = 0;i<dp.length;i++){
+			ans = Math.max(ans,dp[i]);
+		}
+		System.out.println(Arrays.toString(dp));
+		return target.length - ans;
+	}
+
+	//通过解法
+	public int minOperations3(int[] target,int[] arr){
+		HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+		for(int i = 0;i<target.length;i++){
+			map.put(target[i],i+1);
+		}
+		for(int i = 0;i<arr.length;i++){
+			if(map.containsKey(arr[i])){
+				arr[i] = map.get(arr[i]);
+			}else{
+				arr[i] = 0;
+			}
+		}
+
+		List<Integer> list = new ArrayList();
+		for(int i = 0; i < arr.length; i++){
+			if(arr[i] == 0) continue;   //如果arr上的数字在target上没出现过
+			if(list.isEmpty() || arr[i] > list.get(list.size() - 1)){
+				list.add(arr[i]);
+			}else{
+				int l = 0, r = list.size() - 1;
+				while(l < r){
+					int mid = l + r >> 1;
+					if(list.get(mid) >= arr[i]) r = mid;
+					else l = mid + 1;
+				}
+				list.set(l, arr[i]);
+			}
+		}
+		return target.length - list.size();
+	}
 }
