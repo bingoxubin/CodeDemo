@@ -150,7 +150,7 @@ public class LoserKRows {
 		return res;
 	}
 
-	//验证统计军人数量
+	//额外辅助：验证统计军人数量
 	public static int count(int[][] mat) {
 		int row = mat.length;
 		int col = mat[0].length;
