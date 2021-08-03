@@ -33,6 +33,7 @@
         <module>CodeDemo_Technology</module>
         <module>CodeDemo_Zookeeper</module>
         <module>CodeDemo_ClickHouse</module>
+        <module>CodeDemo_ZTest</module>
     </modules>
 
     <repositories>
