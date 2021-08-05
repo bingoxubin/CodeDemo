@@ -15,6 +15,7 @@ public class ThreeNumSum {
 	public static void main(String[] args) {
 		int[] arr = {-2, 0, 1, 1, 2};
 		System.out.println(threeSum(arr));
+		System.out.println(threeSum1(arr));
 	}
 
 	public static ArrayList<ArrayList<Integer>> threeSum(int[] num) {
@@ -53,6 +54,31 @@ public class ThreeNumSum {
 					right--;
 				} else {
 					left++;
+				}
+			}
+		}
+		return res;
+	}
+
+	//方式二：跟上述方式一样，换一种写法
+	public static ArrayList<ArrayList<Integer>> threeSum1(int[] num) {
+		Arrays.sort(num);
+		ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+		for (int i = 0; i < num.length; i++) {
+			if (num[i] > 0) break;
+			if (i > 0 && num[i] == num[i - 1]) continue;
+			int left = i + 1;
+			int right = num.length - 1;
+			while (left < right) {
+				int sum = num[i] + num[left] + num[right];
+				if (sum > 0) {
+					while (left < right && num[right] == num[--right]) ;
+				} else if (sum < 0) {
+					while (left < right && num[left] == num[++left]) ;
+				} else {
+					res.add(new ArrayList<>(Arrays.asList(num[i], num[left], num[right])));
+					while (left < right && num[right] == num[--right]) ;
+					while (left < right && num[left] == num[++left]) ;
 				}
 			}
 		}
