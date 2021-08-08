@@ -6,7 +6,7 @@ package com.bingoabin.test;
  * @CopyRight: sankuai.com
  * @Description:
  */
-public class Test {
+public class PrintParameter {
 	static{
 		System.out.println("init hello");
 	}
@@ -15,7 +15,7 @@ public class Test {
 	public static final int b = 2;
 
 	public static void main(String[] args){
-		System.out.println(Test.a);
-		System.out.println(Test.b);
+		System.out.println(PrintParameter.a);
+		System.out.println(PrintParameter.b);
 	}
 }
