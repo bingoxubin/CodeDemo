@@ -6,7 +6,7 @@ package com.bingoabin.threadvolatile;
  * @CopyRight: sankuai.com
  * @Description:
  */
-public class TestVolatile {
+public class TestVolatile_Visibility {
 	//volatile 可见性
 	public static volatile boolean flag = false;
 
