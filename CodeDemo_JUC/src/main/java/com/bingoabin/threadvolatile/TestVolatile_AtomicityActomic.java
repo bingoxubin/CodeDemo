@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Author: xubin34
  * @Date: 2021/8/9 2:37 下午
  * @CopyRight: sankuai.com
- * @Description:
+ * @Description: 通过Atomic 原子类  CAS来实现
  */
 public class TestVolatile_AtomicityActomic {
 	//通过 Actomic 原子类来实现

@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Author: xubin34
  * @Date: 2021/8/9 2:38 下午
  * @CopyRight: sankuai.com
- * @Description:
+ * @Description: 通过Lock锁来实现线程安全
  */
 public class TestVolatile_AtomicityLock {
 	//通过 Lock方式来解决

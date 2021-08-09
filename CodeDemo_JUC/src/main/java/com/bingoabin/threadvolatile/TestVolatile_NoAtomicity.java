@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Author: xubin34
  * @Date: 2021/8/9 2:16 下午
  * @CopyRight: sankuai.com
- * @Description:
+ * @Description: volatile无法保证原子性实例
  */
 public class TestVolatile_NoAtomicity {
 	public volatile int inc = 0;

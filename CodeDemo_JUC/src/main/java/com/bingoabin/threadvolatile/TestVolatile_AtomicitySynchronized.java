@@ -4,7 +4,7 @@ package com.bingoabin.threadvolatile;
  * @Author: xubin34
  * @Date: 2021/8/9 2:38 下午
  * @CopyRight: sankuai.com
- * @Description:
+ * @Description: 通过synchronized 来实现线程安全
  */
 public class TestVolatile_AtomicitySynchronized {
 	//通过synchronized 同步方法 来解决
