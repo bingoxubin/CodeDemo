@@ -32,7 +32,7 @@ public class ZeroCopy {
 
 	@Test
 	//零拷贝技术
-	public void zeroCopy() throws Exception {
+	public void zeroCopy() throws IOException {
 		long startTime = System.currentTimeMillis();
 		File srcFile = new File("/Users/xubin34/postman/Postman-osx-8.8.0.zip");
 		File targFile = new File("/Users/xubin34/postman/Postman-osx-8.8.0_copy.zip");
