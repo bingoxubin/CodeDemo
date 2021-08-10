@@ -9,7 +9,7 @@ package com.bingoabin.algorithm.dp;
 public class ArithmeticArraySlices {
 	//Leetcode 413. 等差数列划分
 	//示例：输入：nums = [1,2,3,4] 输出：3 解释：nums 中有三个子等差数组：[1, 2, 3]、[2, 3, 4] 和 [1,2,3,4] 自身。
-	//分析：给一个数组，求出所有等差数组的子数组个数，需要连续的至少3个元素
+	//分析：给一个数组，求出所有等差数组的子数组个数，需要连续的至少3个元素  【子数组】
 	//思路：方式一：动态规划
 	//     方式二：动态规划优化，节省空间
 	public static void main(String[] args) {
