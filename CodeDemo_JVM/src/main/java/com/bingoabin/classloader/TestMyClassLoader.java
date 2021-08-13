@@ -19,7 +19,7 @@ public class TestMyClassLoader {
 	}*/
 
 	public static void main(String[] args) {
-		while (true){
+		while (true) {
 			try {
 				String path = "/Users/kkb-james/01-kkb/05-workspace/vip-class/jvm/src/main/java/";
 				MyClassLoader loader = new MyClassLoader(path);
@@ -27,14 +27,14 @@ public class TestMyClassLoader {
 				Object instance = aClass.newInstance();
 				Method method = aClass.getMethod("teach");
 				method.invoke(instance);
-				Thread.sleep(5000) ;
+				Thread.sleep(5000);
 
 				//DriverManager;
-			}catch (Exception e){
+			} catch (Exception e) {
 				System.out.println("没有找到类");
 				try {
-				 	Thread.sleep(5000);
-				}catch (Exception e1){
+					Thread.sleep(5000);
+				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
 			}

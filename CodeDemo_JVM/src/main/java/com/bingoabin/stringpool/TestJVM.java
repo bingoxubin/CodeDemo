@@ -9,6 +9,4 @@ public class TestJVM {
 			System.out.println(str);
 		}
 	}
-
-
 }

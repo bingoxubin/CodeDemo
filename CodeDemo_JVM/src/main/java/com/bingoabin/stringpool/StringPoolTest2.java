@@ -16,7 +16,7 @@ public class StringPoolTest2 {
 		}
 		for (int i = 0; i < MAX; i++) {
 			arr[i] = new String(String.valueOf(DB_DATA[i % DB_DATA.length])).intern();
-//			 arr[i] = new String(String.valueOf(DB_DATA[i % DB_DATA.length]));
+			//arr[i] = new String(String.valueOf(DB_DATA[i % DB_DATA.length]));
 			// arr[i] = String.valueOf(DB_DATA[i % DB_DATA.length]).intern();
 			// arr[i] = String.valueOf(DB_DATA[i % DB_DATA.length]);
 		}

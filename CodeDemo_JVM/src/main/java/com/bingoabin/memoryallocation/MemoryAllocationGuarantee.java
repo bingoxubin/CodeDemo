@@ -1,12 +1,7 @@
 package com.bingoabin.memoryallocation;
 
-import sun.awt.geom.AreaOp;
-
 /**
  * 内存分配担保案例
- * 
- * @author 灭霸詹
- *
  */
 public class MemoryAllocationGuarantee {
 

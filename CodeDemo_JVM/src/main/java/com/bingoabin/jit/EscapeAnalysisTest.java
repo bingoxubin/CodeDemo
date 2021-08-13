@@ -2,9 +2,6 @@ package com.bingoabin.jit;
 
 /***
  * 逃逸分析测试相关代码
- * 
- * @author think
- *
  */
 public class EscapeAnalysisTest {
 	private int age = 19;
@@ -33,5 +30,6 @@ public class EscapeAnalysisTest {
 	}
 
 	// 准备创建的对象
-	static class User {}
+	static class User {
+	}
 }

@@ -2,7 +2,7 @@ package com.bingoabin.jit;
 
 /**
  * 同步锁消除
- */   
+ */
 public class TestLockEliminate {
 	public static String getString(String s1, String s2) {
 		StringBuffer sb = new StringBuffer();
@@ -17,6 +17,6 @@ public class TestLockEliminate {
 			getString("TestLockEliminate ", "Suffix");
 		}
 		System.out.println("一共耗费：" + (System.currentTimeMillis() - tsStart) + " ms");
-	//	System.gc();
+		//	System.gc();
 	}
 }

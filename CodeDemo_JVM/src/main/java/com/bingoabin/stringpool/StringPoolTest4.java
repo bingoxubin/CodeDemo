@@ -1,6 +1,7 @@
 package com.bingoabin.stringpool;
 
 import java.security.SecureRandom;
+
 public class StringPoolTest4 {
 
 	public static void main(String[] args) throws Exception {

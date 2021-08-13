@@ -12,7 +12,7 @@ public class PermGenOomMock {
 		List<ClassLoader> classLoaderList = new ArrayList<ClassLoader>();
 		try {
 			url = new File("/tmp").toURI().toURL();
-			URL[] urls = { url };
+			URL[] urls = {url};
 			while (true) {
 				ClassLoader loader = new URLClassLoader(urls);
 				classLoaderList.add(loader);

@@ -21,6 +21,7 @@ public class MyClassLoader extends ClassLoader {
 
 	/**
 	 * 重写findClass类
+	 *
 	 * @param name
 	 * @return
 	 * @throws ClassNotFoundException
@@ -31,7 +32,7 @@ public class MyClassLoader extends ClassLoader {
 		FileChannel fileChannel = null;
 		WritableByteChannel outChannel = null;
 
-		if (null == clazz){
+		if (null == clazz) {
 			try {
 				String classFile = getClassFile(name);
 
@@ -41,9 +42,9 @@ public class MyClassLoader extends ClassLoader {
 				outChannel = Channels.newChannel(baos);
 				ByteBuffer buffer = ByteBuffer.allocateDirect(1024);
 
-				while (true){
+				while (true) {
 					int i = fileChannel.read(buffer);
-					if (i == 0 || i == -1){
+					if (i == 0 || i == -1) {
 						break;
 					}
 					buffer.flip();
@@ -59,28 +60,27 @@ public class MyClassLoader extends ClassLoader {
 				e.printStackTrace();
 			} finally {
 				try {
-					if (fileChannel != null){
+					if (fileChannel != null) {
 						fileChannel.close();
 					}
-				}catch (IOException e){
+				} catch (IOException e) {
 					e.printStackTrace();
 				}
 				try {
-					if (outChannel != null){
+					if (outChannel != null) {
 						outChannel.close();
 					}
-				}catch (IOException e){
+				} catch (IOException e) {
 					e.printStackTrace();
 				}
 			}
 		}
 
-
 		return clazz;
 	}
 
 	private String getClassFile(String name) {
-		return classpath + "/" +name.replace(".","/")+".class";
+		return classpath + "/" + name.replace(".", "/") + ".class";
 	}
 
 	// 返回类的字节码

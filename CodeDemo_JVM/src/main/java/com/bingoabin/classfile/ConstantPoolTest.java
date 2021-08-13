@@ -74,7 +74,7 @@ public class ConstantPoolTest {
 
 	public static final int x = 1000;
 
-	private String str = "kaikeba" ;
+	private String str = "kaikeba";
 
 	public void init() {
 		this.long_delay_num = 5555L;

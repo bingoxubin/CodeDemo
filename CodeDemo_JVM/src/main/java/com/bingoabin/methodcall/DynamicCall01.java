@@ -9,7 +9,8 @@ public class DynamicCall01 {
 		// 打印结果： Son-f1()
 		method();
 	}
-	public static void method(){
+
+	public static void method() {
 		System.out.println("我是static方法");
 	}
 }

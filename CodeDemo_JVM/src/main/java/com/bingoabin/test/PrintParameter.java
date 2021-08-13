@@ -7,14 +7,14 @@ package com.bingoabin.test;
  * @Description:
  */
 public class PrintParameter {
-	static{
+	static {
 		System.out.println("init hello");
 	}
 
 	public static final String a = "hello";
 	public static final int b = 2;
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		System.out.println(PrintParameter.a);
 		System.out.println(PrintParameter.b);
 	}
