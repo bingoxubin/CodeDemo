@@ -14,6 +14,8 @@ public class Test {
 		map.put(2, 222);
 		map.put(3, 333);
 		map.put(4, 444);
+		map.put(5, 555);
+		map.put(6,6);
 
 		map.keySet().forEach(e -> {
 			System.out.println(e);

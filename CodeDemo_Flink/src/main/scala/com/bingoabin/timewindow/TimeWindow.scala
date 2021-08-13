@@ -1,4 +1,4 @@
-package com.bingoabin.time
+package com.bingoabin.timewindow
 //#对于流式数据处理，最大的特点是数据上具有时间的属性特征
 //#Flink根据时间产生的位置不同，可以将时间区分为三种时间概念
 //1.Event Time（事件生成时间）:事件产生的时间，它通常由事件中的时间戳描述
@@ -46,6 +46,6 @@ package com.bingoabin.time
 //
 //#指定流处理程序以EventTime为准
 //environment.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
-object Time {
+object TimeWindow {
 
 }

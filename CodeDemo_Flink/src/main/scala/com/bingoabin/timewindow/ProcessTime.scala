@@ -1,4 +1,4 @@
-package com.bingoabin.time
+package com.bingoabin.timewindow
 
 //ProcessWindowFunction实现时间确定
 //需求:通过process实现处理时间的确定，包括数据时间、window时间等

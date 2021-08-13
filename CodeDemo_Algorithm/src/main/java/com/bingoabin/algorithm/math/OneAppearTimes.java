@@ -12,7 +12,7 @@ public class OneAppearTimes {
 	//分析：给一个证书，计算小于等于该数的1出现的次数   比如上例 1 10 11 12 13 一共出现了6次
 	//思路：
 	public static void main(String[] args) {
-		System.out.println(countDigitOne(13));
+		System.out.println(countDigitOne(15));
 	}
 
 	public static int countDigitOne(int n) {
