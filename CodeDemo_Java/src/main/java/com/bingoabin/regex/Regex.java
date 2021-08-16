@@ -1,5 +1,8 @@
 package com.bingoabin.regex;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * @author xubin03
  * @date 2021/5/19 11:42 下午
@@ -52,6 +55,15 @@ public class Regex {
 	// {n,}?  重复n次以上，但尽可能少重复
 
 	public static void main(String[] args) {
+		boolean matches = Pattern.matches("data:hadoop-.*\\.pyspark\\.jupyter\\..*", "data:hadoop-.asfasfs.pyspark.jupyter.asfaf");
+		System.out.println(matches);
 
+		String str = "data:hadoop-1.pyspark.jupyter.2";
+		Pattern pattern = Pattern.compile("data:hadoop-(.*)\\.pyspark\\.jupyter\\.(.*)");
+		Matcher matcher = pattern.matcher(str);
+		if (matcher.find()) {
+			System.out.println(matcher.group(1));
+			System.out.println(matcher.group(2));
+		}
 	}
 }
