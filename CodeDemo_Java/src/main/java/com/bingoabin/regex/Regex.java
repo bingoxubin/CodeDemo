@@ -65,5 +65,9 @@ public class Regex {
 			System.out.println(matcher.group(1));
 			System.out.println(matcher.group(2));
 		}
+
+		String path = "公司-美团-基础研发平台-数据科学与平台部-数据平台中心-数据开发平台组-数据开发组";
+		path = path.replaceAll("-","/").replaceAll("公司/美团","");
+		System.out.println(path);
 	}
 }
