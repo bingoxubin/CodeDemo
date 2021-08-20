@@ -35,6 +35,7 @@
         <module>CodeDemo_ClickHouse</module>
         <module>CodeDemo_ZTest</module>
         <module>CodeDemo_JVM</module>
+        <module>CodeDemo_Util</module>
     </modules>
 
     <repositories>
