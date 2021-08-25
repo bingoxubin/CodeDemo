@@ -51,7 +51,5 @@ public class Java8NewTest1 {
 		System.out.println(getordefault1 + "=" + getordefault2);
 
 		System.out.println(map.get(5) + " " + map.get(4) + " " + map.get(6));  //5  4  null
-
-
 	}
 }
