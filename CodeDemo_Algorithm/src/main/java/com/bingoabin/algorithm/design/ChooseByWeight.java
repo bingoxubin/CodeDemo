@@ -31,7 +31,7 @@ public class ChooseByWeight {
 	// 诸若此类。
 
 	//分析：给定一个正整数组，比如[1,3] 表示我获取0的概率为1/4  获取1的概率为 3/4  也就是求获取下标的概率
-	//思路：前缀和 + 二分
+	//思路：前缀和 + 二分  先求出前缀和，然后算出总数  然后在这个和中取一个随机值，用二分的方式找到在该值在前缀和中的位置，也就是该值得下标
 	public static void main(String[] args) {
 		Solution solution = new Solution(new int[]{1, 3});
 		for (int i = 0; i < 12; i++) {
@@ -55,8 +55,11 @@ class Solution {
 		int l = 1, r = n - 1;
 		while (l < r) {
 			int mid = l + r >> 1;
-			if (sum[mid] >= t) r = mid;
-			else l = mid + 1;
+			if (sum[mid] >= t) {
+				r = mid;
+			} else {
+				l = mid + 1;
+			}
 		}
 		return r - 1;
 	}
