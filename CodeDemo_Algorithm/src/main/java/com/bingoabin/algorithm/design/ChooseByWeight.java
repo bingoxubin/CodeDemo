@@ -34,6 +34,11 @@ public class ChooseByWeight {
 	//思路：前缀和 + 二分  先求出前缀和，然后算出总数  然后在这个和中取一个随机值，用二分的方式找到在该值在前缀和中的位置，也就是该值得下标
 	public static void main(String[] args) {
 		Solution solution = new Solution(new int[]{1, 3});
+
+		for(int i = 0;i<100;i++){ //Math.random() 产生[0,1）的数据
+			System.out.println((int)(Math.random() * 4) + 1);
+		}
+
 		for (int i = 0; i < 12; i++) {
 			System.out.println(solution.pickIndex());
 		}
@@ -44,12 +49,13 @@ class Solution {
 	int[] sum;
 
 	public Solution(int[] w) {
+		System.out.println((int)(Math.random() * 4));
 		int n = w.length;
 		sum = new int[n + 1];
 		for (int i = 1; i <= n; i++) sum[i] = sum[i - 1] + w[i - 1];
 	}
 
-	public int pickIndex() {
+	public int pickIndex() {   //[0,1,4]
 		int n = sum.length;
 		int t = (int) (Math.random() * sum[n - 1]) + 1;
 		int l = 1, r = n - 1;
