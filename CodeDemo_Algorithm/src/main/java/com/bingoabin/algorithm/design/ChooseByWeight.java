@@ -35,8 +35,8 @@ public class ChooseByWeight {
 	public static void main(String[] args) {
 		Solution solution = new Solution(new int[]{1, 3});
 
-		for(int i = 0;i<100;i++){ //Math.random() 产生[0,1）的数据
-			System.out.println((int)(Math.random() * 4) + 1);
+		for (int i = 0; i < 100; i++) { //Math.random() 产生[0,1）的数据
+			System.out.println((int) (Math.random() * 4) + 1);
 		}
 
 		for (int i = 0; i < 12; i++) {
@@ -49,7 +49,7 @@ class Solution {
 	int[] sum;
 
 	public Solution(int[] w) {
-		System.out.println((int)(Math.random() * 4));
+		System.out.println((int) (Math.random() * 4));
 		int n = w.length;
 		sum = new int[n + 1];
 		for (int i = 1; i <= n; i++) sum[i] = sum[i - 1] + w[i - 1];
