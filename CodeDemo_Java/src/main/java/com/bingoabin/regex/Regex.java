@@ -67,7 +67,12 @@ public class Regex {
 		}
 
 		String path = "公司-美团-基础研发平台-数据科学与平台部-数据平台中心-数据开发平台组-数据开发组";
-		path = path.replaceAll("-","/").replaceAll("公司/美团","");
+		path = path.replaceAll("-", "/").replaceAll("公司/美团", "");
 		System.out.println(path);
+
+		//取库名.表名   前面的库名
+		Pattern TBL_NAME_PATTERN = Pattern.compile("^([^.]+)(\\.)(.*)$");
+		Matcher matcher1 = TBL_NAME_PATTERN.matcher("*saf.xxb.xxl.sfsfs");
+		System.out.println(matcher1.find() ? matcher1.group(1) : "");
 	}
 }
