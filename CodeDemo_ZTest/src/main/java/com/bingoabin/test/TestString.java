@@ -1,5 +1,7 @@
 package com.bingoabin.test;
 
+import java.util.Collections;
+
 /**
  * @Author: xubin34
  * @Date: 2021/8/13 11:20 上午
@@ -19,5 +21,13 @@ public class TestString {
 		String path = "猫眼娱乐/行业产品研发部/后台研发组";
 		path = path.replaceAll("-","/").substring(path.indexOf("/"));
 		System.out.println(path);
+
+		String sqlFormula = null;
+		sqlFormula = "";
+		if(sqlFormula == null || "".equals(sqlFormula)|| "null".equalsIgnoreCase(sqlFormula)){
+			System.out.println(Collections.EMPTY_LIST);
+		}else{
+			System.out.println(sqlFormula + "====");
+		}
 	}
 }
