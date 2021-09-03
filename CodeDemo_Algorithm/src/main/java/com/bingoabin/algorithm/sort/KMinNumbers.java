@@ -18,7 +18,7 @@ public class KMinNumbers {
 
 	public static ArrayList<Integer> GetLeastNumbers_Solution(int[] input, int k) {
 		ArrayList<Integer> res = new ArrayList<Integer>();
-		if (k > input.length || k <= 0) {
+		if (k > input.length || k < 0) {
 			return res;
 		}
 		quickSort(input, 0, input.length - 1, k);
