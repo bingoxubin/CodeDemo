@@ -63,8 +63,6 @@ public class FindMaxProfitIPO {
 				break;
 			}
 		}
-
 		return w;
 	}
-
 }
