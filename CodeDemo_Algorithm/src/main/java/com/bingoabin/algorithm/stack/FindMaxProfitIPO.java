@@ -1,6 +1,7 @@
 package com.bingoabin.algorithm.stack;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
@@ -31,6 +32,7 @@ public class FindMaxProfitIPO {
 	}
 
 	public int findMaximizedCapital(int k, int w, int[] profits, int[] capital) {
+		//先将 利润跟资本  两个数组放到二维数组中
 		int n = profits.length;
 		int curr = 0;
 		int[][] arr = new int[n][2];
@@ -39,16 +41,24 @@ public class FindMaxProfitIPO {
 			arr[i][0] = capital[i];
 			arr[i][1] = profits[i];
 		}
-		Arrays.sort(arr, (a, b) -> a[0] - b[0]);
+		//将二维数组进行排序
+		//Arrays.sort(arr, (a, b) -> a[0] - b[0]);
+		Arrays.sort(arr, new Comparator<int[]>() {
+			@Override
+			public int compare(int[] o1, int[] o2) {
+				return o1[0] - o2[0];
+			}
+		});
 
-		PriorityQueue<Integer> pq = new PriorityQueue<>((x, y) -> y - x);
+		//创建一个大根堆 将小于成本的利润值放入到queue中，如果需要的成本小于w，那么将利润放入到队列中
+		PriorityQueue<Integer> queue = new PriorityQueue<>((x, y) -> y - x);
 		for (int i = 0; i < k; ++i) {
 			while (curr < n && arr[curr][0] <= w) {
-				pq.add(arr[curr][1]);
+				queue.add(arr[curr][1]);
 				curr++;
 			}
-			if (!pq.isEmpty()) {
-				w += pq.poll();
+			if (!queue.isEmpty()) {
+				w += queue.poll();
 			} else {
 				break;
 			}
