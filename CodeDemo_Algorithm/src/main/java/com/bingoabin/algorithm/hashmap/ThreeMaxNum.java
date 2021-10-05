@@ -52,7 +52,14 @@ public class ThreeMaxNum {
 	//方式二：用优先队列，先将数组用hashset进行过滤存储，然后放入小根堆中，如果小根堆的size > 3，那么就剔除一个
 	public int thirdMax2(int[] nums) {
 		HashSet<Integer> set = new HashSet<>();
-		PriorityQueue<Integer> queue = new PriorityQueue<>();
+		//PriorityQueue<Integer> queue = new PriorityQueue<>();
+		//或者自己定义排序 小根堆  注意：不能直接使用return a-b; 反例：如果a是1 b是-21324242428 那么作差也是负数 b排在了最后面了
+		PriorityQueue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				return o1 > o2 ? 1 : -1;
+			}
+		});
 		int max = 0;
 		for (int num : nums) {
 			if (num > max) max = num;
