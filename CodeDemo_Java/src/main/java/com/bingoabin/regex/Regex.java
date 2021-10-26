@@ -74,5 +74,9 @@ public class Regex {
 		Pattern TBL_NAME_PATTERN = Pattern.compile("^([^.]+)(\\.)(.*)$");
 		Matcher matcher1 = TBL_NAME_PATTERN.matcher("*saf.xxb.xxl.sfsfs");
 		System.out.println(matcher1.find() ? matcher1.group(1) : "");
+
+		System.out.println("===================");
+		boolean flag = Pattern.matches("^[a-z][a-z0-9_]*$","Aasdfsfsa342424");
+		System.out.println(flag);
 	}
 }
