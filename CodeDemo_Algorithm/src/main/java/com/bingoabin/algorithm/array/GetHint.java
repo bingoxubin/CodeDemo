@@ -1,5 +1,7 @@
 package com.bingoabin.algorithm.array;
 
+import static java.lang.System.*;
+
 /**
  * @Author: xubin34
  * @Date: 2021/11/8 10:20 上午
@@ -19,8 +21,8 @@ public class GetHint {
 	public static void main(String[] args) {
 		String secret = "1807";
 		GetHint getHint = new GetHint();
-		System.out.println(getHint.getHint(secret, "7810"));
-		System.out.println(getHint.getHint1(secret, "7810"));
+		out.println(getHint.getHint(secret, "7810"));
+		out.println(getHint.getHint1(secret, "7810"));
 	}
 
 	public String getHint(String secret, String guess) {
@@ -39,7 +41,7 @@ public class GetHint {
 		for (int i = 0; i < 10; ++i) {
 			cows += Math.min(cntS[i], cntG[i]);
 		}
-		return Integer.toString(bulls) + "A" + Integer.toString(cows) + "B";
+		return bulls + "A" + cows + "B";
 	}
 
 	//自己实现一遍
@@ -62,6 +64,6 @@ public class GetHint {
 		for(int i = 0;i<10;i++){
 			cows += Math.min(cntS[i], cntG[i]);
 		}
-		return Integer.toString(bulls) + "A" + Integer.toString(cows) + "B";
+		return bulls + "A" + cows + "B";
 	}
 }
