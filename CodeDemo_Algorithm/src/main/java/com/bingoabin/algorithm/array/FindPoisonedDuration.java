@@ -1,5 +1,7 @@
 package com.bingoabin.algorithm.array;
 
+import static java.lang.System.*;
+
 /**
  * @Author: xubin34
  * @Date: 2021/11/10 1:16 上午
@@ -18,11 +20,12 @@ public class FindPoisonedDuration {
 	//思路：
 	public static void main(String[] args) {
 		int[] arr = {1, 2};
-		FindPoisonedDuration findPoisonedDuration = new FindPoisonedDuration();
-		System.out.println(findPoisonedDuration.findPoisonedDuration(arr, 2));
+		FindPoisonedDuration duration = new FindPoisonedDuration();
+		out.println(duration.findPoisoneDuration(arr, 2));
+		out.println(duration.findPoisoneDuration1(arr, 2));
 	}
 
-	public int findPoisonedDuration(int[] timeSeries, int duration) {
+	public int findPoisoneDuration(int[] timeSeries, int duration) {
 		//最终的中毒时间
 		int res = 0;
 		//未中毒的起始时间
@@ -37,6 +40,21 @@ public class FindPoisonedDuration {
 				res += time + duration - expired;
 			}
 			//起始中毒时间 + 持续中毒时间 等于最后未中毒的起始时间
+			expired = time + duration;
+		}
+		return res;
+	}
+
+	//自己实现一遍
+	public int findPoisoneDuration1(int[] timeSeries, int duration) {
+		int res = 0;
+		int expired = 0;
+		for (int time : timeSeries) {
+			if (time > expired) {
+				res += duration;
+			} else {
+				res += time + duration - expired;
+			}
 			expired = time + duration;
 		}
 		return res;
