@@ -9,6 +9,9 @@ import java.util.HashMap;
 public class EqualsSubArray {
 	//LeetCode 930. 和相同的二元子数组
 	//示例：[0,0,0,0,0], goal = 0 返回 15
+	//     输入：nums = [1,0,1,0,1], goal = 2 输出：4
+	//     解释：
+	//     有 4 个满足题目要求的子数组：[1,0,1]、[1,0,1,0]、[0,1,0,1]、[1,0,1]
 	//分析：给你一个二元数组 nums ，和一个整数 goal ，请你统计并返回有多少个和为 goal 的 非空 子数组。子数组 是数组的一段连续部分。
 	//思路：采用hashmap方式
 	public static void main(String[] args){
