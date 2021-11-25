@@ -35,8 +35,12 @@ public class PoorPig {
 	//     https://leetcode-cn.com/problems/poor-pigs/solution/hua-jie-suan-fa-458-ke-lian-de-xiao-zhu-by-guanpen/
 	public static void main(String[] args) {
 		PoorPig poorPig = new PoorPig();
-		System.out.println(poorPig.poorPigs(4, 15, 15));
+		System.out.println(poorPig.poorPigs(9, 15, 15));
 	}
+	//times    1
+	//buckets  1 2 3 4 5 6 7 8 9
+	//pigs     0 1 2 2 3 3 3 3 4
+	//2只猪如何在一次机会中，统计到4个桶，比如1，3桶喂第一只猪，1，2桶喂第二只猪，按矩阵的行列进行投喂即可。
 
 	public int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
 		int times = minutesToTest / minutesToDie;
