@@ -1,8 +1,6 @@
 package com.bingoabin.test;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 
 /**
  * @author xubin34
@@ -17,7 +15,7 @@ public class Test {
 		map.put(3, 333);
 		map.put(4, 444);
 		map.put(5, 555);
-		map.put(6,6);
+		map.put(6, 6);
 
 		map.keySet().forEach(e -> {
 			System.out.println(e);
@@ -29,7 +27,12 @@ public class Test {
 			System.out.println(e.getClass());
 		});
 
-		List<Long> list = null;
-		HashSet<Long> longHashSet = new HashSet<Long>(list);
+		// List<Long> list = null;
+		// HashSet<Long> longHashSet = new HashSet<Long>(list);
+		System.out.println(Integer.MAX_VALUE);
+
+		//超过2147483647 就报错了
+		long l = 2147483648l;
+		System.out.println(Integer.parseInt(String.valueOf(l)));
 	}
 }
