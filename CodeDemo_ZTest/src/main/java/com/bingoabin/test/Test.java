@@ -1,6 +1,8 @@
 package com.bingoabin.test;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 
 /**
  * @author xubin34
@@ -26,5 +28,8 @@ public class Test {
 			System.out.println(e.getKey());
 			System.out.println(e.getClass());
 		});
+
+		List<Long> list = null;
+		HashSet<Long> longHashSet = new HashSet<Long>(list);
 	}
 }
