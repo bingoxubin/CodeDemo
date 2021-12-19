@@ -34,9 +34,9 @@ public class FindJudge {
         if (n == 1) return n;
         int[] res = new int[n + 1];
         //投出去的-- 投进来的 ++
-        for (int i = 0; i < trust.length; i++) {
-            res[trust[i][0]]--;
-            res[trust[i][1]]++;
+        for (int[] ints : trust) {
+            res[ints[0]]--;
+            res[ints[1]]++;
         }
         //遍历每个人，如果等于n-1，返回那个人就是法官
         for (int i = 0; i < res.length; i++) {
@@ -51,11 +51,11 @@ public class FindJudge {
     public int findJudge2(int n, int[][] trust) {
         int[] in = new int[n + 1];
         int[] out = new int[n + 1];
-        for (int i = 0; i < trust.length; i++) {
+        for (int[] ints : trust) {
             //入度
-            in[trust[i][1]]++;
+            in[ints[1]]++;
             //出度
-            out[trust[i][0]]++;
+            out[ints[0]]++;
         }
         //注意从1开始，如果这种情况1个人，没有人投票，那么如果从0开始返回0，得从第一个人开始
         for (int i = 1; i < in.length; i++) {
