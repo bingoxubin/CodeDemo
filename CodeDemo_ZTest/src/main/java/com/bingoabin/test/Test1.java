@@ -1,9 +1,6 @@
 package com.bingoabin.test;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @Author: xubin34
@@ -12,9 +9,15 @@ import java.util.Set;
  * @Description:
  */
 public class Test1 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         Set<String> set = new HashSet<>(list);
         System.out.println(set);
+
+        List<Integer> list1 = new ArrayList<>(Arrays.asList(3, 4, 5));
+        List<Integer> list2 = new ArrayList<>(Arrays.asList(1, 2));
+
+        list1.addAll(0, list2);
+        System.out.println(list1);
     }
 }
