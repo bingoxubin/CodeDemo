@@ -24,8 +24,9 @@ public class SimplifyPath {
     //思路：栈
     public static void main(String[] args) {
         String path = "/a/./b/../../c/";
+        String path1 = "/home//foo/";
         SimplifyPath simplifyPath = new SimplifyPath();
-        System.out.println(simplifyPath.simplifyPath(path));
+        System.out.println(simplifyPath.simplifyPath(path1));
     }
 
     public String simplifyPath(String path) {
