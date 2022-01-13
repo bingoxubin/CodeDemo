@@ -36,6 +36,7 @@
         <module>CodeDemo_ZTest</module>
         <module>CodeDemo_JVM</module>
         <module>CodeDemo_Util</module>
+        <module>CodeDemo_Doris</module>
     </modules>
 
     <repositories>
