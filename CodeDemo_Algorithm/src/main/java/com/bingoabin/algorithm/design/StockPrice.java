@@ -42,16 +42,24 @@ public class StockPrice {
     //     int maximum()返回股票 最高价格。
     //     int minimum()返回股票 最低价格。
     //思路：
-    public static void main(String[] args){
-
+    public static void main(String[] args) {
+        StockPrice stockPrice = new StockPrice();
+        stockPrice.update(1, 10);
+        stockPrice.update(2, 5);
+        System.out.println(stockPrice.current());
+        System.out.println(stockPrice.maximum());
+        stockPrice.update(1, 3);
+        System.out.println(stockPrice.maximum());
+        stockPrice.update(4, 2);
+        System.out.println(stockPrice.minimum());
     }
 
     //最大的时间
     int maxTime;
     //记录key：时间  value：股票价格
-    Map<Integer,Integer> map;
+    Map<Integer, Integer> map;
     //记录key：股票价格  value:此价格的个数
-    TreeMap<Integer,Integer> treeMap;
+    TreeMap<Integer, Integer> treeMap;
 
     public StockPrice() {
         //初始化
@@ -69,7 +77,7 @@ public class StockPrice {
             int cnt = treeMap.get(oldPrice);
             if (cnt == 1) {
                 treeMap.remove(oldPrice);
-            }else{
+            } else {
                 treeMap.put(oldPrice, cnt - 1);
             }
         }
