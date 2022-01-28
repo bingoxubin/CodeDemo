@@ -23,6 +23,7 @@ public class CountValidWords {
         String sentence = "cat and  dog";
         CountValidWords countValidWords = new CountValidWords();
         System.out.println(countValidWords.countValidWords(sentence));
+        System.out.println(countValidWords.countValidWords1(sentence));
     }
 
     public int countValidWords(String sentence) {
@@ -60,6 +61,18 @@ public class CountValidWords {
     }
 
     //自己实现一遍
+    public int countValidWords1(String sentence) {
+        int n = sentence.length(), ans = 0;
+        for (int i = 0; i < n; ) {
+            if (sentence.charAt(i) == ' ' && ++i >= 0) continue;
+            int j = i;
+            while (j < n && sentence.charAt(j) != ' ') j++;
+            if (check1(sentence.substring(i, j))) ans++;
+            i = j + 1;
+        }
+        return ans;
+    }
+
     public boolean check1(String s) {
         int len = s.length();
         if (len == 0) return false;
