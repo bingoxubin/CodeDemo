@@ -113,6 +113,7 @@ class NNode {
 
     public NNode(int val) {
         this.val = val;
+        this.children = new ArrayList<>();
     }
 
     public NNode(int val, List<NNode> children) {
