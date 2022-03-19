@@ -84,9 +84,14 @@ public class Tree2String {
     void dfs(TreeNode root) {
         sb.append("(");
         sb.append(root.val);
-        if (root.left != null) dfs(root.left);
-        else if (root.right != null) sb.append("()");
-        if (root.right != null) dfs(root.right);
+        if (root.left != null) {
+            dfs(root.left);
+        } else if (root.right != null){
+            sb.append("()");
+        }
+        if (root.right != null){
+            dfs(root.right);
+        }
         sb.append(")");
     }
 
