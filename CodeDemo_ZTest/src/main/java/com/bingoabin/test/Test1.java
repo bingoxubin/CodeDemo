@@ -1,5 +1,8 @@
 package com.bingoabin.test;
 
+import com.bingoabin.domain.Person;
+import org.junit.Test;
+
 import java.util.*;
 
 /**
@@ -22,5 +25,15 @@ public class Test1 {
 
         list1.addAll(0, list2);
         System.out.println(list1);
+    }
+
+    @Test
+    public void test(){  //类中写上hash equals方法
+        Set<Person> person = new HashSet<>();
+        Person xb = new Person(1, "xb");
+        Person xbb = new Person(1, "xb");
+        person.add(xb);
+        person.add(xbb);
+        System.out.println(person.size());
     }
 }
