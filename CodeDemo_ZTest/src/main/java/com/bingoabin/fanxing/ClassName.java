@@ -40,7 +40,7 @@ public class ClassName<T> {
     }
 
     public static void main(String[] args) {
-        ClassName<Fruit> o = new ClassName<Fruit>();
+        ClassName<Fruit> o = new ClassName<>();
         Fruit f = new Fruit();
         Apple a = new Apple();
         Person p = new Person();
