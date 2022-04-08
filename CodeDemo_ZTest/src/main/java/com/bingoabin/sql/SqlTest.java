@@ -1,9 +1,13 @@
 package com.bingoabin.sql;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.directory.api.util.Strings;
+import org.junit.Test;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @Author: xubin34
@@ -13,6 +17,12 @@ import java.util.*;
  */
 public class SqlTest {
     public static void main(String[] args) {
+//        List<String> list = new ArrayList<>();
+//        list.add("${werwrwrwerwr} = 1");
+//        String reloadConfig = "#t_0#${werwrwrwerwr} = 1";
+//        System.out.println(Arrays.toString(reloadConfig.split(String.join("|", list))));
+
+        test1();
 
         String str1 = "sfdadfafsafsafsadffas\n" +
                 "#t_1#\n" +
@@ -22,6 +32,8 @@ public class SqlTest {
                 "#t_3#\n" +
                 "asfsadfdsaff\n" +
                 "##";
+
+
 
         test(str1, 4);
         System.out.println("=================================");
@@ -54,8 +66,53 @@ public class SqlTest {
         System.out.println("=================================");
         String str6 = "#t_3#\n" +
                 "sfafasfafasfasfa\n" +
+                "#t_1#\n" +
+                "safasfasfdsafsafsafsf"+
                 "##";
         test(str6, 4);
+
+        System.out.println("=================================");
+        String str7 = "#t_0#\n" +
+                "safsfsadfsdfsf";
+
+    }
+    public static final Pattern RELOAD_SQL_MARKER = Pattern.compile("#t_([0-9]\\d*)#|##");
+
+    @Test
+    public static void test2(){
+        String str1 = "sfdadfafsafsafsadffas\n" +
+                "#t_1#\n" +
+                "asfsfasfasf   safsfasaf   asfsaf\n" +
+                "#t_2#\n" +
+                "safaaagfdsgdsgfdsafdasf\n" +
+                "#t_3#\n" +
+                "asfsadfdsaff\n" +
+                "##";
+        Matcher matcher = RELOAD_SQL_MARKER.matcher(str1);
+        if (matcher.find()) {
+            int count = matcher.groupCount();
+            for(int i = 1;i<= count;i++){
+                String group = matcher.group(i);
+                System.out.println(group);
+            }
+        }
+    }
+
+    @Test
+    public static void test1(){
+        String[] reloadMarkers = {"#t_0#","","#t_1#","##"};
+        // 简单校验
+        for (String reloadMarker : reloadMarkers) {
+            Matcher matcher = RELOAD_SQL_MARKER.matcher(reloadMarker);
+            if (matcher.find()) {
+                String group = matcher.group(1);
+                if (StringUtils.isNotEmpty(group)) {
+                    System.out.println("true");
+                }
+            } else {
+                System.out.println("error");
+            }
+            }
     }
 
     public static void test(String str, int n) {
