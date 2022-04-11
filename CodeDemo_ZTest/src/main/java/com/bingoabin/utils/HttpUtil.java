@@ -1,12 +1,11 @@
 package com.bingoabin.utils;
 
-import com.google.gson.reflect.TypeToken;
-import com.meituan.mtrace.http.HttpClients;
 import com.bingoabin.utils.constant.BizCodes;
 import com.bingoabin.utils.dto.ApiRespAndErrorBase;
 import com.bingoabin.utils.dto.ApiRespBase;
 import com.bingoabin.utils.dto.ApiRespMessageBase;
 import com.bingoabin.utils.exception.BizException;
+import com.google.gson.reflect.TypeToken;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.StatusLine;
@@ -65,7 +64,7 @@ public class HttpUtil {
         cm.setMaxTotal(100);
         RequestConfig config = RequestConfig.custom().setConnectTimeout(CONNECTION_TIMEOUT)
                 .setSocketTimeout(SO_TIMEOUT).build();
-        httpClient = HttpClients.custom().setConnectionManager(cm).setDefaultRequestConfig(config).build();
+        httpClient = null;//HttpClients.custom().setConnectionManager(cm).setDefaultRequestConfig(config).build();
     }
 
 
