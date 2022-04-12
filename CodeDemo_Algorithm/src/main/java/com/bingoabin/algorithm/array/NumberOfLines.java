@@ -33,7 +33,6 @@ public class NumberOfLines {
 		for (int i = 0; i < s.length(); i++) {
 			sum += widths[s.charAt(i) - 'a'];
 			if (sum > 100) {
-				sum -= widths[s.charAt(i) - 'a'];
 				sum = 0;
 				sum += widths[s.charAt(i) - 'a'];
 				lines++;
