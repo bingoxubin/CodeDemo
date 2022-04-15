@@ -30,7 +30,7 @@ class RealSubjectProxy implements Subject {
 
 	public RealSubjectProxy(){
 		try{
-			this.realSubject = (RealSubject) this.getClass().getClassLoader().loadClass("com.bingoabin.designpattern.structure.RealSubject").newInstance();
+			this.realSubject = (RealSubject) this.getClass().getClassLoader().loadClass("com.bingoabin.structure.RealSubject").newInstance();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
