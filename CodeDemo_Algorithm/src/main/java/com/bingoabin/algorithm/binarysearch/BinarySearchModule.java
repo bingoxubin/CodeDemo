@@ -116,5 +116,4 @@ public class BinarySearchModule {
 		}
 		return left;
 	}
-
 }
