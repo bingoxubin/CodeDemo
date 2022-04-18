@@ -12,6 +12,10 @@ public class QuickSort {
 	//千万注意递归退出的条件，千万千万，如果出现问题很难排查出来哦
 	public static void main(String[] args) {
 		int[] arr = {6, 8, 9, 2, 1, 5, 3, 6, 0, 1, 2, 4, 4, 6, 7, 9, 3, 2, 5};
+		//
+		QuickSort quickSort = new QuickSort();
+		quickSort.quickSort(arr, 0, arr.length - 1);
+		System.out.println(Arrays.toString(arr));
 		quickSort(arr);
 		System.out.println(Arrays.toString(arr));
 	}
@@ -39,6 +43,31 @@ public class QuickSort {
 	}
 
 	public static void swap(int[] arr, int i, int j) {
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+
+	//自己实现一下
+	public void quickSort(int[] arr, int left, int right) {
+		if (left > right) return;
+		int i = left;
+		int j = right;
+		int temp = arr[left];
+		while (i < j) {
+			while (i < j && arr[j] > temp) j--;
+			while (i < j && arr[i] <= temp) i++;
+			if (i < j) {
+				swapValue(arr, i, j);
+			}
+		}
+		arr[left] = arr[i];
+		arr[i] = temp;
+		quickSort(arr, left, i - 1);
+		quickSort(arr, i + 1, right);
+	}
+
+	public void swapValue(int[] arr, int i, int j) {
 		int temp = arr[i];
 		arr[i] = arr[j];
 		arr[j] = temp;
