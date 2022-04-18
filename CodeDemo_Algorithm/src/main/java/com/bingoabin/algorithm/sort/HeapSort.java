@@ -17,6 +17,10 @@ public class HeapSort {
 	//比如上面的数组，先从5数字开始往上遍历  不断调整堆，然后将最上面的值，放到数组最后，然后不断调整堆即可
 	public static void main(String[] args) {
 		int[] arr = {4, 3, 5, 7, 2, 1, 8, 9, 0};
+		//
+		HeapSort heapSort = new HeapSort();
+		heapSort.heapSort1(arr);
+		System.out.println(Arrays.toString(arr));
 		heapSort(arr);
 		System.out.println(Arrays.toString(arr));
 	}
@@ -52,5 +56,33 @@ public class HeapSort {
 			lchild = 2 * lchild + 1;
 		}
 		arr[parent] = temp;
+	}
+
+	//自己实现一遍
+	public void heapSort_self(int[] arr, int parent, int end) {
+		int temp = arr[parent];
+		int lchild = 2 * parent + 1;
+		while (lchild < end) {
+			int rchild = lchild + 1;
+			if (rchild < end && arr[lchild] < arr[rchild]) lchild++;
+			if (arr[lchild] < temp) break;
+			arr[parent] = arr[lchild];
+			parent = lchild;
+			lchild = 2 * parent + 1;
+		}
+		arr[parent] = temp;
+	}
+
+	public void heapSort1(int[] arr) {
+		for (int i = (arr.length - 1) / 2; i >= 0; i--) {
+			heapSort_self(arr, i, arr.length);
+		}
+
+		for (int i = arr.length - 1; i >= 0; i--) {
+			int temp = arr[0];
+			arr[0] = arr[i];
+			arr[i] = temp;
+			heapSort_self(arr, 0, i);
+		}
 	}
 }
