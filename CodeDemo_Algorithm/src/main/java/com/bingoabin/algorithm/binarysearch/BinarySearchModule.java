@@ -64,56 +64,64 @@ public class BinarySearchModule {
 	// < 目标值 的最大值下标
 	public static int lessMax(int[] nums, int target) {
 		int left = 0, right = nums.length - 1;
+		int res = -1;
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
 			if (nums[mid] < target) {
+				res = mid;
 				left = mid + 1;
 			} else if (nums[mid] >= target) {
 				right = mid - 1;
 			}
 		}
-		return right;
+		return res;
 	}
 
 	// <= 目标值 的最大下标
 	public static int lessEqualMax(int[] nums, int target) {
 		int left = 0, right = nums.length - 1;
+		int res = -1;
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
 			if (nums[mid] <= target) {
+				res = mid;
 				left = mid + 1;
 			} else if (nums[mid] > target) {
 				right = mid - 1;
 			}
 		}
-		return right;
+		return res;
 	}
 
 	// > 目标值 的最小下标
 	public static int moreMin(int[] nums, int target) {
 		int left = 0, right = nums.length - 1;
+		int res = nums.length;
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
 			if (nums[mid] <= target) {
 				left = mid + 1;
 			} else if (nums[mid] > target) {
+				res = mid;
 				right = mid - 1;
 			}
 		}
-		return left;
+		return res;
 	}
 
 	// >= 目标值 的最小下标
 	public static int moreEqualMin(int[] nums, int target) {
 		int left = 0, right = nums.length - 1;
+		int res = nums.length;
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
 			if (nums[mid] < target) {
 				left = mid + 1;
 			} else if (nums[mid] >= target) {
+				res = mid;
 				right = mid - 1;
 			}
 		}
-		return left;
+		return res;
 	}
 }
