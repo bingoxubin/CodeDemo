@@ -7,9 +7,6 @@ import server.ClientProtocols;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 
-/**
- * Created by angel
- */
 public class DFSClient {
     public static void main(String[] args) throws IOException {
         final ClientProtocols proxy = RPC.getProxy(//动态代理-->反射、序列化、非阻塞异步IO（NIO）
