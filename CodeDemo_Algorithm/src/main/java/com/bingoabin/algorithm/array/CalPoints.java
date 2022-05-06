@@ -6,7 +6,6 @@ import java.util.List;
 /**
  * @Author: xubin34
  * @Date: 2022/3/26 7:22 下午
- * @CopyRight: sankuai.com
  * @Description:
  */
 public class CalPoints {
