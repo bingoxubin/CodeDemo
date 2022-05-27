@@ -10,6 +10,17 @@ import java.util.concurrent.TimeUnit;
  * @date 2022/5/27 8:55
  */
 public class DelayQueueTest {
+	//kafka:  https://zhuanlan.zhihu.com/p/365802989
+	//delayqueue:  https://blog.csdn.net/c15158032319/article/details/118636233
+
+	//DelayQueue其实采用了装饰器模式，在对PriorityQueue进行包装下增加了延时时间获取元素的功能，其主要特点归纳如下：
+	// DelayQueue是一个无界阻塞队列，队列内部使用PriorityQueue来实现。
+	// 进入队列的元素必须实现Delayed接口，在创建元素时可以指定多久才能从队列中获取当前元素，只有在延迟期满时才能从中提取元素；
+	// 该队列头部是延迟期满后保存时间最长的Delayed元素；
+	// 如果没有延迟未过期元素，且队列没有头部，并且poll将返回null；
+	// 当一个元素的getDelay（TimeUnit.NANOSECONDS）方法返回一个小于等于0的值时，表示该元素已过期；
+	// 无法使用poll或take移除未到期的元素，也不会将这些元素作为正常元素对待；例如：size方法返回到期和未到期元素的计数之和。
+	// 此队列不允许使用null元素。
 	static BlockingQueue<Delayed> queue = new DelayQueue();
 	public static void main(String[] args) throws InterruptedException {
 		queue.add(new MyDelay(80000, "第一次添加任务"));
