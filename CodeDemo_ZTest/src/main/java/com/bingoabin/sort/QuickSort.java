@@ -2,10 +2,6 @@ package com.bingoabin.sort;
 
 import java.util.Arrays;
 
-/**
- * @author bingoabin
- * @date 2022/6/10 14:24
- */
 public class QuickSort {
 	public static void main(String[] args){
 		int[] arr = {8, 6, 5, 4, 9, 8, 1, 2, 4, 2, 0, 4};
