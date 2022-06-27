@@ -1,9 +1,5 @@
 package com.bingoabin.algorithm.string;
 
-/**
- * @author bingoabin
- * @date 2022/6/25 23:19
- */
 public class CountXingNums {
 	//Leetcode 6104. 统计星号
 	//示例：输入：s = "l|*e*et|c**o|*de|"
