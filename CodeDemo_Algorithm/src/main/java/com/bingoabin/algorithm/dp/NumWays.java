@@ -1,9 +1,5 @@
 package com.bingoabin.algorithm.dp;
 
-/**
- * @author bingoabin
- * @date 2022/7/1 15:58
- */
 public class NumWays {
 	//Leetcode 276. 栅栏涂色
 	//示例：示例:
