@@ -1,9 +1,5 @@
 package com.bingoabin.algorithm.string;
 
-/**
- * @author bingoabin
- * @date 2022/7/4 18:17
- */
 public class AddString {
 	//Leetcode 415. 字符串相加
 	//示例：
