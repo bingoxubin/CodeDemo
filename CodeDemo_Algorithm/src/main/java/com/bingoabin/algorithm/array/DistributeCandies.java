@@ -2,10 +2,6 @@ package com.bingoabin.algorithm.array;
 
 import java.util.Arrays;
 
-/**
- * @author bingoabin
- * @date 2022/7/8 10:28
- */
 public class DistributeCandies {
 	//Leetcode 1103. 分糖果 II
 	//示例：示例 1：
