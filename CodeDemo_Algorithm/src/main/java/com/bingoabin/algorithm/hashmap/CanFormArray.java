@@ -42,8 +42,8 @@ public class CanFormArray {
 		for (int i = 0; i < arr.length; i++) {
 			if (map.containsKey(arr[i])) {
 				int[] piece = map.get(arr[i]);
-				for (int j = 0; j < piece.length; j++) {
-					if (piece[j] == arr[i]) {
+				for (int k : piece) {
+					if (k == arr[i]) {
 						i++;
 					} else {
 						return false;
