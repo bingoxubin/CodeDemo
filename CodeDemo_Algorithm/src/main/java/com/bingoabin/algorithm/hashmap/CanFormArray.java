@@ -3,10 +3,6 @@ package com.bingoabin.algorithm.hashmap;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author bingoabin
- * @date 2022/7/12 10:09
- */
 public class CanFormArray {
 	//Leetcode 1640. 能否连接形成数组
 	//示例：示例 1：
