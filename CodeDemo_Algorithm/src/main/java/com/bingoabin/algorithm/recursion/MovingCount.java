@@ -23,6 +23,9 @@ public class MovingCount {
 	public static void main(String[] args) {
 		MovingCount movingCount = new MovingCount();
 		System.out.println(movingCount.movingCount(17, 3, 2));
+		System.out.println(movingCount.movingCount(0, 3, 1));
+		System.out.println(movingCount.movingCount1(17, 3, 2));
+		System.out.println(movingCount.movingCount2(17, 3, 2));
 	}
 
 	//深度遍历
@@ -64,5 +67,28 @@ public class MovingCount {
 			queue.add(new int[] { i, j + 1, si, (j + 1) % 10 != 0 ? sj + 1 : sj - 8 });
 		}
 		return res;
+	}
+
+	//深度正确的方式
+	public int movingCount2(int m,int n,int k){
+		boolean[][] visited = new boolean[m][n];
+		return dfs1(visited, m, n, k, 0, 0);
+	}
+
+	private int dfs1(boolean[][] visited, int m, int n, int k, int i, int j) {
+		if(i >= m || j >= n || bitSum(i) + bitSum(j) > k || visited[i][j]){
+			return 0;
+		}
+		visited[i][j] = true;
+		return 1 + dfs1(visited, m, n, k, i + 1, j) + dfs1(visited, m, n, k, i, j + 1);
+	}
+
+	public int bitSum(int x){
+		int sum = 0;
+		while(x != 0){
+			sum += x % 10;
+			x /= 10;
+		}
+		return sum;
 	}
 }
