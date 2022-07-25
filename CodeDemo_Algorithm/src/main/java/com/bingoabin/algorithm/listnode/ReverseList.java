@@ -69,6 +69,28 @@ public class ReverseList {
 		head.next = null;
 		return res;
 	}
+
+	//方式一：递归
+	public static ListNode reverseList(ListNode head) {
+		if (head == null || head.next == null) return head;
+		ListNode res = reverseList(head.next);
+		head.next.next = head;
+		head.next = null;
+		return res;
+	}
+
+	//方式二：迭代
+	public static ListNode reverseList3(ListNode head) {
+		if (head == null) return head;
+		ListNode pre = null;
+		while (head != null) {
+			ListNode temp = head.next;
+			head.next = pre;
+			pre = head;
+			head = temp;
+		}
+		return pre;
+	}
 }
 
 class ListNode {
