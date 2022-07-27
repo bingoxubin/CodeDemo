@@ -58,4 +58,32 @@ public class MirrorTree {
 		}
 		return root;
 	}
+
+	//方式一 递归
+	public static TreeNode mirrorTree(TreeNode root) {
+		if (root == null) return root;
+		TreeNode left = root.left;
+		root.left = root.right;
+		root.right = left;
+		mirrorTree(root.left);
+		mirrorTree(root.right);
+		return root;
+	}
+
+	//方式二 迭代
+	public static TreeNode mirrorTree1(TreeNode root) {
+		if (root == null) return root;
+		Deque<TreeNode> queue = new LinkedList<>();
+		queue.offer(root);
+		while (!queue.isEmpty()) {
+			TreeNode node = queue.poll();
+			TreeNode left = node.left;
+			node.left = node.right;
+			node.right = left;
+			if (node.left != null) queue.offer(node.left);
+			if (node.right != null) queue.offer(node.right);
+		}
+		return root;
+	}
+
 }
