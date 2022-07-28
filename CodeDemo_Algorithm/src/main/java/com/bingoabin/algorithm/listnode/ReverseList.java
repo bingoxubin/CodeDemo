@@ -9,7 +9,7 @@ public class ReverseList {
 	//样例：1,2,3,4,5  返回 5 4 3 2 1
 	//分析：给你一个链表，进行翻转后返回
 	//思路：方式一：迭代的方式，定义一个pre为null，然后进行不断向后遍历，每次遍历到一个节点  翻转指针
-	//     方式二：递归的方式，通过递归到最后一个节点，然后从后面不断往前进行递归
+	//      方式二：递归的方式，通过递归到最后一个节点，然后从后面不断往前进行递归
 	public static void main(String[] args) {
 		ListNode node1 = new ListNode(1);
 		ListNode node2 = new ListNode(2);
