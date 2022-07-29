@@ -3,6 +3,7 @@ package com.bingoabin.algorithm.tree;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author bingoabin
@@ -58,5 +59,22 @@ public class LevelOrder {
 			res.add(list);
 		}
 		return res;
+	}
+
+	public int[] levelOrder3(TreeNode root) {
+		List<Integer> res = new ArrayList<>();
+		if (root == null) return res.stream().mapToInt(Integer::valueOf).toArray();
+		Deque<TreeNode> queue = new LinkedList<>();
+		queue.offer(root);
+		while (!queue.isEmpty()) {
+			int size = queue.size();
+			for (int i = 0; i < size; i++) {
+				TreeNode node = queue.poll();
+				res.add(node.val);
+				if (node.left != null) queue.offer(node.left);
+				if (node.right != null) queue.offer(node.right);
+			}
+		}
+		return res.stream().mapToInt(Integer::valueOf).toArray();
 	}
 }
