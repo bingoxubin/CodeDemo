@@ -61,6 +61,7 @@ public class LevelOrder {
 		return res;
 	}
 
+	//全部打印到一行中
 	public int[] levelOrder3(TreeNode root) {
 		List<Integer> res = new ArrayList<>();
 		if (root == null) return res.stream().mapToInt(Integer::valueOf).toArray();
@@ -77,4 +78,61 @@ public class LevelOrder {
 		}
 		return res.stream().mapToInt(Integer::valueOf).toArray();
 	}
+
+	//之字形打印
+	public List<List<Integer>> levelOrder4(TreeNode root){
+		List<List<Integer>> res = new ArrayList<>();
+		if(root == null) return res;
+		Deque<TreeNode> queue = new LinkedList<>();
+		queue.offer(root);
+		int rows = 0;
+		while (!queue.isEmpty()) {
+			int size = queue.size();
+			List<Integer> list = new ArrayList<>();
+			for(int i = 0;i<size;i++){
+				TreeNode node = queue.poll();
+				if((rows & 1) == 0){
+					list.add(node.val);
+				}else{
+					list.add(0,node.val);
+				}
+				if(node.left != null) queue.offer(node.left);
+				if(node.right != null) queue.offer(node.right);
+			}
+			rows ++;
+			res.add(list);
+		}
+		return res;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
