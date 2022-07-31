@@ -8,7 +8,7 @@ import java.util.LinkedList;
  * @date 2022/7/30 11:29
  * @Description: 验证二叉树的后续遍历
  */
-public class VertiryPostOrder {
+public class VertifyPostOrder {
 	//Leetcode 剑指 Offer 33. 二叉搜索树的后序遍历序列
 	//示例：示例 1：
 	//      输入: [1,6,3,2,5]
@@ -33,7 +33,7 @@ public class VertiryPostOrder {
 
 		int[] postorder = {1, 6, 3, 2, 5};
 		int[] postorder1 = {1, 3, 2, 6, 5};
-		VertiryPostOrder vertiryPostOrder = new VertiryPostOrder();
+		VertifyPostOrder vertiryPostOrder = new VertifyPostOrder();
 		System.out.println(vertiryPostOrder.verityPostorder(postorder));
 		// System.out.println(vertiryPostOrder.verityPostorder(postorder1));
 	}
