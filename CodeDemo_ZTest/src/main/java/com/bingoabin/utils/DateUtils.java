@@ -6,11 +6,6 @@ import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 
-/**
- * @author HanJunsheng
- * @date 2021/7/16
- * @copyright sankuai.com
- */
 public class DateUtils {
     public static final FastDateFormat yyyyMMdd = FastDateFormat.getInstance("yyyyMMdd");
     public static final FastDateFormat dd = FastDateFormat.getInstance("dd");

@@ -8,11 +8,6 @@ import org.slf4j.LoggerFactory;
 import java.util.Arrays;
 import java.util.function.Supplier;
 
-/**
- * @author HanJunsheng
- * @date 2021/7/16
- * @copyright sankuai.com
- */
 public class BizException extends RuntimeException {
     private static final Logger LOGGER = LoggerFactory.getLogger(BizException.class);
 

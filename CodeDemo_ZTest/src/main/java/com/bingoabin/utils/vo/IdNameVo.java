@@ -2,11 +2,6 @@ package com.bingoabin.utils.vo;
 
 import java.util.Objects;
 
-/**
- * @author HanJunsheng
- * @date 2021/7/16
- * @copyright sankuai.com
- */
 public class IdNameVo {
     private Integer id;
     private String name;

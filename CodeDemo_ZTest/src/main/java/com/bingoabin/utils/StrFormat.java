@@ -4,11 +4,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.function.Supplier;
 
-/**
- * @author HanJunsheng
- * @date 2021/7/16
- * @copyright sankuai.com
- */
 public class StrFormat {
 
     private static final int MAX_MSG = 512;

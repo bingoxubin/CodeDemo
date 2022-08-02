@@ -10,12 +10,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.function.Consumer;
 
-
-/**
- * @author HanJunsheng
- * @date 2021/7/16
- * @copyright sankuai.com
- */
 public class JsonUtil {
     private static final Consumer<Object> LOGGER = e -> {
     };

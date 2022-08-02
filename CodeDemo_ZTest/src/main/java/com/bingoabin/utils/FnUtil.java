@@ -9,7 +9,7 @@ import java.util.function.*;
 /**
  * @author HanJunsheng
  * @date 2021/7/16
- * @copyright sankuai.com
+ *
  */
 public class FnUtil {
     private static Consumer LOG = e -> {

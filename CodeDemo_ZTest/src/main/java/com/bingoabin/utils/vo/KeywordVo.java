@@ -1,10 +1,5 @@
 package com.bingoabin.utils.vo;
 
-/**
- * @author HanJunsheng
- * @date 2021/7/16
- * @copyright sankuai.com
- */
 public class KeywordVo {
     private String keyword;
     private Integer pageSize;

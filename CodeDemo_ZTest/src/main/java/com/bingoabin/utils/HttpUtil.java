@@ -31,11 +31,6 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
 
-/**
- * @author HanJunsheng
- * @date 2021/7/16
- * @copyright sankuai.com
- */
 public class HttpUtil {
     static Logger logger = LogManager.getLogger(HttpUtil.class);
 

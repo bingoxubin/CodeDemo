@@ -10,11 +10,6 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-/**
- * @author HanJunsheng
- * @date 2021/7/16
- * @copyright sankuai.com
- */
 public class PageList<T> {
     public static final int MAX_PAGE = 1000;
     public static final int DEF_PAGE_SIZE = 100;

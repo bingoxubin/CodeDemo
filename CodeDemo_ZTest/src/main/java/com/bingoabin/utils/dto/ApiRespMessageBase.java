@@ -1,10 +1,5 @@
 package com.bingoabin.utils.dto;
 
-/**
- * @author HanJunsheng
- * @date 2021/7/16
- * @copyright sankuai.com
- */
 public class ApiRespMessageBase<T> {
 
     private Integer code;

@@ -3,11 +3,6 @@ package com.bingoabin.utils.constant;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author HanJunsheng
- * @date 2021/7/16
- * @copyright sankuai.com
- */
 public enum BizCodes {
     SUCCESS(0, "操作成功"),
     ERROR(1, "失败"),

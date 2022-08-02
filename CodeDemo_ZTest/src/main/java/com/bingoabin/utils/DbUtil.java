@@ -7,11 +7,6 @@ import java.util.function.Consumer;
 import java.util.function.IntFunction;
 import java.util.regex.Pattern;
 
-/**
- * @author HanJunsheng
- * @date 2021/7/16
- * @copyright sankuai.com
- */
 public class DbUtil {
     public static final Pattern ESCAPE_PATTERN = Pattern.compile("\\\\");
     public static final String ESCAPE_REPLACE = "\\\\\\\\";
