@@ -6,11 +6,6 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.*;
 
-/**
- * @author HanJunsheng
- * @date 2021/7/16
- *
- */
 public class FnUtil {
     private static Consumer LOG = e -> {
     };
