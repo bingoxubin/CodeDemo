@@ -53,7 +53,7 @@ public class MergeTree {
 		System.out.println(mergeTree.mergeTrees2(node1, node5).val);
 	}
 
-	//迭代方式
+	//方式一：迭代方式
 	public TreeNode mergeTrees1(TreeNode t1, TreeNode t2) {
 		if (t1 == null) return t2;
 		if (t2 == null) return t1;
@@ -80,7 +80,7 @@ public class MergeTree {
 		return t1;
 	}
 
-	//递归方式
+	//方式二：递归方式
 	public TreeNode mergeTrees2(TreeNode t1, TreeNode t2) {
 		if (t1 == null) return t2;
 		if (t2 == null) return t1;
