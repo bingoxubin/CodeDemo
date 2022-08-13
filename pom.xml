@@ -37,6 +37,7 @@
         <module>CodeDemo_JVM</module>
         <module>CodeDemo_Util</module>
         <module>CodeDemo_Doris</module>
+        <module>CodeDemo_MongoDB</module>
     </modules>
 
     <repositories>
