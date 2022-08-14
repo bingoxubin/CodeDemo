@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 
 /**
  * @author bingoabin
- * @date 2022/8/12 12:13
  * @Description: 测试分组
  */
 public class TestGrouping {
