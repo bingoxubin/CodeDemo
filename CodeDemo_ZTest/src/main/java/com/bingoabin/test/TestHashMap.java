@@ -22,6 +22,5 @@ public class TestHashMap {
 		System.out.println(map.get(person1));
 		person1.setId(2);
 		System.out.println(map.get(person1));
-
 	}
 }
