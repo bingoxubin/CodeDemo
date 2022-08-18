@@ -1,5 +1,7 @@
 package com.bingoabin.algorithm.advanced;
 
+import com.mysql.jdbc.StringUtils;
+
 /**
  * @author bingoabin
  * @date 2022/4/23 19:15
@@ -11,7 +13,7 @@ public class Manacher {
 	}
 
 	public static String longestPalindrome(String s) {
-		if (s.length() < 0) return s;
+		if (StringUtils.isNullOrEmpty(s)) return s;
 		StringBuffer buff = new StringBuffer();
 		for (int i = 0; i < s.length(); i++) {
 			buff.append("#").append(s.charAt(i));
