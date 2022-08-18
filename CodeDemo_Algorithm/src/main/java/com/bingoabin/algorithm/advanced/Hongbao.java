@@ -25,19 +25,20 @@ public class Hongbao {
 	}
 
 	public static List<Integer> deviceRedPacket3(Integer money, Integer person) {
-		List<Integer> result = new ArrayList<Integer>();
-		Set<Integer> segments = new HashSet<Integer>();
+		List<Integer> result = new ArrayList<>();
+		Set<Integer> segments = new HashSet<>();
 		Random random = new Random();
 		for(int i = 0;i<person -1;i++){
 			int segment = random.nextInt(money);
-			int flag = random.nextInt(1) == 0?1:-1;
+			random.nextInt(1);
+			int flag = 1;
 			while(segments.contains(segment)){
 				segment = (segment + flag) % money;
 			}
 			segments.add(segment);
 		}
 
-		List<Integer> segmentList = new ArrayList<Integer>(segments);
+		List<Integer> segmentList = new ArrayList<>(segments);
 		Collections.sort(segmentList);
 		for(int i = 0;i< segmentList.size();i++){
 			if(i == 0){
