@@ -5,6 +5,8 @@ import com.bingoabin.utils.ListUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @author bingoabin
@@ -25,14 +27,19 @@ public class TestGrouping {
 		list.add(people4);
 		list.add(people5);
 		list.add(people6);
-		// Map<Integer, Map<Integer, List<People>>> collect =
-		// 		ListUtil.stream(list).collect(Collectors.groupingBy(People::getId,
-		// 		                                                    Collectors.groupingBy(People::getAge)));
-
-		ListUtil.stream(list).forEach(e->{
-			e.setAge(15);
-			e.setName("zhangsan");
-		});
-		System.out.println(list);
+		Map<Integer, Map<Integer, List<String>>> collect = ListUtil
+				.stream(list)
+				.collect(Collectors.groupingBy(People::getId, Collectors.groupingBy(People::getAge, Collectors.mapping(People::getName, Collectors.toList()))));
+		// System.out.println(collect);
+		// ListUtil.stream(list).forEach(e->{
+		// 	e.setAge(15);
+		// 	e.setName("zhangsan");
+		// });
+		// System.out.println(list);
+		//
+		// Map<String, Map<String, List<People>>> amazonBalanceMap = list.stream()
+		//                                                               .filter(item -> StringUtils.isNotBlank(item.getName()) && item.getName() != null)
+		//                                                               .collect(Collectors.groupingBy(People::getName
+		// 		                                                              , Collectors.groupingBy(item -> StringUtils.isNotBlank(item.getName()) ? item.getName() : "")));
 	}
 }
