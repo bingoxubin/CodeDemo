@@ -1,6 +1,8 @@
 package com.bingoabin.test;
 
 import com.bingoabin.domain.People;
+import com.bingoabin.domain.PersonBO;
+import com.bingoabin.utils.JsonUtil;
 import com.bingoabin.utils.ListUtil;
 
 import java.util.ArrayList;
@@ -30,6 +32,12 @@ public class TestGrouping {
 		Map<Integer, Map<Integer, List<String>>> collect = ListUtil
 				.stream(list)
 				.collect(Collectors.groupingBy(People::getId, Collectors.groupingBy(People::getAge, Collectors.mapping(People::getName, Collectors.toList()))));
+		System.out.println(collect);
+
+		System.out.println("string===" + JsonUtil.toJSONString(collect));
+
+		PersonBO checkDDLDMLBO = JsonUtil.JSON.parseObject(JsonUtil.toJSONString(collect), PersonBO.class);
+		System.out.println(checkDDLDMLBO);
 		// System.out.println(collect);
 		// ListUtil.stream(list).forEach(e->{
 		// 	e.setAge(15);

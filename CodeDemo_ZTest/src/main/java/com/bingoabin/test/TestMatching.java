@@ -10,9 +10,9 @@ import java.util.regex.Pattern;
 public class TestMatching {
 	public static void main(String[] args){
 		String s1 = "C)Q";
-		boolean matches1 = Pattern.compile("C\\)Q").matcher(s1).matches();
+		boolean matches1 = Pattern.compile("\\*").matcher(s1).matches();
 		System.out.println(matches1);
-		// boolean matches = s1.matches(s2);
-		// System.out.println(matches);
+		boolean matches = s1.matches("\\*");
+		System.out.println(matches);
 	}
 }
