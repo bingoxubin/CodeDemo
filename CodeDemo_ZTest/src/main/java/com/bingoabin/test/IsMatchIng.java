@@ -9,8 +9,8 @@ import java.util.regex.Pattern;
  */
 public class IsMatchIng {
 	public static void main(String[] args) {
-		System.out.println(new IsMatchIng().isMatch("test", "*"));
-		System.out.println(Pattern.compile("[test]").matcher("t").matches());
+		System.out.println(new IsMatchIng().isMatch("test_12", "test_*"));
+		System.out.println(Pattern.compile("test").matcher("test").matches());
 		System.out.println(Pattern.compile("\\*").matcher("t").matches());
 
 		System.out.println("t".matches("\\*"));
