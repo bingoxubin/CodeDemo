@@ -62,7 +62,7 @@ class BFileResolve implements IFileStragegy {
 
 @Component
 class StrategyUserService implements ApplicationContextAware {
-	private Map<FileTypeResolveEnum, IFileStragegy> iFileStragegyMap = new ConcurrentHashMap<>();
+	private final Map<FileTypeResolveEnum, IFileStragegy> iFileStragegyMap = new ConcurrentHashMap<>();
 
 	public void resolveFile(FileTypeResolveEnum fileTypeResolveEnum, Object objectParams) {
 		IFileStragegy iFileStragegy = iFileStragegyMap.get(fileTypeResolveEnum);
@@ -78,9 +78,6 @@ class StrategyUserService implements ApplicationContextAware {
 	}
 }
 
-
-
-
 enum FileTypeResolveEnum{
 	FILE_A_RESOLVE(1, "a"),
 	FILE_B_RESOLVE(2, "b"),
@@ -93,4 +90,20 @@ enum FileTypeResolveEnum{
 
 	private Integer id;
 	private String desc;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
 }
