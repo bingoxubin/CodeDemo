@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class Observer {
 	//观察者模式：一种依赖关系，一对多依赖，也称为发布订阅模式。定义对象间的一种一对多依赖关系，使得每当一个对象状态发生改变时，其相关依赖对象皆得到通知并被自动更新
+	//使用场景：完成某个事件后，异步通知场景。如，登陆成功，发个IM消息等
 	public static void main(String[] args) {
 		ZhangSan zhangSan = new ZhangSan();
 		zhangSan.borrow(new ZhaoSi());
