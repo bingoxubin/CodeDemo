@@ -6,7 +6,7 @@ package com.bingoabin.behavior;
  */
 public class ChainOfResponsibility {
 	//责任链模式：是一种处理请求的模式，它让多个处理器都有机会处理该请求，直到其中某个处理成功为止。责任链模式把多个处理器串成链，然后让请求在链上传递
-	//例如：请假流程中  需要层层审批
+	//例如：请假流程中  需要层层审批，比如下订单场景，下订单接口的基本逻辑中，一般有参数非空校验、安全校验、黑名单校验、规则拦截等等
 
 	//缺点：性能问题，链头走到链尾  不易于排查
 	public static void main(String[] args) {
