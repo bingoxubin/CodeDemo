@@ -18,6 +18,11 @@ public class Strategy {
 	//策略模式：定义一组算法，将每个算法都封装起来，并且使他们之间可以互换。策略模式让算法独立于使用它的客户而变化，也称为政策模式 -- 跟状态模式很像
 	//比如 洗衣机的 标准 浸洗 快洗 大物等
 
+	//解决if else分支判断的问题
+	//如果不用策略模式：
+	//1.如果分支变多，这里的代码就会变得臃肿，难以维护，可读性低
+	//2.如果你需要接入一种新的解析类型，那只能再原有代码上修改
+
 	//例如ThreadPoolExecutor构造方法中的拒绝策略
 	// public static void main(String[] args) {
 	// 	new ThreadPoolExecutor(2, 5, 1000, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(2), new ThreadPoolExecutor.AbortPolicy());
