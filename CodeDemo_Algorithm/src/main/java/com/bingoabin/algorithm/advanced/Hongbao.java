@@ -22,6 +22,7 @@ public class Hongbao {
 		System.out.println(set);
 
 		System.out.println(deviceRedPacket3(100,4));
+		System.out.println(deviceRedPacket3(100,5));
 	}
 
 	public static List<Integer> deviceRedPacket3(Integer money, Integer person) {
