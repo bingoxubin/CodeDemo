@@ -50,20 +50,20 @@ public class MergeSort {
 
 	//自己实现一遍
 	public void mergeSort_self(int[] arr, int left, int mid, int right) {
-		int[] helper = new int[right - left + 1];
+		int[] dp = new int[right - left + 1];
 		int index = 0;
 		int i = left;
 		int j = mid + 1;
 		while (i <= mid && j <= right) {
-			helper[index++] = arr[i] < arr[j] ? arr[i++] : arr[j++];
+			dp[index++] = arr[i] < arr[j] ? arr[i++] : arr[j++];
 		}
 		while (i <= mid) {
-			helper[index++] = arr[i++];
+			dp[index++] = arr[i++];
 		}
 		while (j <= right) {
-			helper[index++] = arr[j++];
+			dp[index++] = arr[j++];
 		}
-		System.arraycopy(helper, 0, arr, left, helper.length);
+		System.arraycopy(dp, 0, arr, left, dp.length);
 	}
 
 	public void mergeSort1(int[] arr, int left, int right) {
