@@ -1,5 +1,8 @@
 package com.bingoabin.algorithm.sort;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 /**
  * @author xubin03
  * @date 2021/5/13 7:29 下午
@@ -10,10 +13,12 @@ public class FindKthMax {
 	//分析：给一个长度为n的数组，找出第k大的数
 	//思路：同样采用快排的方式，数组长度为n，求第k大，也就是找下标为n-k位置，即可
 	public static void main(String[] args) {
-		int[] arr = {1, 3, 5, 2, 2};
-		System.out.println(findKth(arr, arr.length, 3));
+		int[] arr = {1, 3, 5, 2, 2,7};
+		System.out.println(findKth(arr, arr.length, 2));
+		System.out.println(findKth1(arr, arr.length, 2));
 	}
 
+	//方式一：快排
 	public static int findKth(int[] a, int n, int k) {
 		if (k < 1 || k > n) {
 			return -1;
@@ -54,5 +59,22 @@ public class FindKthMax {
 		//递归调用
 		quickSort(arr, left, i - 1, k);
 		quickSort(arr, i + 1, right, k);
+	}
+
+	//方式二：优先队列，小根堆
+	public static int findKth1(int[] a, int n, int k) {
+		PriorityQueue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				return o1 - o2;
+			}
+		});
+		for (int i = 0; i < a.length; i++) {
+			queue.offer(a[i]);
+			if (queue.size() > k) {
+				queue.poll();
+			}
+		}
+		return queue.peek();
 	}
 }
