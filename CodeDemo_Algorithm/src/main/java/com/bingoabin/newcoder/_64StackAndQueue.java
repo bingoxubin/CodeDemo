@@ -7,6 +7,7 @@ package com.bingoabin.newcoder;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 
 public class _64StackAndQueue {
 	public class Solution {
@@ -50,6 +51,23 @@ public class _64StackAndQueue {
 				}
 			}
 			return result;
+		}
+
+		public ArrayList<Integer> maxIndexWindows(int[] nums, int size) {
+			ArrayList<Integer> res = new ArrayList<>();
+			if (nums == null || size <= 0 || nums.length < 0) return res;
+			Deque<Integer> queue = new ArrayDeque<>();
+			for (int i = 0; i < nums.length; i++) {
+				while (!queue.isEmpty() && nums[i] > nums[queue.peekLast()]) queue.pollLast();
+				queue.addLast(i);
+				if (i - queue.peekFirst() + 1 > size) {
+					queue.pollFirst();
+				}
+				if (i + 1 >= size) {
+					res.add(nums[queue.peekFirst()]);
+				}
+			}
+			return res;
 		}
 	}
 }
