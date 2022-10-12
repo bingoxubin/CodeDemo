@@ -58,7 +58,7 @@ public class QuickSort {
 			while (i < j && arr[j] > temp) j--;
 			while (i < j && arr[i] <= temp) i++;
 			if (i < j) {
-				swapValue(arr, i, j);
+				swap(arr, i, j);
 			}
 		}
 		arr[left] = arr[i];
@@ -66,10 +66,34 @@ public class QuickSort {
 		quickSort(arr, left, i - 1);
 		quickSort(arr, i + 1, right);
 	}
-
-	public void swapValue(int[] arr, int i, int j) {
-		int temp = arr[i];
-		arr[i] = arr[j];
-		arr[j] = temp;
-	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
