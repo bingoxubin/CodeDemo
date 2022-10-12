@@ -68,7 +68,7 @@ public class HeapSort {
 			if (arr[lchild] < temp) break;
 			arr[parent] = arr[lchild];
 			parent = lchild;
-			lchild = 2 * parent + 1;
+			lchild = 2 * lchild + 1;
 		}
 		arr[parent] = temp;
 	}
