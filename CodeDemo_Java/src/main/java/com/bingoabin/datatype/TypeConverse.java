@@ -50,5 +50,6 @@ public class TypeConverse {
 		List<String> list3 = Arrays.asList(strings1);
 		// List<String> 转 String[]
 		String[] strings2 = list3.toArray(new String[0]);
+
 	}
 }
