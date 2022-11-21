@@ -38,6 +38,8 @@
         <module>CodeDemo_Util</module>
         <module>CodeDemo_Doris</module>
         <module>CodeDemo_MongoDB</module>
+        <module>CodeDemo_Hudi_Spark</module>
+        <module>CodeDemo_Hudi_Flink</module>
     </modules>
 
     <repositories>
