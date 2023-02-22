@@ -18,7 +18,7 @@ public class DateCompare {
         String date1 = "2022-08-27 00:00:00";
         String date2 = "2022-03-30 00:00:00";
         System.out.println(dayDiff(date1,date2,"yyyy-MM-dd HH:mm:ss"));
-
+        System.out.println();
     }
 
 
