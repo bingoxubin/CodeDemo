@@ -1,4 +1,4 @@
-package com.bingo.sparksql.mysql
+package com.bingo.mysql
 
 import org.apache.spark.sql.SparkSession
 

@@ -1,8 +1,9 @@
-package com.bingo.sparksql.mysql
+package com.bingo.mysql
 
-import java.util.Properties
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{DataFrame, SparkSession}
+
+import java.util.Properties
 
 object ReadMysql {
 	def main(args: Array[String]): Unit = {
@@ -14,18 +15,18 @@ object ReadMysql {
 
 		//3、读取mysql表的数据
 		//3.1 指定mysql连接地址
-		val url="jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8"
+		val url = "jdbc:mysql://localhost:3306/test?characterEncoding=UTF-8"
 		//3.2 指定要加载的表名
-		val tableName="score"
+		val tableName = "score"
 		// 3.3 配置连接数据库的相关属性
 		val properties = new Properties()
 
 		//用户名
-		properties.setProperty("user","root")
+		properties.setProperty("user", "root")
 		//密码
-		properties.setProperty("password","111111")
+		properties.setProperty("password", "111111")
 
-		val mysqlDF: DataFrame = spark.read.jdbc(url,tableName,properties)
+		val mysqlDF: DataFrame = spark.read.jdbc(url, tableName, properties)
 
 		//打印schema信息
 		mysqlDF.printSchema()

@@ -40,6 +40,9 @@
         <module>CodeDemo_MongoDB</module>
         <module>CodeDemo_Hudi_Spark</module>
         <module>CodeDemo_Hudi_Flink</module>
+        <module>CodeDemo_SparkSQL</module>
+        <module>CodeDemo_SparkStreaming</module>
+        <module>CodeDemo_SparkMLlib</module>
     </modules>
 
     <repositories>
