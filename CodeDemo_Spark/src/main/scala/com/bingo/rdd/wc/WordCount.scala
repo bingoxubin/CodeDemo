@@ -1,3 +1,5 @@
+package com.bingo.rdd.wc
+
 import org.apache.spark.{SparkConf, SparkContext}
 
 object WordCount {
@@ -10,7 +12,7 @@ object WordCount {
 		//3.使用sc创建RDD并执行相应的transformation和action
 		//sc.textFile(args(0)).flatMap(_.split(" ")).map((_, 1)).reduceByKey(_+_, 1).sortBy(_._2, false).saveAsTextFile(args(1))
 		//val tuples: Array[(String, Int)] = sc.textFile("E:\\60.test\\littlefile").flatMap(_.split(" ")).map((_, 1)).reduceByKey((_ + _)).collect()
-		val tuples: Array[(String, Int)] = sc.textFile("E:\\60.test\\littlefile").flatMap(x => x.split(" ")).map(x => (x,1)).reduceByKey((x,y)=>x+y).collect()
+		val tuples: Array[(String, Int)] = sc.textFile("E:\\60.test\\littlefile").flatMap(x => x.split(" ")).map(x => (x, 1)).reduceByKey((x, y) => x + y).collect()
 		print(tuples.toBuffer)
 		//4.关闭连接
 		sc.stop()

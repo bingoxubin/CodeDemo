@@ -1,3 +1,5 @@
+package com.bingo.rdd.wc
+
 import org.apache.spark.sql.{Column, DataFrame, SparkSession}
 
 object SqlTest {
@@ -47,4 +49,3 @@ object SqlTest {
 		spark.stop()
 	}
 }
-
