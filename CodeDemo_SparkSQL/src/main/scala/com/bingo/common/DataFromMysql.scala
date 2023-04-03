@@ -1,4 +1,4 @@
-package com.bingo
+package com.bingo.common
 
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{DataFrame, SparkSession}

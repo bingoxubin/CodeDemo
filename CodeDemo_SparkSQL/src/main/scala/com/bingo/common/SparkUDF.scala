@@ -1,4 +1,4 @@
-package com.bingo
+package com.bingo.common
 
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.SparkConf
