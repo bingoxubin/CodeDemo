@@ -43,6 +43,7 @@
         <module>CodeDemo_SparkSQL</module>
         <module>CodeDemo_SparkStreaming</module>
         <module>CodeDemo_SparkMLlib</module>
+        <module>CodeDemo_HDFS</module>
     </modules>
 
     <repositories>
