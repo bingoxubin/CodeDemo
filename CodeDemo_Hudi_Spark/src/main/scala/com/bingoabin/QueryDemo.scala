@@ -15,14 +15,14 @@ object QueryDemo {
     // 创建 SparkSession
     val sparkConf = new SparkConf()
       .setAppName(this.getClass.getSimpleName)
-//      .setMaster("local[*]")
+      .setMaster("local[*]")
       .set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
     val sparkSession = SparkSession.builder()
       .config(sparkConf)
       .enableHiveSupport()
       .getOrCreate()
 
-    val basePath = "hdfs://hadoop1:8020/tmp/hudi_trips_cow"
+    val basePath = "hdfs://hadoop11:8020/tmp/hudi_trips_cow"
 
     val tripsSnapshotDF = sparkSession.
       read.
