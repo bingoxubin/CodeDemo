@@ -58,7 +58,6 @@ public class ExceptionClass {
 			System.out.println("nihaoya");
 		} finally {
 		}
-
 		//运行时异常
 		int i = 2 / 0;
 	}
