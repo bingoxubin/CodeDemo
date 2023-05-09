@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class _05RangeOfNums {
 	public static void main(String[] args) {
 		//测试
-		System.out.println(getLessThanMax(new int[]{4, 5, 5, 5, 5, 5, 6, 8, 9}, 5));
-		System.out.println(getMoreThanMin(new int[]{4, 5, 5, 5, 5, 5, 6, 8, 9}, 5));
+		// System.out.println(getLessThanMax(new int[]{4, 5, 5, 5, 5, 5, 6, 8, 9}, 5));
+		// System.out.println(getMoreThanMin(new int[]{4, 5, 5, 5, 5, 5, 6, 8, 9}, 5));
 
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
@@ -29,6 +29,7 @@ public class _05RangeOfNums {
 				System.out.println();
 			} else {
 				System.out.printf("%d %d", moreThanMin, lessThanMax);
+				System.out.println();
 			}
 		}
 	}
