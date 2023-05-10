@@ -6,4 +6,7 @@ package com.bingoabin.acwing._01basic;
  * @Description:
  */
 public class _10HighAccuracyDivide {
+	public static void main(String[] args) {
+
+	}
 }
