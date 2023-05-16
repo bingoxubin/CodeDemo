@@ -19,7 +19,7 @@ public class KafkaConsumerTest {
 		//准备配置属性
 		Properties props = new Properties();
 		//kafka集群地址
-		props.put("bootstrap.servers", "node01:9092,node02:9092,node03:9092");
+		props.put("bootstrap.servers", "hadoop11:9092,hadoop12:9092,hadoop13:9092");
 		//消费者组id
 		props.put("group.id", "consumer-test");
 		//自动提交偏移量
@@ -35,7 +35,7 @@ public class KafkaConsumerTest {
 		props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 		KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
 		//指定消费哪些topic
-		consumer.subscribe(Arrays.asList("test"));
+		consumer.subscribe(Arrays.asList("test1"));
 		while (true) {
 			//不断的拉取数据
 			ConsumerRecords<String, String> records = consumer.poll(100);
