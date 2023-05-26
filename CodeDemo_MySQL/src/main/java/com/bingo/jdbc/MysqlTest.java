@@ -9,8 +9,8 @@ import java.sql.*;
  */
 public class MysqlTest {
 	public static void main(String[] args) throws SQLException {
-		String mysqlHost = "localhost";
-		int mysqlPort = 3306;
+		String mysqlHost = "hahaha";
+		int mysqlPort = 20001;
 		String mysqlDatabase = "test";
 		String mysqlUser = "root";
 		String mysqlPassword = "111111";
