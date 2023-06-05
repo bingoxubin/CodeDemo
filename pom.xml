@@ -44,6 +44,7 @@
         <module>CodeDemo_SparkStreaming</module>
         <module>CodeDemo_SparkMLlib</module>
         <module>CodeDemo_HDFS</module>
+        <module>CodeDemo_AI</module>
     </modules>
 
     <repositories>
