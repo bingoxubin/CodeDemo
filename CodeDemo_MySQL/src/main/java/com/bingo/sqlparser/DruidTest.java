@@ -52,13 +52,13 @@ public class DruidTest {
 
 	//插入语句分析
 	@Test
-	public void testInsert(){
+	public void testInsert() {
 		String sql = "insert into table_test_2 (farendma, hesuandm, hesuanmc, weihguiy, weihjigo, weihriqi, shijchuo) values\n" +
 				"('99996','HS205301','代码1','S####','101001','20140101',1414673101376), \n" +
 				"('99996','HS205401','代码2','S####','101001','20140101',1414673101376);";
 		MySqlStatementParser parser = new MySqlStatementParser(sql);
 		SQLStatement sqlStatement = parser.parseStatement();
-		MySqlInsertStatement insertStatement = (MySqlInsertStatement)sqlStatement;
+		MySqlInsertStatement insertStatement = (MySqlInsertStatement) sqlStatement;
 
 		//获取列的名称
 		//List<SQLExpr> columnExprs = insertStatement.getColumns();
@@ -70,7 +70,7 @@ public class DruidTest {
 		//获取列的名称
 		List<SQLExpr> columnExprs = insertStatement.getColumns();
 		System.out.println("列的名称为：");
-		for(SQLExpr expr : columnExprs){
+		for (SQLExpr expr : columnExprs) {
 			StringBuffer buffer = new StringBuffer();
 			expr.output(buffer);
 			System.out.print(buffer + "\t");
@@ -80,9 +80,9 @@ public class DruidTest {
 		//获取插入的值
 		List<SQLInsertStatement.ValuesClause> valuesClauseList = insertStatement.getValuesList();
 		System.out.println("值分别是：");
-		for(SQLInsertStatement.ValuesClause valuesClause : valuesClauseList){
+		for (SQLInsertStatement.ValuesClause valuesClause : valuesClauseList) {
 			List<SQLExpr> valueExprList = valuesClause.getValues();
-			for(SQLExpr expr : valueExprList){
+			for (SQLExpr expr : valueExprList) {
 				System.out.print(expr + "\t");
 			}
 			System.out.println();
@@ -91,17 +91,17 @@ public class DruidTest {
 
 	//更新 删除操作
 	@Test
-	public void testUpdate(){
+	public void testUpdate() {
 		String sql = "UPDATE table_test_3 SET run_title='maple' WHERE run_id = '1';";
 		MySqlStatementParser parser = new MySqlStatementParser(sql);
 		SQLStatement sqlStatement = parser.parseStatement();
-		MySqlUpdateStatement updateStatement = (MySqlUpdateStatement)sqlStatement;
+		MySqlUpdateStatement updateStatement = (MySqlUpdateStatement) sqlStatement;
 		SQLExpr whereExpr = updateStatement.getWhere();
-		if(whereExpr instanceof SQLInListExpr){
+		if (whereExpr instanceof SQLInListExpr) {
 			// SQLInListExpr 指 run_id in ('1', '2') 这一情况
-			SQLInListExpr inListExpr = (SQLInListExpr)whereExpr;
+			SQLInListExpr inListExpr = (SQLInListExpr) whereExpr;
 			List<SQLExpr> valueExprs = inListExpr.getTargetList();
-			for(SQLExpr expr : valueExprs){
+			for (SQLExpr expr : valueExprs) {
 				System.out.print(expr + "\t");
 			}
 		} else {
@@ -117,13 +117,13 @@ public class DruidTest {
 		String sql = "alter table test_check1 ADD index ind1(farendma), add co2 VARCHAR(20), drop INDEX id3, drop column co1;";
 		MySqlStatementParser parser = new MySqlStatementParser(sql);
 		SQLStatement statement = parser.parseStatement();
-		SQLAlterTableStatement alter = (SQLAlterTableStatement)statement;
+		SQLAlterTableStatement alter = (SQLAlterTableStatement) statement;
 		for (SQLAlterTableItem item : alter.getItems()) {
 			if (item instanceof SQLAlterTableDropIndex) {
 				SQLAlterTableDropIndex dropIndex = (SQLAlterTableDropIndex) item;
 				System.out.println("删除的索引名为： " + dropIndex.getIndexName());
-			} else if (item instanceof SQLAlterTableDropColumnItem){
-				SQLAlterTableDropColumnItem dropColumn = (SQLAlterTableDropColumnItem)item;
+			} else if (item instanceof SQLAlterTableDropColumnItem) {
+				SQLAlterTableDropColumnItem dropColumn = (SQLAlterTableDropColumnItem) item;
 				System.out.println("删除的列名为： " + dropColumn.getColumns());
 			} else if (item instanceof SQLAlterTableAddIndex) {
 				SQLAlterTableAddIndex addIndex = (SQLAlterTableAddIndex) item;

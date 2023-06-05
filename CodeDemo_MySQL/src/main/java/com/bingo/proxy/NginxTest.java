@@ -21,7 +21,7 @@ public class NginxTest {
 
 		try {
 			sourceHost = InetAddress.getByName("hahaha");
-			ServerSocket serverSocket = new ServerSocket(sourcePort,0,sourceHost);
+			ServerSocket serverSocket = new ServerSocket(sourcePort, 0, sourceHost);
 			System.out.println("代理服务器已启动，监听端口：" + sourcePort);
 
 			while (true) {
@@ -60,7 +60,7 @@ public class NginxTest {
 				while ((bytesRead = input.read(buffer)) != -1) {
 					output.write(buffer, 0, bytesRead);
 					output.flush();
-					System.out.println(new String(buffer,0,bytesRead));
+					System.out.println(new String(buffer, 0, bytesRead));
 				}
 			} catch (IOException e) {
 				e.printStackTrace();

@@ -15,15 +15,15 @@ import java.util.List;
  * @Description:
  */
 public class AntlrTest {
-	public static void main(String[] args){
-	    //操作步骤 参考文档：https://www.bilibili.com/read/cv16868467/
+	public static void main(String[] args) {
+		//操作步骤 参考文档：https://www.bilibili.com/read/cv16868467/
 		//1.https://github.com/antlr/grammars-v4/tree/master/sql/mysql/Positive-Technologies下载两个g4文件
 		//2.右击文件Generate ANTLR Recognizer  第一个目录选到java，第二个目录选到src，后面package指明antlr4.mysql，最后用Java语言
-			//填写的内容分别为：
-			// 1、生成代码位置
-			// 2、使用规则源文件存放位置，就是自己下载的模板文件路径
-			// 3、包名，写代码引用的时候会用到
-			// 4、自动生成代码语言，这里写Java
+		//填写的内容分别为：
+		// 1、生成代码位置
+		// 2、使用规则源文件存放位置，就是自己下载的模板文件路径
+		// 3、包名，写代码引用的时候会用到
+		// 4、自动生成代码语言，这里写Java
 
 		/** antlr4 格式化SQL **/
 		MySqlLexer lexer = new MySqlLexer(CharStreams.fromString("create table newtable select * from table1"));
@@ -32,7 +32,7 @@ public class AntlrTest {
 		CreateTableListener listener = new CreateTableListener();
 		ParseTreeWalker.DEFAULT.walk(listener, parser.sqlStatements());
 		/**提取关键参数-表名*/
-		String tableName= listener.getTableName();
+		String tableName = listener.getTableName();
 		/**测试打印方法*/
 		System.out.println(tableName);
 	}

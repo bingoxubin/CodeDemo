@@ -37,7 +37,7 @@ import java.util.stream.Collectors;
  * @Description:
  */
 public class JSqlParserTest {
-	public static void main(String[] args){
+	public static void main(String[] args) {
 
 	}
 
@@ -45,7 +45,7 @@ public class JSqlParserTest {
 	@Test
 	public void parseSingleSql() throws JSQLParserException {
 		//1、获取原始sql输入
-		String sql="SELECT u.username, u.age, u.sex FROM user as u where u.id=1 and u.age in (1,2,3) ;";
+		String sql = "SELECT u.username, u.age, u.sex FROM user as u where u.id=1 and u.age in (1,2,3) ;";
 		//构建解析器
 		Select select = (Select) CCJSqlParserUtil.parse(sql);
 		//获取select对象
@@ -53,9 +53,9 @@ public class JSqlParserTest {
 		System.err.println(selectBody.toString());
 
 		//解析sql
-		PlainSelect plainSelect=(PlainSelect) selectBody;
+		PlainSelect plainSelect = (PlainSelect) selectBody;
 		//表名
-		Table table= (Table) plainSelect.getFromItem();
+		Table table = (Table) plainSelect.getFromItem();
 		//表名称
 		System.out.println(table.getName());
 		//别名
@@ -122,14 +122,14 @@ public class JSqlParserTest {
 
 		// 3.解析WHERE条件
 		AndExpression andExpression = (AndExpression) plainSelect.getWhere();
-		AndExpression leftAndExpression=(AndExpression)andExpression.getLeftExpression();
+		AndExpression leftAndExpression = (AndExpression) andExpression.getLeftExpression();
 		Expression leftExpression1 = leftAndExpression.getLeftExpression();
 		Expression rightExpression1 = leftAndExpression.getRightExpression();
 		System.out.println(leftExpression1);
 		System.out.println(rightExpression1);
 
 		// 4.解析IN
-		InExpression rightAndExpression=(InExpression)andExpression.getRightExpression();
+		InExpression rightAndExpression = (InExpression) andExpression.getRightExpression();
 		System.out.println(rightAndExpression.getRightItemsList());
 	}
 
@@ -166,7 +166,7 @@ public class JSqlParserTest {
 
 	//解析delete
 	@Test
-	public void parseDelete() throws JSQLParserException{
+	public void parseDelete() throws JSQLParserException {
 		String updateSql = "delete from test  WHERE LastName = 'b' ";
 		Statement statement = CCJSqlParserUtil.parse(updateSql);
 		if (statement instanceof Delete) {
@@ -178,7 +178,7 @@ public class JSqlParserTest {
 
 	//組裝insert
 	@Test
-	public void mergeInsert(){
+	public void mergeInsert() {
 		// 创建表对象设置表名
 		Table table = new Table();
 		table.setName("table");
@@ -197,7 +197,7 @@ public class JSqlParserTest {
 
 	//組裝update
 	@Test
-	public void mergeUpdate(){
+	public void mergeUpdate() {
 		// 创建表对象设置表名
 		Table table = new Table();
 		table.setName("table");
@@ -219,7 +219,7 @@ public class JSqlParserTest {
 
 	//組裝delete
 	@Test
-	public void mergeDelete(){
+	public void mergeDelete() {
 		// 创建表对象设置表名
 		Table table = new Table();
 		table.setName("table");
@@ -243,7 +243,7 @@ public class JSqlParserTest {
 
 	//组装单表查询
 	@Test
-	public void mergeSingleQuery(){
+	public void mergeSingleQuery() {
 		// 单表全量
 		Table table = new Table("test");
 		table.setAlias(new Alias("t"));
@@ -276,7 +276,7 @@ public class JSqlParserTest {
 
 		// 其他运算符, 参考上面代码添加表达式即可
 		GreaterThan gt = new GreaterThan(); // ">"
-		gt.setLeftExpression(new Column(table,"age"));
+		gt.setLeftExpression(new Column(table, "age"));
 		gt.setRightExpression(new StringValue("12"));
 		PlainSelect plainSelectGt = (PlainSelect) select.getSelectBody();
 		plainSelectGt.setWhere(gt);
@@ -353,7 +353,7 @@ public class JSqlParserTest {
 
 	//组装多表查询
 	@Test
-	public void mergeMultiQuery(){
+	public void mergeMultiQuery() {
 		Table t1 = new Table("t_user").withAlias(new Alias("t1").withUseAs(true)); // 表1
 		Table t2 = new Table("t_user_book").withAlias(new Alias("t2", false)); // 表2
 		PlainSelect plainSelect = new PlainSelect().addSelectItems(new AllColumns()).withFromItem(t1);

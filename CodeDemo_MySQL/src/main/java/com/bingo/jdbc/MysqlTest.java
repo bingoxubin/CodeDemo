@@ -43,7 +43,7 @@ public class MysqlTest {
 			}
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			// 关闭连接
 			rs.close();
 			stmt.close();
