@@ -78,7 +78,7 @@ public class MyInterceptor implements Interceptor {
 	 * 批量event拦截逻辑
 	 */
 	public List<Event> intercept(List<Event> events) {
-		List<Event> out = new ArrayList<Event>();
+		List<Event> out = new ArrayList<>();
 		for (Event event : events) {
 			Event outEvent = intercept(event);
 			if (outEvent != null) {
