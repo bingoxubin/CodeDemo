@@ -24,8 +24,8 @@ import java.util.Map;
 public class DruidTest {
 	public static void main(String[] args){
 		// String sql = "SELECT id, name, age FROM myuser";
-		String sql = "select id,name,age,dob,created_at,updated_at,salary,longitude,department,active_status,address_json,fsp,long_description,serialized_data from complex_types_example;";
-		// String sql = "select cast(id as varchar(10)),name,age,dob,created_at,updated_at,salary,longitude,department,active_status,address_json,fsp,long_description,serialized_data,1 as num from complex_types_example;";
+		// String sql = "select id,name,age,dob,created_at,updated_at,salary,longitude,department,active_status,address_json,fsp,long_description,serialized_data from complex_types_example;";
+		String sql = "select cast(id as varchar(10)),name,age,dob,created_at,updated_at,salary,longitude,department,active_status,address_json,fsp,long_description,serialized_data,1 as num from complex_types_example;";
 		Map<String, String> columnTypes = DruidTest.getSqlColumnTypes(sql, DruidTest.createDataSource());
 		System.out.println(columnTypes);
 	}

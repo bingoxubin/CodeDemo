@@ -7,7 +7,7 @@ import java.sql.*;
  * @date 2021/7/18 10:50 下午
  */
 public class HiveJDBC {
-	private static String url = "jdbc:hive2://192.168.52.120:10000/myhive";
+	private static final String url = "jdbc:hive2://192.168.52.120:10000/myhive";
 
 	public static void main(String[] args) throws Exception {
 		Class.forName("org.apache.hive.jdbc.HiveDriver");
