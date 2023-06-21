@@ -1,4 +1,4 @@
-package com.bingo; /**
+package com.bingo.wordcount; /**
  * @author bingoabin
  * @date 2020/7/16 10:43
  */
@@ -26,7 +26,7 @@ public class JavaWordCount {
 		JavaSparkContext jsc = new JavaSparkContext(sparkConf);
 
 		//3、读取数据文件
-		JavaRDD<String> data = jsc.textFile("E:\\60.test\\littlefile");
+		JavaRDD<String> data = jsc.textFile("file:///E:\\60.test\\littlefile");
 
 		//4、切分每一行获取所有的单词   scala:  data.flatMap(x=>x.split(" "))
 		JavaRDD<String> wordsJavaRDD = data.flatMap(new FlatMapFunction<String, String>() {

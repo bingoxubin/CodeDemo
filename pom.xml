@@ -45,6 +45,7 @@
         <module>CodeDemo_SparkMLlib</module>
         <module>CodeDemo_HDFS</module>
         <module>CodeDemo_AI</module>
+        <module>CodeDemo_Spark3.2</module>
     </modules>
 
     <repositories>
