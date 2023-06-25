@@ -13,8 +13,8 @@ import java.io.InputStreamReader;
  */
 public class SFTPTest {
 	public static void main(String[] args) {
-		downloadFiles("hadoop12","bingo","111111","/opt/module/hadoop3.1.3/etc/hadoop/core-site.xml","CodeDemo_Java/src/main/files/core-site.xml");
-		commandExec("hadoop12","bingo","111111","ls -l");
+		// downloadFiles("hadoop12","bingo","111111","/opt/module/hadoop3.1.3/etc/hadoop/core-site.xml","CodeDemo_Java/src/main/files/core-site.xml");
+		// commandExec("hadoop12","bingo","111111","ls -l");
 		commandMultiExec("hadoop12","bingo","111111","CodeDemo_Java/src/main/files/script.sh","/home/bingo/bin/script.sh");
 	}
 
@@ -66,7 +66,7 @@ public class SFTPTest {
 			session.disconnect();
 
 			// 输出命令的执行结果
-			System.out.println("Command output:\n" + output.toString());
+			System.out.println("Command output:\n" + output);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -108,7 +108,7 @@ public class SFTPTest {
 			session.disconnect();
 
 			// 输出命令的执行结果
-			System.out.println("Command output:\n" + output.toString());
+			System.out.println("Command output:\n" + output);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
