@@ -9,9 +9,9 @@ import java.net.*;
  * @Description:
  */
 public class JdbcProxyServer {
-	private static final int PROXY_PORT = 9999; // 代理服务器监听的端口号
-	private static final String REAL_JDBC_HOST = "真实的JDBC地址"; // 真实的 JDBC 地址
-	private static final int REAL_JDBC_PORT = 1433; // 真实的 JDBC 端口号
+	private static final int PROXY_PORT = 20001; // 代理服务器监听的端口号
+	private static final String REAL_JDBC_HOST = "localhost"; // 真实的 JDBC 地址
+	private static final int REAL_JDBC_PORT = 3306; // 真实的 JDBC 端口号
 
 	public static void main(String[] args) {
 		try {
@@ -89,6 +89,9 @@ public class JdbcProxyServer {
 				while ((bytesRead = inputStream.read(buffer)) != -1) {
 					outputStream.write(buffer, 0, bytesRead);
 					outputStream.flush();
+
+					String data = new String(buffer, 0, bytesRead, "UTF-8");
+					System.out.println(data);
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
