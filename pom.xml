@@ -47,6 +47,7 @@
         <module>CodeDemo_AI</module>
         <module>CodeDemo_Spark3.2</module>
         <module>CodeDemo_Neo4j</module>
+        <module>CodeDemo_FlinkJava</module>
     </modules>
 
     <repositories>
