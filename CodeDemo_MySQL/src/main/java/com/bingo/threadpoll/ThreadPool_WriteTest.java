@@ -35,8 +35,9 @@ public class ThreadPool_WriteTest {
 		ExecutorService executor = Executors.newFixedThreadPool(10);
 		for (int i = 0; i < 10; i++) {
 			final int threadId = i; // 为了简便起见，我们用线程id作为用户id的基数
+			int finalI = i;
 			executor.submit(() -> {
-				try (Connection connection = getConnection()){
+				try (Connection connection = getConnection()) {
 					PreparedStatement ps = connection.prepareStatement("INSERT INTO user_t (id, user_name) VALUES (?, ?)");
 					// 每个线程写入2条数据
 					for (int j = 1; j <= 2; j++) {
@@ -44,6 +45,7 @@ public class ThreadPool_WriteTest {
 						ps.setString(2, "user_name" + (threadId * 10 + j)); // Name
 						ps.executeUpdate();
 					}
+					System.out.println("插入成功第 ：" + finalI);
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
