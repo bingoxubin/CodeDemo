@@ -1,0 +1,96 @@
+flink:
+  deployment:
+    option:
+      target: application
+      detached:
+      shutdownOnAttachedExit:
+      zookeeperNamespace:
+      jobmanager:
+    property: #@see: https://ci.apache.org/projects/flink/flink-docs-release-1.12/deployment/config.html
+      $internal.application.main: com.bingo.flink.stream.StreamXMySQLSinkDemo
+      pipeline.name: stramx_kafka_sink_mysql_demo
+      taskmanager.numberOfTaskSlots: 1
+      parallelism.default: 1
+      jobmanager.memory:
+        flink.size:
+        heap.size:
+        jvm-metaspace.size:
+        jvm-overhead.max:
+        off-heap.size:
+        process.size:
+      taskmanager.memory:
+        flink.size:
+        framework.heap.size:
+        framework.off-heap.size:
+        managed.size:
+        process.size:
+        task.heap.size:
+        task.off-heap.size:
+        jvm-metaspace.size:
+        jvm-overhead.max:
+        jvm-overhead.min:
+        managed.fraction: 0.4
+  checkpoints:
+    enable: false
+    interval: 30000
+    mode: EXACTLY_ONCE
+    timeout: 300000
+    unaligned: true
+  watermark:
+    interval: 10000
+  # 状态后端
+  state:
+    backend:
+      value: hashmap # 保存类型,在flink1.13中只有('rocksdb','hashmap')
+    checkpoints.num-retained: 1
+  # 重启策略
+  restart-strategy:
+    value: fixed-delay  #重启策略[(fixed-delay|failure-rate|none)共3个可配置的策略]
+    fixed-delay:
+      attempts: 3
+      delay: 5000
+    failure-rate:
+      max-failures-per-interval:
+      failure-rate-interval:
+      delay:
+  # table
+  table:
+    planner: blink # (blink|old|any)
+    mode: streaming #(batch|streaming)
+
+# kafka source 配置
+#kafka.source:
+#    bootstrap.servers: hadoop11:9092,hadoop12:9092,hadoop13:9092
+#    topic: s1
+#    group.id: bingo
+#    auto.offset.reset: latest
+
+
+#kafka.source:
+#    bootstrap.servers: hadoop11:9092,hadoop12:9092,hadoop13:9092
+#    # 定义可能需要消费到的topic
+#    topic: s1,s2,s3
+#    group.id: bingo
+#    auto.offset.reset: latest
+
+kafka.source:
+  kafka1:
+    # 配置第一个Kafka集群
+    bootstrap.servers: hadoop11:9092,hadoop12:9092,hadoop13:9092
+    topic: s1
+    group.id: bingo1
+    auto.offset.reset: latest
+    enable.auto.commit: true
+  kafka2:
+    # 配置第二个kafka集群
+    bootstrap.servers: hadoop11:9092,hadoop12:9092,hadoop13:9092
+    topic: s2
+    group.id: bingo2
+    auto.offset.reset: latest
+    enable.auto.commit: true
+
+jdbc:
+  driverClassName: com.mysql.jdbc.Driver
+  jdbcUrl: jdbc:mysql://hadoop11:3306/test?useSSL=false&allowPublicKeyRetrieval=true
+  username: root
+  password: 11111
