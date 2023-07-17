@@ -61,7 +61,9 @@ public class MysqlSinkPlus extends TwoPhaseCommitSinkFunction<Tuple2<String, Int
 	@Override
 	protected HikariUtil beginTransaction() throws Exception {
 		log.info("start beginTransaction.......");
-		return new HikariUtil();
+		HikariUtil res = HikariUtil.HIKARI_CP_UTI;
+		log.info("自己加的一些配置" + res);
+		return res;
 	}
 
 	/**

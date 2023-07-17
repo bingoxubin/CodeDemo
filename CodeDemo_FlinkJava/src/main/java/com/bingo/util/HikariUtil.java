@@ -20,14 +20,14 @@ import java.util.Properties;
  */
 public class HikariUtil {
 	private static final Logger log = LoggerFactory.getLogger(HikariUtil.class);
-	private final static HikariUtil HIKARI_CP_UTI = new HikariUtil();
+	public final static HikariUtil HIKARI_CP_UTI = new HikariUtil();
 
 	private static Properties properties = null;
 	private static HikariDataSource dataSource = null;
 	private static transient Connection conn = null;
 
 	//1.单例模式中,应该创建私有构造方法
-	public HikariUtil() {
+	private HikariUtil() {
 	}
 
 	/**
