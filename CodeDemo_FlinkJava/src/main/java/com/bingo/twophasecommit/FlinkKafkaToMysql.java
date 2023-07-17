@@ -24,8 +24,7 @@ public class FlinkKafkaToMysql {
 	private static final String topic_ExactlyOnce = "test";
 	private static final String group_id = "TwoPhaseCommitConsumer";
 	private static final String bootstrap_servers = "localhost:9092";
-	private static final String statebackend_address = "file:///E:/60.test/ch" +
-			"eckpoint";
+	private static final String statebackend_address = "file:///E:/60.test/checkpoint";
 
 	public static void main(String[] args) throws Exception {
 		final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
