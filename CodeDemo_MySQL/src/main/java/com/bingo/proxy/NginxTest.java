@@ -6,6 +6,8 @@ import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author bingoabin
@@ -26,10 +28,10 @@ public class NginxTest {
 
 			while (true) {
 				Socket sourceSocket = serverSocket.accept();
-				System.out.println("接收到源地址连接：" + sourceSocket.getInetAddress() + ":" + sourceSocket.getPort());
+				// System.out.println("接收到源地址连接：" + sourceSocket.getInetAddress() + ":" + sourceSocket.getPort());
 
 				Socket targetSocket = new Socket(targetHost, targetPort);
-				System.out.println("连接到目标地址：" + targetHost + ":" + targetPort);
+				// System.out.println("连接到目标地址：" + targetHost + ":" + targetPort);
 
 				ProxyThread sourceToTargetThread = new ProxyThread(sourceSocket.getInputStream(), targetSocket.getOutputStream());
 				ProxyThread targetToSourceThread = new ProxyThread(targetSocket.getInputStream(), sourceSocket.getOutputStream());
@@ -60,7 +62,14 @@ public class NginxTest {
 				while ((bytesRead = input.read(buffer)) != -1) {
 					output.write(buffer, 0, bytesRead);
 					output.flush();
-					System.out.println(new String(buffer, 0, bytesRead));
+
+					String res = new String(buffer, 0, bytesRead, "UTF-8");
+					// System.out.println(res);
+					Pattern pattern = Pattern.compile("(SELECT\\s+.+?\\s+FROM\\s+[^\\s;]+\\s*(WHERE\\s+[^;]+)?)", Pattern.CASE_INSENSITIVE);
+					Matcher matcher = pattern.matcher(res);
+					if (matcher.find()) {
+						System.out.println(matcher.group());
+					}
 				}
 			} catch (IOException e) {
 				e.printStackTrace();

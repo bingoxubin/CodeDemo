@@ -27,7 +27,7 @@ public class MysqlTest {
 			conn = DriverManager.getConnection(jdbcUrl, mysqlUser, mysqlPassword);
 
 			// 执行查询语句
-			String query = "SELECT * FROM score";
+			String query = "select * from score";
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(query);
 
