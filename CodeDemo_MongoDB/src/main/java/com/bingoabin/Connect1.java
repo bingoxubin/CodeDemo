@@ -14,7 +14,7 @@ import java.util.List;
  * @date 2022/8/10 16:48
  * @Description: mongodb测试
  */
-public class Connect {
+public class Connect1 {
 	//连接mongo-无认证
 	@Test
 	public void testNoAuth(){
