@@ -49,6 +49,7 @@
         <module>CodeDemo_Neo4j</module>
         <module>CodeDemo_FlinkJava</module>
         <module>CodeDemo_StreamX</module>
+        <module>CodeDemo_InfluxDB</module>
     </modules>
 
     <repositories>
