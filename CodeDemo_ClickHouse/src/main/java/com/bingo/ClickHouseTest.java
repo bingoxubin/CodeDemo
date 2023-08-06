@@ -18,7 +18,7 @@ public class ClickHouseTest {
 		// properties.setDatabase("default");
 		try {
 			Class.forName("ru.yandex.clickhouse.ClickHouseDriver");
-			ClickHouseDataSource dataSource = new ClickHouseDataSource("jdbc:clickhouse://192.168.186.109:8123/defalut"); //default表示数据表 ,port原来为8123
+			ClickHouseDataSource dataSource = new ClickHouseDataSource("jdbc:clickhouse://192.168.214.11:8123/?user=default&password=111111"); //default表示数据表 ,port原来为8123
 			ClickHouseConnectionImpl connection = (ClickHouseConnectionImpl) dataSource.getConnection();
 			if (connection != null) {
 				System.out.println("连接成功");
