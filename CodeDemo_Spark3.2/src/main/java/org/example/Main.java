@@ -30,6 +30,7 @@ public class Main {
 				.builder()
 				.appName("SparkHiveExample")
 				.config("spark.master", "local")
+				.config("hive.metastore.uris","thrift://hadoop11:9083")
 				.enableHiveSupport()
 				.getOrCreate();
 
