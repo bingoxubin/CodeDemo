@@ -1,7 +1,6 @@
 package com.bingoabin.sql
 //#Flink SQL 也支持三种窗口类型，分别为 Tumble Windows、HOP Windows 和 Session Windows，其中 HOP Windows 对应 Table API 中的 Sliding Window，同时每种窗口分别有相应的使用场景和方法。
 //#需求:统计最近 5 秒钟，每个单词出现的次数
-package com.kaikeba.table
 
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.functions.AssignerWithPeriodicWatermarks
