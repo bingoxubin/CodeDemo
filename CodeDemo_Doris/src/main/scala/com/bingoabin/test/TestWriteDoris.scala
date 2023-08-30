@@ -1,4 +1,4 @@
-package com.bingoabin
+package com.bingoabin.test
 
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{SaveMode, SparkSession}
