@@ -1,8 +1,9 @@
-package com.bingoabin.doris
+package com.bingoabin.spark
 
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 
+//这种方式是早期写法，Spark 无法感知Doris 的数据分布，会导致打到 Doris 的查询压力非常大。
 object _04JDBCDemo {
 	def main(args: Array[String]): Unit = {
 		val sparkConf = new SparkConf().setAppName("JDBCDemo").setMaster("local[*]")
