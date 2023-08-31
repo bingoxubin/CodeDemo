@@ -3,7 +3,7 @@ package com.bingo.flink;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 
-public class SQLDemo {
+public class _01SQLDemo {
 	public static void main(String[] args) {
 
 		StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();

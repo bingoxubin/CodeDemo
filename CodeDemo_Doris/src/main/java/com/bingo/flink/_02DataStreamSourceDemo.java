@@ -6,8 +6,8 @@ import org.apache.doris.flink.deserialization.SimpleListDeserializationSchema;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
 import java.util.Properties;
-
-public class DataStreamSourceDemo {
+//读取数据 datastream方式
+public class _02DataStreamSourceDemo {
 	public static void main(String[] args) throws Exception {
 
 		StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();

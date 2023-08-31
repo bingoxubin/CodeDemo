@@ -11,8 +11,8 @@ import org.apache.flink.table.data.GenericRowData;
 import org.apache.flink.table.data.RowData;
 import org.apache.flink.table.data.StringData;
 import org.apache.flink.table.types.logical.*;
-
-public class DataStreamRowDataSinkDemo {
+//rowdata方式写入
+public class _04DataStreamRowDataSinkDemo {
 	public static void main(String[] args) throws Exception {
 
 		StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();

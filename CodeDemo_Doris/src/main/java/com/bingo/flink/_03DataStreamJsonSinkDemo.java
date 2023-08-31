@@ -8,13 +8,8 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
 import java.util.Properties;
 
-/**
- * TODO
- *
- * @author cjp
- * @version 1.0
- */
-public class DataStreamJsonSinkDemo {
+//json方式写入
+public class _03DataStreamJsonSinkDemo {
 	public static void main(String[] args) throws Exception {
 
 		StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
@@ -41,6 +36,7 @@ public class DataStreamJsonSinkDemo {
 						               .setUsername("test")
 						               .setPassword("test").build()
 				                 ));
+				//注意：前面两个参数可以不需要
 //            .addSink(
 //                DorisSink.sink(
 //                        DorisOptions.builder()
