@@ -1,10 +1,12 @@
-package org.example;
+package com.bingo.submit;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+
 import static org.apache.spark.sql.functions.col;
-public class Main {
+
+public class Test2 {
 	public static void main(String[] args) {
 		System.out.println("Hello world!");
 		// localPattern();
