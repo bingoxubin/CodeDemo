@@ -1,4 +1,4 @@
-package com.bingo.core.test
+package com.bingo.core.distributecompute
 
 class Task extends Serializable {
 

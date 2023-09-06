@@ -1,4 +1,4 @@
-package com.bingo.core.test
+package com.bingo.core.distributecompute
 
 import java.io.{ObjectOutputStream, OutputStream}
 import java.net.Socket

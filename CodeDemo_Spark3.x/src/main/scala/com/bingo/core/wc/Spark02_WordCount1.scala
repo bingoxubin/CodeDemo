@@ -5,6 +5,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 object Spark02_WordCount1 {
 
+    //由下面的test1 test2演化而来
     def main(args: Array[String]): Unit = {
 
         // Application
@@ -41,5 +42,36 @@ object Spark02_WordCount1 {
         // TODO 关闭连接
         sc.stop()
 
+        test()
+    }
+
+    //另一种写法
+    def test():Unit = {
+        val conf: SparkConf = new SparkConf().setMaster("local").setAppName("WordCount")
+        val sc = new SparkContext(conf)
+        val words: RDD[String] = sc.textFile("datas").flatMap(_.split(" "))
+        val wordOne: RDD[(String, Int)] = words.map(word => (word, 1))
+        val wordGroup: RDD[(String, Iterable[(String, Int)])] = wordOne.groupBy(t => t._1)
+        val wordCount = wordGroup.map{
+            case(word,list) => {
+                list.reduce(
+                    (t1,t2) => {
+                        (t1._1,t1._2 + t2._2)
+                    }
+                )
+            }
+        }
+        wordCount.collect().foreach(println)
+        sc.stop()
+    }
+
+    def test1(): Unit = {
+        val conf: SparkConf = new SparkConf().setMaster("local").setAppName("WordCount")
+        val sc = new SparkContext(conf)
+        val words: RDD[String] = sc.textFile("datas").flatMap(_.split(" "))
+        val wordOne: RDD[(String, Int)] = words.map(word => (word, 1))
+        val wordCount: RDD[(String, Int)] = wordOne.reduceByKey((_ + _))
+        wordCount.collect().foreach(println)
+        sc.stop()
     }
 }

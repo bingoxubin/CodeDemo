@@ -1,4 +1,4 @@
-package com.bingo.core.test
+package com.bingo.core.distributecompute
 
 class SubTask extends Serializable {
     var datas : List[Int] = _
