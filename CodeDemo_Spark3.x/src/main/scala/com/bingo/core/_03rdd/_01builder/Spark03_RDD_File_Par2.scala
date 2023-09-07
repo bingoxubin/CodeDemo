@@ -1,7 +1,7 @@
-package com.bingo.core._03rdd.builder
+package com.bingo.core._03rdd._01builder
 
 import org.apache.spark.{SparkConf, SparkContext}
-
+//举例文件数据如何分配的，指定分区后
 object Spark03_RDD_File_Par2 {
 
     def main(args: Array[String]): Unit = {

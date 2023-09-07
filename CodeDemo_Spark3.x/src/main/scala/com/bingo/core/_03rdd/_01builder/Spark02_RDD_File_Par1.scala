@@ -1,7 +1,7 @@
-package com.bingo.core._03rdd.builder
+package com.bingo.core._03rdd._01builder
 
 import org.apache.spark.{SparkConf, SparkContext}
-
+//文件数据如何分配的，指定分区后
 object Spark02_RDD_File_Par1 {
 
     def main(args: Array[String]): Unit = {
@@ -21,8 +21,8 @@ object Spark02_RDD_File_Par1 {
            3     => 6
 
          */
-        // 3. 数据分区的偏移量范围的计算
-        // 0 => [0, 3]  => 12
+        // 3. 数据分区的偏移量范围的计算  其中：3是偏移量，7/2 = 3
+        // 0 => [0, 3]  => 12  //读到3偏移量的时候，是新的一行，按行读取，读完
         // 1 => [3, 6]  => 3
         // 2 => [6, 7]  =>
 

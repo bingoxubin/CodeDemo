@@ -1,7 +1,7 @@
-package com.bingo.core._03rdd.builder
+package com.bingo.core._03rdd._01builder
 
 import org.apache.spark.{SparkConf, SparkContext}
-
+//获取文件数据的目录 wholeTextFile
 object Spark02_RDD_File1 {
 
     def main(args: Array[String]): Unit = {
@@ -17,7 +17,6 @@ object Spark02_RDD_File1 {
         // wholeTextFiles : 以文件为单位读取数据
         //    读取的结果表示为元组，第一个元素表示文件路径，第二个元素表示文件内容
         val rdd = sc.wholeTextFiles("datas")
-
         rdd.collect().foreach(println)
 
         // TODO 关闭环境

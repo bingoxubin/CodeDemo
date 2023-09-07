@@ -1,7 +1,8 @@
-package com.bingo.core._03rdd.builder
+package com.bingo.core._03rdd._01builder
 
 import org.apache.spark.{SparkConf, SparkContext}
 
+//分区和并行度的关系
 object Spark01_RDD_Memory_Par {
 
     def main(args: Array[String]): Unit = {
@@ -18,8 +19,8 @@ object Spark01_RDD_Memory_Par {
         //     scheduler.conf.getInt("spark.default.parallelism", totalCores)
         //    spark在默认情况下，从配置对象中获取配置参数：spark.default.parallelism
         //    如果获取不到，那么使用totalCores属性，这个属性取值为当前运行环境的最大可用核数
-        //val rdd = sc.makeRDD(List(1,2,3,4),2)
-        val rdd = sc.makeRDD(List(1,2,3,4))
+        val rdd = sc.makeRDD(List(1,2,3,4),2)
+        //val rdd = sc.makeRDD(List(1,2,3,4))
 
         // 将处理的数据保存成分区文件
         rdd.saveAsTextFile("output")

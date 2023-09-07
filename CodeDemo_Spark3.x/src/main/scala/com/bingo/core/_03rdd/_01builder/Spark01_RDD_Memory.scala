@@ -1,8 +1,8 @@
-package com.bingo.core._03rdd.builder
+package com.bingo.core._03rdd._01builder
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
-
+//内存数据，创建rdd
 object Spark01_RDD_Memory {
 
     def main(args: Array[String]): Unit = {

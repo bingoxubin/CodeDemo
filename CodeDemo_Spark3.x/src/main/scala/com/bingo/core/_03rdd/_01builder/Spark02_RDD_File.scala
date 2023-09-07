@@ -1,7 +1,7 @@
-package com.bingo.core._03rdd.builder
+package com.bingo.core._03rdd._01builder
 
 import org.apache.spark.{SparkConf, SparkContext}
-
+//文件数据创建rdd
 object Spark02_RDD_File {
 
     def main(args: Array[String]): Unit = {
