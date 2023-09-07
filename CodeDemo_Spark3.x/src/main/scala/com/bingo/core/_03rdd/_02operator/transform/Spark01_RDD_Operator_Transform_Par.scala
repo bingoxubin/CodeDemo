@@ -15,6 +15,8 @@ object Spark01_RDD_Operator_Transform_Par {
         //    只有前面一个数据全部的逻辑执行完毕后，才会执行下一个数据。
         //    分区内数据的执行是有序的。
         // 2. 不同分区数据计算是无序的。
+
+        //测试：改并行度测试 改成1
         val rdd = sc.makeRDD(List(1,2,3,4),2)
 
         val mapRDD = rdd.map(
