@@ -1,14 +1,14 @@
-package com.bingo.core.distributecompute
+package com.bingo.core._02distributecompute
 
 import java.io.{InputStream, ObjectInputStream}
 import java.net.{ServerSocket, Socket}
 
-object Executor {
+object Executor2 {
 
     def main(args: Array[String]): Unit = {
 
         // 启动服务器，接收数据
-        val server = new ServerSocket(9999)
+        val server = new ServerSocket(8888)
         println("服务器启动，等待接收数据")
 
         // 等待客户端的连接
@@ -17,7 +17,7 @@ object Executor {
         val objIn = new ObjectInputStream(in)
         val task: SubTask = objIn.readObject().asInstanceOf[SubTask]
         val ints: List[Int] = task.compute()
-        println("计算节点[9999]计算的结果为：" + ints)
+        println("计算节点[8888]计算的结果为：" + ints)
         objIn.close()
         client.close()
         server.close()

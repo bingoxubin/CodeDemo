@@ -1,5 +1,5 @@
-package com.bingo.core.distributecompute
-
+package com.bingo.core._02distributecompute
+//代表数据结构
 class Task extends Serializable {
 
     val datas = List(1,2,3,4)

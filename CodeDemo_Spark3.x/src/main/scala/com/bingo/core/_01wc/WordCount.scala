@@ -1,4 +1,4 @@
-package com.bingo.core.wc
+package com.bingo.core._01wc
 
 import org.apache.spark.{SparkConf, SparkContext}
 
