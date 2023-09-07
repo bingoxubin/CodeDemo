@@ -1,6 +1,5 @@
 package com.bingo.core._03rdd._02operator.transform
 
-import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
 object Spark02_RDD_Operator_Transform_Test {
@@ -17,12 +16,13 @@ object Spark02_RDD_Operator_Transform_Test {
         // 【2】，【4】
         val mpRDD = rdd.mapPartitions(
             iter => {
-                List(iter.max).iterator
+                //List(iter.max).iterator
+                val max: Int = iter.max
+                List(max).iterator
             }
         )
         mpRDD.collect().foreach(println)
 
         sc.stop()
-
     }
 }
