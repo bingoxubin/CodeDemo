@@ -1,8 +1,7 @@
 package com.bingo.core._03rdd._02operator._01transform
 
-import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
-
+//map处理后  分区数 分区数据不变
 object Spark01_RDD_Operator_Transform_Part {
 
     def main(args: Array[String]): Unit = {
