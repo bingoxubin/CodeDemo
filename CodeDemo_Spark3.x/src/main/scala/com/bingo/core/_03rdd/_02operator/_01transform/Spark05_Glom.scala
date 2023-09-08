@@ -9,7 +9,14 @@ object Spark05_Glom {
 		val sc = new SparkContext(conf)
 		val rdd: RDD[Int] = sc.makeRDD(List(1, 2, 3, 4), 2)
 
-		rdd.collect().foreach(println)
+		val glomRDD: RDD[Array[Int]] = rdd.glom()
+		val maxRDD: RDD[Int] = glomRDD.map(
+			data => {
+				data.max
+			}
+		)
+		println(maxRDD.collect().sum)
+		//rdd.collect().foreach(println)
 		sc.stop()
 	}
 

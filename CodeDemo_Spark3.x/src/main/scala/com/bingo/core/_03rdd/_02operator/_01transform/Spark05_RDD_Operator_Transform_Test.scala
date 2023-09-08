@@ -25,11 +25,6 @@ object Spark05_RDD_Operator_Transform_Test {
         )
         println(maxRDD.collect().sum)
 
-
-
-
-
         sc.stop()
-
     }
 }

@@ -13,15 +13,11 @@ object Spark05_RDD_Operator_Transform {
         // TODO 算子 - glom
         val rdd : RDD[Int] = sc.makeRDD(List(1,2,3,4), 2)
 
-        // List => Int
-        // Int => Array
+        // List => Int   flatmap的效果
+        // Int => Array   glom的效果，数组中包含数组
         val glomRDD: RDD[Array[Int]] = rdd.glom()
 
         glomRDD.collect().foreach(data=> println(data.mkString(",")))
-
-
-
-
 
         sc.stop()
 
