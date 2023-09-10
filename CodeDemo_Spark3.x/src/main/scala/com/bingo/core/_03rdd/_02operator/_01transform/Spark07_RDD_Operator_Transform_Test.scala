@@ -1,6 +1,5 @@
 package com.bingo.core._03rdd._02operator._01transform
 
-import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
 object Spark07_RDD_Operator_Transform_Test {
@@ -21,8 +20,6 @@ object Spark07_RDD_Operator_Transform_Test {
             }
         ).collect().foreach(println)
 
-
         sc.stop()
-
     }
 }
