@@ -10,7 +10,7 @@ object Spark08_Sample {
 
 		val rdd: RDD[Int] = sc.makeRDD(List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
 		val rdds: RDD[Int] = rdd.sample(false, 0.3)
-		rdds.collect().mkString(",")
+		println(rdds.collect().mkString(","))
 		sc.stop()
 	}
 }
