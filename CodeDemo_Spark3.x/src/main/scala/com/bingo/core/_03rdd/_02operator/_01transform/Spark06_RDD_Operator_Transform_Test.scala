@@ -34,8 +34,6 @@ object Spark06_RDD_Operator_Transform_Test {
             }
         }.collect.foreach(println)
 
-
         sc.stop()
-
     }
 }

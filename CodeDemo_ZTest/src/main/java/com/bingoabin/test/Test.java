@@ -27,7 +27,9 @@ public class Test {
 		System.out.println(Integer.MAX_VALUE);
 
 		//超过2147483647 就报错了
-		long l = 2147483648l;
-		System.out.println(Integer.parseInt(String.valueOf(l)));
+		// long l = 2147483648l;
+		// System.out.println(Integer.parseInt(String.valueOf(l)));
+
+		System.out.println(4&7);
 	}
 }
