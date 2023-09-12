@@ -38,11 +38,6 @@ object Spark19_RDD_Operator_Transform {
         }
         resultRDD.collect().foreach(println)
 
-
-
-
-
         sc.stop()
-
     }
 }

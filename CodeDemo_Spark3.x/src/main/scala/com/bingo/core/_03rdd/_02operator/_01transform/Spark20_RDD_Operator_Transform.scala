@@ -1,8 +1,7 @@
 package com.bingo.core._03rdd._02operator._01transform
 
-import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
-
+//4种聚合函数的区别
 object Spark20_RDD_Operator_Transform {
 
     def main(args: Array[String]): Unit = {
@@ -58,11 +57,6 @@ object Spark20_RDD_Operator_Transform {
         rdd.foldByKey(0)(_+_) // wordcount
         rdd.combineByKey(v=>v,(x:Int,y)=>x+y,(x:Int,y:Int)=>x+y) // wordcount
 
-
-
-
-
         sc.stop()
-
     }
 }
