@@ -2,7 +2,7 @@ package com.bingo.core._03rdd._02operator._01transform
 
 import org.apache.spark.{SparkConf, SparkContext}
 
-object Spark17_RDD_Operator_Transform2 {
+object Spark18_RDD_Operator_Transform2 {
 
     def main(args: Array[String]): Unit = {
 

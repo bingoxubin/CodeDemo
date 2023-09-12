@@ -2,6 +2,7 @@ package com.bingo.core._03rdd._02operator._01transform
 
 import org.apache.spark.{SparkConf, SparkContext}
 
+//演示画图中的具体情况，验证画图结果
 object Spark17_RDD_Operator_Transform1 {
 
     def main(args: Array[String]): Unit = {
