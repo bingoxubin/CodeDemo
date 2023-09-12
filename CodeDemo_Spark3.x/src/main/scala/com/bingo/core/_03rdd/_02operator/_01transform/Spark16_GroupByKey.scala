@@ -13,6 +13,11 @@ object Spark16_GroupByKey {
 		))
 
 		val newRDD: RDD[(String, Iterable[Int])] = rdd.groupByKey()
+
+		//用map进行记数 统计求和
+		//val newRDD2: RDD[(String, Int)] = newRDD.map {
+		//	case (key, iter) => (key, iter.sum)
+		//}
 		newRDD.collect().foreach(println)
 
 		//跟Groupby的区别，返回类型，key是一致的，value有区别，groupby不会把value单独拿出来
