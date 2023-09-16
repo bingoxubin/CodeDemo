@@ -1,4 +1,4 @@
-package com.bingo.core._03rdd.serial
+package com.bingo.core._03rdd._03serial
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
@@ -33,7 +33,7 @@ object Spark01_RDD_Serial {
 
         // 属性序列化案例
         def getMatch2(rdd: RDD[String]): RDD[String] = {
-            val s = query
+            val s = query  //这里运行在driver端，下面运行在executor端，变成s后，字符串可序列化就没问题了
             rdd.filter(x => x.contains(s))
         }
     }
