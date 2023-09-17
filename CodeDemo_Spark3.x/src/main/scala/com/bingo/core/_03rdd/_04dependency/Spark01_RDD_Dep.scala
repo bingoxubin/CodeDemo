@@ -1,26 +1,26 @@
-package com.bingo.core._03rdd.dep
+package com.bingo.core._03rdd._04dependency
 
-import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
-
-object Spark02_RDD_Dep {
+import org.apache.spark.rdd.RDD
+//打印血缘
+object Spark01_RDD_Dep {
 
     def main(args: Array[String]): Unit = {
 
-        val sparConf = new SparkConf().setMaster("local").setAppName("Dep")
+        val sparConf = new SparkConf().setMaster("local[*]").setAppName("WordCount")
         val sc = new SparkContext(sparConf)
 
-        val lines: RDD[String] = sc.textFile("datas/word.txt")
-        println(lines.dependencies)
+        val lines: RDD[String] = sc.textFile("datas/word1.txt")
+        println(lines.toDebugString)
         println("*************************")
         val words: RDD[String] = lines.flatMap(_.split(" "))
-        println(words.dependencies)
+        println(words.toDebugString)
         println("*************************")
         val wordToOne = words.map(word=>(word,1))
-        println(wordToOne.dependencies)
+        println(wordToOne.toDebugString)
         println("*************************")
         val wordToSum: RDD[(String, Int)] = wordToOne.reduceByKey(_+_)
-        println(wordToSum.dependencies)
+        println(wordToSum.toDebugString)
         println("*************************")
         val array: Array[(String, Int)] = wordToSum.collect()
         array.foreach(println)
