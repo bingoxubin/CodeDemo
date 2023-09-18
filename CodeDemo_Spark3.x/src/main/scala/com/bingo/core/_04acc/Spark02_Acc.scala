@@ -1,7 +1,7 @@
-package com.bingo.core.acc
+package com.bingo.core._04acc
 
 import org.apache.spark.{SparkConf, SparkContext}
-
+//累加器
 object Spark02_Acc {
 
     def main(args: Array[String]): Unit = {

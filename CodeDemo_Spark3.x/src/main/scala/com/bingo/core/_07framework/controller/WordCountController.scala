@@ -1,7 +1,7 @@
-package com.bingo.core.framework.controller
+package com.bingo.core._07framework.controller
 
-import com.bingo.core.framework.common.TController
-import com.bingo.core.framework.service.WordCountService
+import com.bingo.core._07framework.common.TController
+import com.bingo.core._07framework.service.WordCountService
 
 
 /**

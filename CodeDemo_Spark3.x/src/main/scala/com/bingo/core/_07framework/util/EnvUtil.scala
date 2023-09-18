@@ -1,4 +1,4 @@
-package com.bingo.core.framework.util
+package com.bingo.core._07framework.util
 
 import org.apache.spark.SparkContext
 

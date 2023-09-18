@@ -1,7 +1,7 @@
-package com.bingo.core.framework.service
+package com.bingo.core._07framework.service
 
-import com.bingo.core.framework.common.TService
-import com.bingo.core.framework.dao.WordCountDao
+import com.bingo.core._07framework.common.TService
+import com.bingo.core._07framework.dao.WordCountDao
 import org.apache.spark.rdd.RDD
 
 /**

@@ -1,7 +1,7 @@
-package com.bingo.core.acc
+package com.bingo.core._04acc
 
 import org.apache.spark.{SparkConf, SparkContext}
-
+//累加器在行动算子中操作
 object Spark03_Acc {
 
     def main(args: Array[String]): Unit = {
@@ -32,6 +32,7 @@ object Spark03_Acc {
         // 一般情况下，累加器会放置在行动算子进行操作
         mapRDD.collect()
         mapRDD.collect()
+        // 上述如果不加collect行动算子，结构就是0，如果加两个行动算子就是20
         println(sumAcc.value)
 
         sc.stop()

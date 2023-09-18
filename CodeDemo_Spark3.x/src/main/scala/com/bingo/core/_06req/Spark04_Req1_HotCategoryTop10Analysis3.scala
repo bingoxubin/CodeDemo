@@ -1,4 +1,4 @@
-package com.bingo.core.req
+package com.bingo.core._06req
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.util.AccumulatorV2

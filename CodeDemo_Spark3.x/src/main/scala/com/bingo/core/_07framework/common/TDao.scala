@@ -1,6 +1,6 @@
-package com.bingo.core.framework.common
+package com.bingo.core._07framework.common
 
-import com.bingo.core.framework.util.EnvUtil
+import com.bingo.core._07framework.util.EnvUtil
 
 
 trait TDao {

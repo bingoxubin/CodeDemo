@@ -1,7 +1,7 @@
-package com.bingo.core.framework.application
+package com.bingo.core._07framework.application
 
-import com.bingo.core.framework.common.TApplication
-import com.bingo.core.framework.controller.WordCountController
+import com.bingo.core._07framework.common.TApplication
+import com.bingo.core._07framework.controller.WordCountController
 
 
 object WordCountApplication extends App with TApplication{

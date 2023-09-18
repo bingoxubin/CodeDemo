@@ -1,4 +1,4 @@
-package com.bingo.core.acc
+package com.bingo.core._04acc
 
 import org.apache.spark.util.AccumulatorV2
 import org.apache.spark.{SparkConf, SparkContext}
@@ -71,8 +71,8 @@ object Spark04_Acc_WordCount {
             val map1 = this.wcMap
             val map2 = other.value
 
-            map2.foreach{
-                case ( word, count ) => {
+            map2.foreach {
+                case (word, count) => {
                     val newCount = map1.getOrElse(word, 0L) + count
                     map1.update(word, newCount)
                 }
