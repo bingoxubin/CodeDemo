@@ -1,8 +1,8 @@
-package com.bingo.core._03rdd.persist
+package com.bingo.core._03rdd._05persist
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
-
+//cache persist checkpoint的区别
 object Spark05_RDD_Persist {
 
     def main(args: Array[String]): Unit = {

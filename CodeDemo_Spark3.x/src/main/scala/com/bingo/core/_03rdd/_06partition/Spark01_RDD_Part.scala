@@ -1,7 +1,7 @@
-package com.bingo.core._03rdd.part
+package com.bingo.core._03rdd._06partition
 
 import org.apache.spark.rdd.RDD
-import org.apache.spark.{HashPartitioner, Partitioner, SparkConf, SparkContext}
+import org.apache.spark.{Partitioner, SparkConf, SparkContext}
 
 object Spark01_RDD_Part {
 

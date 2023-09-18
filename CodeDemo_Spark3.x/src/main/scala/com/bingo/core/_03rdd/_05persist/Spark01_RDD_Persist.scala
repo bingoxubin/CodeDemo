@@ -1,8 +1,8 @@
-package com.bingo.core._03rdd.persist
+package com.bingo.core._03rdd._05persist
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
-
+//两个job，两段逻辑，想是否能重用rdd
 object Spark01_RDD_Persist {
 
     def main(args: Array[String]): Unit = {

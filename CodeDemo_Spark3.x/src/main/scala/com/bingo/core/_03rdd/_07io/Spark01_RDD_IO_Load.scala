@@ -1,4 +1,4 @@
-package com.bingo.core._03rdd.io
+package com.bingo.core._03rdd._07io
 
 import org.apache.spark.{SparkConf, SparkContext}
 
