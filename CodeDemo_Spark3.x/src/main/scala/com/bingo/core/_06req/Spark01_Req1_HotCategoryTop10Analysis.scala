@@ -2,7 +2,7 @@ package com.bingo.core._06req
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
-
+//基础实现方式，求Top10的热门品类
 object Spark01_Req1_HotCategoryTop10Analysis {
 
     def main(args: Array[String]): Unit = {

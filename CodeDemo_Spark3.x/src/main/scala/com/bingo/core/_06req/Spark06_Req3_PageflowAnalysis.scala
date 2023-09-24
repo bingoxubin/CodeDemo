@@ -43,6 +43,8 @@ object Spark06_Req3_PageflowAnalysis {
         // TODO 计算分母
         val pageidToCountMap: Map[Long, Long] = actionDataRDD.filter(
             action => {
+                //init 不包含最后一个  不包含7
+                //注意  分子不能先过滤，比如 1-9-2-3-8-4 如果过滤了8 9 就是1 2 3 4 逻辑不对了
                 ids.init.contains(action.page_id)
             }
         ).map(

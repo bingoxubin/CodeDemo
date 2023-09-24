@@ -2,7 +2,7 @@ package com.bingo.core._06req
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
-
+//优化基础实现方式，求Top10的热门品类
 object Spark02_Req1_HotCategoryTop10Analysis1 {
 
     def main(args: Array[String]): Unit = {
@@ -11,8 +11,8 @@ object Spark02_Req1_HotCategoryTop10Analysis1 {
         val sparConf = new SparkConf().setMaster("local[*]").setAppName("HotCategoryTop10Analysis")
         val sc = new SparkContext(sparConf)
 
-        // Q : actionRDD重复使用
-        // Q : cogroup性能可能较低
+        // Q : actionRDD重复使用   .cache()进行优化
+        // Q : cogroup性能可能较低  采用（品类，点击数） =》 改成（品类，（点击，0,0）） 再进行合并
 
         // 1. 读取原始日志数据
         val actionRDD = sc.textFile("datas/user_visit_action.txt")
