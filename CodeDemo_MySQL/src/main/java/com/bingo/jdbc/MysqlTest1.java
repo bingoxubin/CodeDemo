@@ -27,7 +27,8 @@ public class MysqlTest1 {
 			conn = DriverManager.getConnection(jdbcUrl, mysqlUser, mysqlPassword);
 
 			// 执行查询语句
-			String query = "select cast(id as char(3)),name,age,dob,created_at,updated_at,salary,longitude,department,active_status,address_json,fsp,long_description,serialized_data,1 as num from complex_types_example;";
+			// String query = "select cast(id as char(3)),name,age,dob,created_at,updated_at,salary,longitude,department,active_status,address_json,fsp,long_description,serialized_data,1 as num from complex_types_example;";
+			String query = "select * from score";
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(query);
 
