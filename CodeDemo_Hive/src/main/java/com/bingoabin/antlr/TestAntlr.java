@@ -11,8 +11,9 @@ import org.apache.hadoop.hive.ql.parse.ParseException;
  */
 public class TestAntlr {
 	public static void main(String[] args) throws ParseException {
+		//${hivevar:EXT_DATA}
 		ParseDriver parseDriver = new ParseDriver();
-		String sql = "create external table if not exists DL_SDB.EXT_MAIN${hivevar:EXT_DATA} (id STRING) stored as textfile location '/datalake/user/${hivevar:EXT_DATA}/date'";
+		String sql = " ";
 		ASTNode node = parseDriver.parse(sql);
 		System.out.println("success");
 	}

@@ -1,5 +1,7 @@
 package com.bingoabin.regex;
 
+import org.junit.Test;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -76,7 +78,25 @@ public class Regex {
 		System.out.println(matcher1.find() ? matcher1.group(1) : "");
 
 		System.out.println("===================");
-		boolean flag = Pattern.matches("^[a-z][a-z0-9_]*$","Aasdfsfsa342424");
+		boolean flag = Pattern.matches("^[a-z][a-z0-9_]*$", "Aasdfsfsa342424");
 		System.out.println(flag);
+	}
+
+	@Test
+	public void test() {
+		String sql = "create external table if not exists DL_SDB.EXT_MAIN${hivevar:EXT_DATA} (id STRING) stored as textfile location '/datalake/user/${hivevar:EXT_DATA}/date'";
+		Pattern pattern = Pattern.compile("\\$\\{hivevar:[^}]+}");
+		Matcher matcher = pattern.matcher(sql);
+
+		while (matcher.find()) {
+			System.out.println(matcher.group());
+		}
+	}
+
+	@Test
+	public void test1(){
+		String sql = "create external table if not exists DL_SDB.EXT_MAIN${hivevar:EXT_DATA} (id STRING) stored as textfile location '/datalake/user/${hivevar:EXT_DATA}/date'";
+		String res = sql.replace("${hivevar:EXT_DATA}", "_HIVEVAR_EXT_DATA_385");
+		System.out.println(res);
 	}
 }
