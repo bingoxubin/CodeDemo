@@ -56,7 +56,8 @@ class BFileResolve implements IFileStragegy {
 	private final Logger logger = LoggerFactory.getLogger(BFileResolve.class);
 	@Override
 	public FileTypeResolveEnum getFileType() {
-		return FileTypeResolveEnum.FILE_B_RESOLVE;
+		FileTypeResolveEnum res = FileTypeResolveEnum.FILE_B_RESOLVE;
+		return res;
 	}
 
 	@Override
