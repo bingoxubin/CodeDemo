@@ -1,10 +1,10 @@
-package com.bingo.sql
+package com.bingo.sql._01demo
 
 import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{DataFrame, Dataset, Row, SparkSession}
 
-object Spark01_SparkSQL_Basic {
+object ccSpark01_SparkSQL_Basic {
 
     def main(args: Array[String]): Unit = {
 
