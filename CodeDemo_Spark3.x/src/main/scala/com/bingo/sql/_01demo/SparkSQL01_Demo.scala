@@ -6,7 +6,7 @@ import org.apache.spark.sql.{DataFrame, Dataset, Row, SparkSession}
 
 object SparkSQL01_Demo {
 	def main(args: Array[String]): Unit = {
-		//创建上下文环境对象
+		//创建sparksql上下文环境对象
 		val conf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("sparksql01_demo")
 		//创建sparksession对象
 		val spark: SparkSession = SparkSession.builder().config(conf).getOrCreate()
@@ -28,7 +28,7 @@ object SparkSQL01_Demo {
 
 		//RDD => DataFrame => DataSet
 		//创建rdd
-		val rdd1: RDD[(Int, String, Int)] = spark.sparkContext.makeRDD(List((1, "zhangsan", 30), (2, "lisi", 28), (3, "wwangwu", 20)))
+		val rdd1: RDD[(Int, String, Int)] = spark.sparkContext.makeRDD(List((1, "zhangsan", 30), (2, "lisi", 28), (3, "wangwu", 20)))
 		//RDD -> DataFrame
 		val df1: DataFrame = rdd1.toDF("id", "name", "age")
 		df1.show()

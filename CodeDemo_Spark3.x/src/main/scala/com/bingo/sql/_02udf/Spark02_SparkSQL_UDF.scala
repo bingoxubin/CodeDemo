@@ -1,8 +1,7 @@
-package com.bingo.sql
+package com.bingo.sql._02udf
 
 import org.apache.spark.SparkConf
-import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.{DataFrame, Dataset, Row, SparkSession}
+import org.apache.spark.sql.SparkSession
 
 object Spark02_SparkSQL_UDF {
 
@@ -21,6 +20,8 @@ object Spark02_SparkSQL_UDF {
         })
 
         spark.sql("select age, prefixName(username) from user").show
+        //这种方式不行：
+        //spark.sql("select age,'Name:' + username from user").show()
 
 
         // TODO 关闭环境

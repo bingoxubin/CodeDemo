@@ -1,9 +1,9 @@
-package com.bingo.sql
+package com.bingo.sql._03udaf
 
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.{Row, SparkSession}
 import org.apache.spark.sql.expressions.{MutableAggregationBuffer, UserDefinedAggregateFunction}
 import org.apache.spark.sql.types.{DataType, LongType, StructField, StructType}
+import org.apache.spark.sql.{Row, SparkSession}
 
 object Spark03_SparkSQL_UDAF {
 
