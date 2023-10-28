@@ -13,7 +13,7 @@ object Spark03_SparkSQL_UDAF {
         val sparkConf = new SparkConf().setMaster("local[*]").setAppName("sparkSQL")
         val spark = SparkSession.builder().config(sparkConf).getOrCreate()
 
-        val df = spark.read.json("datas/user.json")
+        val df = spark.read.json("datas/test.json")
         df.createOrReplaceTempView("user")
 
         spark.udf.register("ageAvg", new MyAvgUDAF())

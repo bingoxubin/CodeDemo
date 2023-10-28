@@ -1,7 +1,6 @@
-package com.bingo.sql
+package com.bingo.sql._04save
 
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.expressions.Aggregator
 import org.apache.spark.sql._
 
 object Spark04_SparkSQL_JDBC {
@@ -16,22 +15,22 @@ object Spark04_SparkSQL_JDBC {
         // 读取MySQL数据
         val df = spark.read
                 .format("jdbc")
-                .option("url", "jdbc:mysql://linux1:3306/spark-sql")
+                .option("url", "jdbc:mysql://localhost:3306/test")
                 .option("driver", "com.mysql.jdbc.Driver")
                 .option("user", "root")
-                .option("password", "123123")
-                .option("dbtable", "user")
+                .option("password", "111111")
+                .option("dbtable", "test")
                 .load()
         //df.show
 
-        // 保存数据
+        // 保存数据  如果目标表不存在，默认新建
         df.write
                 .format("jdbc")
-                .option("url", "jdbc:mysql://linux1:3306/spark-sql")
+                .option("url", "jdbc:mysql://localhost:3306/test")
                 .option("driver", "com.mysql.jdbc.Driver")
                 .option("user", "root")
-                .option("password", "123123")
-                .option("dbtable", "user1")
+                .option("password", "111111")
+                .option("dbtable", "test1")
                 .mode(SaveMode.Append)
                 .save()
 
