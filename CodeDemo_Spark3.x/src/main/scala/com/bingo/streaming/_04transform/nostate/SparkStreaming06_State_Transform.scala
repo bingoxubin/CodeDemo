@@ -1,4 +1,4 @@
-package com.bingo.streaming
+package com.bingo.streaming._04transform.nostate
 
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.dstream.DStream
@@ -13,7 +13,7 @@ object SparkStreaming06_State_Transform {
 
         val lines = ssc.socketTextStream("localhost", 9999)
 
-        // transform方法可以将底层RDD获取到后进行操作
+        // transform方法可以将底层RDD获取到后进行操作，以下是transform的应用场景
         // 1. DStream功能不完善
         // 2. 需要代码周期性的执行
 
