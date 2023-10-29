@@ -1,10 +1,10 @@
-package com.bingo.streaming
+package com.bingo.streaming._04transform.nostate
 
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.dstream.DStream
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
-object SparkStreaming06_State_Join {
+object SparkStreaming06_Join {
 
     def main(args: Array[String]): Unit = {
 
