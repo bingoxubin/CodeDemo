@@ -1,15 +1,14 @@
-package com.bingo.streaming
+package com.bingo.streaming._07req
 
 import com.bingo.util.JDBCUtil
-
-import java.sql.ResultSet
-import java.text.SimpleDateFormat
 import org.apache.kafka.clients.consumer.{ConsumerConfig, ConsumerRecord}
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.dstream.InputDStream
 import org.apache.spark.streaming.kafka010.{ConsumerStrategies, KafkaUtils, LocationStrategies}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
+import java.sql.ResultSet
+import java.text.SimpleDateFormat
 import scala.collection.mutable.ListBuffer
 
 object SparkStreaming11_Req1_BlackList1 {

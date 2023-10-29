@@ -1,4 +1,4 @@
-package com.bingo.streaming
+package com.bingo.streaming._07req
 
 import org.apache.kafka.clients.consumer.{ConsumerConfig, ConsumerRecord}
 import org.apache.spark.SparkConf
@@ -6,7 +6,11 @@ import org.apache.spark.streaming.dstream.InputDStream
 import org.apache.spark.streaming.kafka010.{ConsumerStrategies, KafkaUtils, LocationStrategies}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
-object SparkStreaming13_Req3 {
+import java.io.{File, FileWriter, PrintWriter}
+import java.text.SimpleDateFormat
+import scala.collection.mutable.ListBuffer
+
+object SparkStreaming13_Req31 {
 
     def main(args: Array[String]): Unit = {
 
@@ -54,7 +58,28 @@ object SparkStreaming13_Req3 {
             }
         ).reduceByKeyAndWindow((x:Int,y:Int)=>{x+y}, Seconds(60), Seconds(10))
 
-        reduceDS.print()
+        //reduceDS.print()
+        reduceDS.foreachRDD(
+            rdd => {
+                val list = ListBuffer[String]()
+
+                val datas: Array[(Long, Int)] = rdd.sortByKey(true).collect()
+                datas.foreach{
+                    case ( time, cnt ) => {
+
+                        val timeString = new SimpleDateFormat("mm:ss").format(new java.util.Date(time.toLong))
+
+                        list.append(s"""{"xtime":"${timeString}", "yval":"${cnt}"}""")
+                    }
+                }
+
+                // 输出文件
+                val out = new PrintWriter(new FileWriter(new File("D:\\mineworkspace\\idea\\classes\\atguigu-classes\\datas\\adclick\\adclick.json")))
+                out.println("["+list.mkString(",")+"]")
+                out.flush()
+                out.close()
+            }
+        )
 
 
         ssc.start()

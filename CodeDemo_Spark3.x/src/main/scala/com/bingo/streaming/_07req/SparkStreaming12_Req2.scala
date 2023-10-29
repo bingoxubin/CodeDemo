@@ -1,22 +1,20 @@
-package com.bingo.streaming
+package com.bingo.streaming._07req
 
-import java.io.{File, FileWriter, PrintWriter}
-import java.text.SimpleDateFormat
-
+import com.bingo.util.JDBCUtil
 import org.apache.kafka.clients.consumer.{ConsumerConfig, ConsumerRecord}
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.dstream.InputDStream
 import org.apache.spark.streaming.kafka010.{ConsumerStrategies, KafkaUtils, LocationStrategies}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
-import scala.collection.mutable.ListBuffer
+import java.text.SimpleDateFormat
 
-object SparkStreaming13_Req31 {
+object SparkStreaming12_Req2 {
 
     def main(args: Array[String]): Unit = {
 
         val sparkConf = new SparkConf().setMaster("local[*]").setAppName("SparkStreaming")
-        val ssc = new StreamingContext(sparkConf, Seconds(5))
+        val ssc = new StreamingContext(sparkConf, Seconds(3))
 
         val kafkaPara: Map[String, Object] = Map[String, Object](
             ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG -> "linux1:9092,linux2:9092,linux3:9092",
@@ -38,47 +36,45 @@ object SparkStreaming13_Req31 {
             }
         )
 
-        // 最近一分钟，每10秒计算一次
-        // 12:01 => 12:00
-        // 12:11 => 12:10
-        // 12:19 => 12:10
-        // 12:25 => 12:20
-        // 12:59 => 12:50
-
-        // 55 => 50, 49 => 40, 32 => 30
-        // 55 / 10 * 10 => 50
-        // 49 / 10 * 10 => 40
-        // 32 / 10 * 10 => 30
-
-        // 这里涉及窗口的计算
         val reduceDS = adClickData.map(
             data => {
-                val ts = data.ts.toLong
-                val newTS = ts / 10000 * 10000
-                ( newTS, 1 )
-            }
-        ).reduceByKeyAndWindow((x:Int,y:Int)=>{x+y}, Seconds(60), Seconds(10))
+                val sdf = new SimpleDateFormat("yyyy-MM-dd")
+                val day = sdf.format(new java.util.Date( data.ts.toLong ))
+                val area = data.area
+                val city = data.city
+                val ad = data.ad
 
-        //reduceDS.print()
+                ( ( day, area, city, ad ), 1 )
+            }
+        ).reduceByKey(_+_)
+
         reduceDS.foreachRDD(
             rdd => {
-                val list = ListBuffer[String]()
-
-                val datas: Array[(Long, Int)] = rdd.sortByKey(true).collect()
-                datas.foreach{
-                    case ( time, cnt ) => {
-
-                        val timeString = new SimpleDateFormat("mm:ss").format(new java.util.Date(time.toLong))
-
-                        list.append(s"""{"xtime":"${timeString}", "yval":"${cnt}"}""")
+                rdd.foreachPartition(
+                    iter => {
+                        val conn = JDBCUtil.getConnection
+                        val pstat = conn.prepareStatement(
+                            """
+                              | insert into area_city_ad_count ( dt, area, city, adid, count )
+                              | values ( ?, ?, ?, ?, ? )
+                              | on DUPLICATE KEY
+                              | UPDATE count = count + ?
+                            """.stripMargin)
+                        iter.foreach{
+                            case ( ( day, area, city, ad ), sum ) => {
+                                pstat.setString(1,day )
+                                pstat.setString(2,area )
+                                pstat.setString(3, city)
+                                pstat.setString(4, ad)
+                                pstat.setInt(5, sum)
+                                pstat.setInt(6,sum )
+                                pstat.executeUpdate()
+                            }
+                        }
+                        pstat.close()
+                        conn.close()
                     }
-                }
-
-                // 输出文件
-                val out = new PrintWriter(new FileWriter(new File("D:\\mineworkspace\\idea\\classes\\atguigu-classes\\datas\\adclick\\adclick.json")))
-                out.println("["+list.mkString(",")+"]")
-                out.flush()
-                out.close()
+                )
             }
         )
 

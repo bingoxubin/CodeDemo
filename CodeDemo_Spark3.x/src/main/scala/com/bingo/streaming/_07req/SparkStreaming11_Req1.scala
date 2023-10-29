@@ -1,4 +1,4 @@
-package com.bingo.streaming
+package com.bingo.streaming._07req
 
 import org.apache.kafka.clients.consumer.{ConsumerConfig, ConsumerRecord}
 import org.apache.spark.SparkConf

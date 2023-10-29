@@ -1,11 +1,8 @@
-package com.bingo.streaming
-
-import java.util.{Properties, Random}
+package com.bingo.streaming._07req
 
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
-import org.apache.spark.SparkConf
-import org.apache.spark.streaming.{Seconds, StreamingContext}
 
+import java.util.{Properties, Random}
 import scala.collection.mutable.ListBuffer
 
 object SparkStreaming10_MockData {
