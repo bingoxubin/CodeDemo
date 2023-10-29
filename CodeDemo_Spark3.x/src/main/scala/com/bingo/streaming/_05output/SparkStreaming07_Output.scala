@@ -1,4 +1,4 @@
-package com.bingo.streaming
+package com.bingo.streaming._05output
 
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.dstream.DStream
@@ -20,7 +20,7 @@ object SparkStreaming07_Output {
                 (x:Int, y:Int) => { x + y},
                 (x:Int, y:Int) => {x - y},
                 Seconds(9), Seconds(3))
-        // SparkStreaming如何没有输出操作，那么会提示错误
+        // SparkStreaming如何没有输出操作，那么会提示错误,报错
         //windowDS.print()
 
         ssc.start()
