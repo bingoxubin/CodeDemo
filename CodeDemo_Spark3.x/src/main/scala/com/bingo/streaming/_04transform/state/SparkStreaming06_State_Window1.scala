@@ -1,4 +1,4 @@
-package com.bingo.streaming
+package com.bingo.streaming._04transform.state
 
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.dstream.DStream
