@@ -1,12 +1,12 @@
-package com.bingo.streaming
+package com.bingo.streaming._06close
 
 import org.apache.spark.SparkConf
-import org.apache.spark.streaming.{Seconds, StreamingContext, StreamingContextState}
+import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 object SparkStreaming09_Resume {
 
     def main(args: Array[String]): Unit = {
-
+        //恢复数据
         val ssc = StreamingContext.getActiveOrCreate("cp", ()=>{
             val sparkConf = new SparkConf().setMaster("local[*]").setAppName("SparkStreaming")
             val ssc = new StreamingContext(sparkConf, Seconds(3))

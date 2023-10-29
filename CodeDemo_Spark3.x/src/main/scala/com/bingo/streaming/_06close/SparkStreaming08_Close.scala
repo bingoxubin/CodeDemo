@@ -1,7 +1,6 @@
-package com.bingo.streaming
+package com.bingo.streaming._06close
 
 import org.apache.spark.SparkConf
-import org.apache.spark.streaming.dstream.DStream
 import org.apache.spark.streaming.{Seconds, StreamingContext, StreamingContextState}
 
 object SparkStreaming08_Close {
@@ -34,23 +33,26 @@ object SparkStreaming08_Close {
                 override def run(): Unit = {
                     // 优雅地关闭
                     // 计算节点不在接收新的数据，而是将现有的数据处理完毕，然后关闭
+                    // 可以通过如下第三方进行控制，比如mysql中加入一条数据，那么进行监控关闭
                     // Mysql : Table(stopSpark) => Row => data
                     // Redis : Data（K-V）
                     // ZK    : /stopSpark
                     // HDFS  : /stopSpark
+                    //这边，应该加上读取第三方的逻辑，然后替换下面if中的true的条件
                     /*
                     while ( true ) {
                         if (true) {
                             // 获取SparkStreaming状态
                             val state: StreamingContextState = ssc.getState()
                             if ( state == StreamingContextState.ACTIVE ) {
-                                ssc.stop(true, true)
+                                ssc.stop(true, true)   //关键行，优雅的关闭
                             }
                         }
                         Thread.sleep(5000)
                     }
                      */
 
+                    //练习的写法
                     Thread.sleep(5000)
                     val state: StreamingContextState = ssc.getState()
                     if ( state == StreamingContextState.ACTIVE ) {
