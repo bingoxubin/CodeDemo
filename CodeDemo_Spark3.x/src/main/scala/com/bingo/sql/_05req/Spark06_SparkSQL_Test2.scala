@@ -1,4 +1,4 @@
-package com.bingo.sql
+package com.bingo.sql._05req
 
 import org.apache.spark.SparkConf
 import org.apache.spark.sql._
