@@ -33,6 +33,7 @@ object SparkStreaming03_DIY {
                 override def run(): Unit = {
                     while ( flg ) {
                         val message = "采集的数据为：" + new Random().nextInt(10).toString
+                        //对采集的数据进行封装，封装到storagelevel
                         store(message)
                         Thread.sleep(500)
                     }
