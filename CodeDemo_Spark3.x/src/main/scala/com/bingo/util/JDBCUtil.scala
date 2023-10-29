@@ -13,10 +13,11 @@ object JDBCUtil {
     //初始化连接池方法
     def init(): DataSource = {
         val properties = new Properties()
+        //val config: Properties = PropertiesUtil.load("config.properties")
         properties.setProperty("driverClassName", "com.mysql.jdbc.Driver")
-        properties.setProperty("url", "jdbc:mysql://linux1:3306/spark-streaming?useUnicode=true&characterEncoding=UTF-8")
+        properties.setProperty("url", "jdbc:mysql://localhost:3306/spark-streaming?useUnicode=true&characterEncoding=UTF-8")
         properties.setProperty("username", "root")
-        properties.setProperty("password", "123123")
+        properties.setProperty("password", "111111")
         properties.setProperty("maxActive", "50")
         DruidDataSourceFactory.createDataSource(properties)
     }

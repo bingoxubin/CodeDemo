@@ -16,7 +16,7 @@ object SparkStreaming10_MockData {
         // Application => Kafka => SparkStreaming => Analysis
         val prop = new Properties()
         // 添加配置
-        prop.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "linux1:9092")
+        prop.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092")
         prop.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer")
         prop.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer")
         val producer = new KafkaProducer[String, String](prop)
@@ -26,7 +26,7 @@ object SparkStreaming10_MockData {
             mockdata().foreach(
                 data => {
                     // 向Kafka中生成数据
-                    val record = new ProducerRecord[String, String]("atguiguNew", data)
+                    val record = new ProducerRecord[String, String]("test", data)
                     producer.send(record)
                     println(data)
                 }

@@ -81,10 +81,11 @@ object SparkStreaming11_Req1_BlackList1 {
                 // rdd. foreach方法会每一条数据创建连接
                 // foreach方法是RDD的算子，算子之外的代码是在Driver端执行，算子内的代码是在Executor端执行
                 // 这样就会涉及闭包操作，Driver端的数据就需要传递到Executor端，需要将数据进行序列化
-                // 数据库的连接对象是不能序列化的。
+                // 数据库的连接对象是不能序列化的。因为A连接到数据库，然后将数据库对象序列化给C，那么C也能连？需要认证的，认证就没用了？
 
                 // RDD提供了一个算子可以有效提升效率 : foreachPartition
                 // 可以一个分区创建一个连接对象，这样可以大幅度减少连接对象的数量，提升效率
+                // 需要将下面的代码拷贝到此处代码中
                 rdd.foreachPartition(iter => {
                         val conn = JDBCUtil.getConnection
                         iter.foreach{
