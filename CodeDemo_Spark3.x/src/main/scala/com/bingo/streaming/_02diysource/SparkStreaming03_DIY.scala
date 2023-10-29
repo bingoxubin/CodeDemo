@@ -1,15 +1,12 @@
-package com.bingo.streaming
-
-import java.util.Random
+package com.bingo.streaming._02diysource
 
 import org.apache.spark.SparkConf
-import org.apache.spark.rdd.RDD
 import org.apache.spark.storage.StorageLevel
 import org.apache.spark.streaming.dstream.ReceiverInputDStream
 import org.apache.spark.streaming.receiver.Receiver
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
-import scala.collection.mutable
+import java.util.Random
 
 object SparkStreaming03_DIY {
 

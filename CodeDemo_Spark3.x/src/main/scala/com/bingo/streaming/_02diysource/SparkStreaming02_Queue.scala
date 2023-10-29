@@ -1,8 +1,7 @@
-package com.bingo.streaming
+package com.bingo.streaming._02diysource
 
 import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
-import org.apache.spark.streaming.dstream.{DStream, ReceiverInputDStream}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 import scala.collection.mutable
