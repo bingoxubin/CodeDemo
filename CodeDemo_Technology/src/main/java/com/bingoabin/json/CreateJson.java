@@ -49,5 +49,6 @@ public class CreateJson {
 		//JSON字符串转换成JSON对象
 		JSONObject json = JSONObject.parseObject(user2);
 		System.out.println("string->json:" + json);
+
 	}
 }
