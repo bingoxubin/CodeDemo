@@ -38,7 +38,6 @@
             <artifactId>spark-yarn_2.12</artifactId>
             <version>3.2.2</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.hive</groupId>
             <artifactId>hive-exec</artifactId>
@@ -59,6 +58,11 @@
             <artifactId>jackson-core</artifactId>
             <version>2.12.3</version> <!-- 使用最新的版本 -->
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -74,6 +78,28 @@
 
     <build>
         <plugins>
+            <!--编译scala所需插件-->
+            <plugin>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <version>2.15.1</version>
+                <executions>
+                    <execution>
+                        <id>compile-scala</id>
+                        <goals>
+                            <goal>add-source</goal>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile-scala</id>
+                        <goals>
+                            <goal>add-source</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <!-- 该插件用于将 Scala 代码编译成 class 文件 -->
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
@@ -83,6 +109,7 @@
                     <execution>
                         <!-- 声明绑定到 maven 的 compile 阶段 -->
                         <goals>
+                            <goal>compile</goal>
                             <goal>testCompile</goal>
                         </goals>
                     </execution>
