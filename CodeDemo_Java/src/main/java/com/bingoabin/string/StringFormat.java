@@ -1,5 +1,7 @@
 package com.bingoabin.string;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,5 +22,12 @@ public class StringFormat {
         String message = String.format(TABLE_DELETE_MESSAGE, ++messageNo, String.join("、", tableDeleteMessages));
         //1. 上游表及关联关系被删除：zhangsan、lisi、wangwu
         System.out.println(message);
+    }
+
+    @Test
+    public void test(){
+        String msg = "xubin %%p XXXXXXX";
+        String clientId = "xssss";
+        System.out.println(String.format("cancel client '%s'.Error: " +  msg, clientId));
     }
 }
