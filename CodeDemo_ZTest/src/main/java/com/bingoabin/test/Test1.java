@@ -13,6 +13,7 @@ import java.util.*;
  */
 public class Test1 {
     public static void main(String[] args) {
+        //test
         List<String> list = new ArrayList<>();
         String[] strings = list.toArray(new String[list.size()]);
         System.out.println(Arrays.toString(strings));
